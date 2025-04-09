@@ -39,47 +39,66 @@
             <a href="#marketplace" class="nav-link">Marketplace</a>
         </div>
 
-        <div class="nav-auth">
-            <button class="btn-login">Log In</button>
-            <button class="btn-signup">Sign Up</button>
+        <div class="nav-right">
+            <div class="nav-auth">
+                <button class="btn-login">Log In</button>
+                <button class="btn-signup">Sign Up</button>
+            </div>
+
+            <!-- Hamburger Menu -->
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
 
-        <button class="hamburger" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu">
-        <div class="mobile-nav-items">
-            <a href="#castings" class="mobile-nav-link">
-                Castings
-            </a>
-            <a href="#post-casting" class="mobile-nav-link">
-                Post a casting
-            </a>
-            <a href="#academy" class="mobile-nav-link">
-                Model Academy
-            </a>
-            <a href="#rankings" class="mobile-nav-link">
-                Rankings
-            </a>
-
-            <div class="mobile-nav-section">
-                <a href="#blog" class="mobile-nav-link">
-                    Blog
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <nav class="mobile-nav-links">
+                <div class="mobile-nav-auth">
+                    <button class="btn-login">Log In</button>
+                    <button class="btn-signup">Sign Up</button>
+                </div>
+                <a href="#" class="mobile-nav-link upgrade">
+                    <i data-lucide="star"></i>
+                    Upgrade now
+                </a>
+                <a href="#castings" class="mobile-nav-link">
+                    <i data-lucide="calendar"></i>
+                    Castings
+                </a>
+                <a href="#post-casting" class="mobile-nav-link">
+                    <i data-lucide="plus-circle"></i>
+                    Post a casting
+                </a>
+                <a href="#academy" class="mobile-nav-link">
+                    <i data-lucide="graduation-cap"></i>
+                    Model Academy
+                </a>
+                <a href="#rankings" class="mobile-nav-link">
+                    <i data-lucide="bar-chart-2"></i>
+                    Rankings
                 </a>
                 <a href="#about" class="mobile-nav-link">
-                    About
+                    <i data-lucide="users"></i>
+                    About us
                 </a>
-                <a href="#language" class="mobile-nav-link">
-                    Language
+                <a href="#blog" class="mobile-nav-link">
+                    <i data-lucide="file-text"></i>
+                    Blog
                 </a>
+            </nav>
+
+            <div class="mobile-menu-footer">
+                <div class="language-selector">
+                    <i data-lucide="globe"></i>
+                    <span>Language</span>
+                    <i data-lucide="chevron-down"></i>
+                </div>
             </div>
         </div>
-    </div>
+    </nav>
 
     <!-- Bottom Navigation -->
     <nav class="bottom-nav">
@@ -598,29 +617,57 @@
         <div class="section-container">
             <h2>Brands that trust us</h2>
             <div class="brand-logos" data-aos="fade-up">
-                <button class="prev-brand"><i class="fas fa-chevron-left"></i></button>
-                <div class="brand-logo">
-                    <img src="https://via.placeholder.com/200x80" alt="Adidas" loading="lazy">
+                <button class="prev-brand" aria-label="Previous brands">
+                    <i class="lucide lucide-chevron-left"></i>
+                </button>
+                <div class="brand-logos-container">
+                    <div class="brand-logos-wrapper">
+                        <div class="brand-logo">
+                            <img src="img/brands/nike.png" alt="Nike" loading="lazy">
+                        </div>
+                        <div class="brand-logo">
+                            <img src="img/brands/adidas.png" alt="Adidas" loading="lazy">
+                        </div>
+                        <div class="brand-logo">
+                            <img src="img/brands/puma.png" alt="Puma" loading="lazy">
+                        </div>
+                        <div class="brand-logo">
+                            <img src="img/brands/reebok.png" alt="Reebok" loading="lazy">
+                        </div>
+                        <div class="brand-logo">
+                            <img src="img/brands/under-armour.png" alt="Under Armour" loading="lazy">
+                        </div>
+                        <div class="brand-logo">
+                            <img src="img/brands/new-balance.png" alt="New Balance" loading="lazy">
+                        </div>
+                        <div class="brand-logo">
+                            <img src="img/brands/asics.png" alt="Asics" loading="lazy">
+                        </div>
+                        <div class="brand-logo">
+                            <img src="img/brands/fila.png" alt="Fila" loading="lazy">
+                        </div>
+                    </div>
                 </div>
-                <div class="brand-logo">
-                    <img src="https://via.placeholder.com/200x80" alt="Nike" loading="lazy">
-                </div>
-                <div class="brand-logo">
-                    <img src="https://via.placeholder.com/200x80" alt="Zara" loading="lazy">
-                </div>
-                <div class="brand-logo">
-                    <img src="https://via.placeholder.com/200x80" alt="Audi" loading="lazy">
-                </div>
-                <button class="next-brand"><i class="fas fa-chevron-right"></i></button>
+                <button class="next-brand" aria-label="Next brands">
+                    <i class="lucide lucide-chevron-right"></i>
+                </button>
             </div>
         </div>
     </section>
 
     <!-- Get Discovered -->
     <section class="get-discovered">
-        <div class="get-discovered-content">
-            <h2>Get Discovered</h2>
-            <button class="signup-btn">Sign up now</button>
+        <div class="section-container">
+            <div class="get-discovered-content">
+                <div class="get-discovered-text">
+                    <h2>Get Discovered</h2>
+                    <p>Join thousands of models and talents who found success through our platform</p>
+                    <button class="cta-button">Sign up now</button>
+                </div>
+                <div class="get-discovered-image">
+                    <img src="images/model-confident.jpg" alt="Confident Model" loading="lazy">
+                </div>
+            </div>
         </div>
     </section>
 
@@ -664,7 +711,7 @@
                 <a href="#"><i class="fab fa-linkedin"></i></a>
                 <a href="#"><i class="fab fa-facebook"></i></a>
             </div>
-            <p>&copy; 2024 ModelHub. All rights reserved.</p>
+            <p>&copy; 2024 . All rights reserved.</p>
         </div>
     </footer>
 

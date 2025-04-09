@@ -11,7 +11,7 @@ const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelector('.nav-links');
 const navAuth = document.querySelector('.nav-auth');
 const mobileMenu = document.querySelector('.mobile-menu');
-const closeMenuBtn = document.querySelector('.close-menu');
+const mobileMenuClose = document.querySelector('.mobile-menu-close');
 const body = document.body;
 let isMenuOpen = false;
 
@@ -30,17 +30,12 @@ function closeMobileMenu() {
 }
 
 // Event Listeners
-if (hamburger && mobileMenu && closeMenuBtn) {
+if (hamburger && mobileMenu) {
     // Hamburger click
     hamburger.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
         toggleMobileMenu();
-    });
-
-    // Close button click
-    closeMenuBtn.addEventListener('click', () => {
-        closeMobileMenu();
     });
 
     // Close menu when clicking outside
@@ -339,14 +334,52 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Bottom Navigation Active State
+    // Bottom Navigation
+    const bottomNav = document.querySelector('.bottom-nav');
     const bottomNavLinks = document.querySelectorAll('.bottom-nav-link');
-    bottomNavLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            bottomNavLinks.forEach(l => l.classList.remove('active'));
-            link.classList.add('active');
-        });
+
+    // Show/hide bottom navigation based on scroll position
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > lastScrollTop) {
+            // Scrolling down
+            if (bottomNav) bottomNav.style.transform = 'translateY(60px)';
+        } else {
+            // Scrolling up
+            if (bottomNav) bottomNav.style.transform = 'translateY(0)';
+        }
+        lastScrollTop = scrollTop;
     });
+
+    // Active state for bottom navigation links
+    if (bottomNavLinks.length > 0) {
+        bottomNavLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                bottomNavLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+    }
+
+    // Close mobile menu when clicking a link
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+    if (mobileNavLinks.length > 0) {
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (hamburger) hamburger.classList.remove('active');
+                if (navMenu) navMenu.classList.remove('active');
+                if (body) body.classList.remove('menu-open');
+            });
+        });
+    }
+
+    // Initialize bottom navigation visibility
+    if (bottomNav) {
+        bottomNav.style.transform = 'translateY(0)';
+    }
 
     // Initialize AOS
     AOS.init({
@@ -501,4 +534,97 @@ if (categoryScroll) {
 
     // Initialize cursor style
     categoryScroll.style.cursor = 'grab';
-} 
+}
+
+// Brand Logos Carousel
+document.addEventListener('DOMContentLoaded', () => {
+    const brandLogosWrapper = document.querySelector('.brand-logos-wrapper');
+    const prevButton = document.querySelector('.prev-brand');
+    const nextButton = document.querySelector('.next-brand');
+    
+    if (!brandLogosWrapper || !prevButton || !nextButton) return;
+
+    let currentPosition = 0;
+    const step = 120 + 32; // logo width + gap
+    const maxScroll = brandLogosWrapper.scrollWidth - brandLogosWrapper.clientWidth;
+
+    function updateButtonStates() {
+        prevButton.style.opacity = currentPosition <= 0 ? '0.5' : '1';
+        nextButton.style.opacity = currentPosition >= maxScroll ? '0.5' : '1';
+    }
+
+    function scroll(direction) {
+        if (direction === 'prev' && currentPosition > 0) {
+            currentPosition = Math.max(0, currentPosition - step);
+        } else if (direction === 'next' && currentPosition < maxScroll) {
+            currentPosition = Math.min(maxScroll, currentPosition + step);
+        }
+        
+        brandLogosWrapper.style.transform = `translateX(-${currentPosition}px)`;
+        updateButtonStates();
+    }
+
+    prevButton.addEventListener('click', () => scroll('prev'));
+    nextButton.addEventListener('click', () => scroll('next'));
+
+    // Touch and drag functionality
+    let isDragging = false;
+    let startX;
+    let scrollLeft;
+
+    brandLogosWrapper.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.pageX - brandLogosWrapper.offsetLeft;
+        scrollLeft = currentPosition;
+    });
+
+    brandLogosWrapper.addEventListener('mouseleave', () => {
+        isDragging = false;
+    });
+
+    brandLogosWrapper.addEventListener('mouseup', () => {
+        isDragging = false;
+    });
+
+    brandLogosWrapper.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - brandLogosWrapper.offsetLeft;
+        const walk = (x - startX) * 2;
+        const newPosition = scrollLeft - walk;
+        
+        if (newPosition >= 0 && newPosition <= maxScroll) {
+            currentPosition = newPosition;
+            brandLogosWrapper.style.transform = `translateX(-${currentPosition}px)`;
+            updateButtonStates();
+        }
+    });
+
+    // Touch events for mobile
+    brandLogosWrapper.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        startX = e.touches[0].pageX - brandLogosWrapper.offsetLeft;
+        scrollLeft = currentPosition;
+    });
+
+    brandLogosWrapper.addEventListener('touchend', () => {
+        isDragging = false;
+    });
+
+    brandLogosWrapper.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.touches[0].pageX - brandLogosWrapper.offsetLeft;
+        const walk = (x - startX) * 2;
+        const newPosition = scrollLeft - walk;
+        
+        if (newPosition >= 0 && newPosition <= maxScroll) {
+            currentPosition = newPosition;
+            brandLogosWrapper.style.transform = `translateX(-${currentPosition}px)`;
+            updateButtonStates();
+        }
+    });
+
+    // Initial button states
+    updateButtonStates();
+}); 
