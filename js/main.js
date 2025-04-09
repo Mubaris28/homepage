@@ -300,35 +300,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Theme Toggle
-    const themeToggle = document.querySelector('.theme-toggle');
-    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-
-    function setTheme(theme) {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-
-        // Update theme toggle icon
-        const themeIcon = themeToggle.querySelector('i');
-        if (theme === 'dark') {
-            themeIcon.classList.remove('lucide-sun');
-            themeIcon.classList.add('lucide-moon');
-        } else {
-            themeIcon.classList.remove('lucide-moon');
-            themeIcon.classList.add('lucide-sun');
-        }
-    }
-
-    // Check for saved theme preference or system preference
-    const savedTheme = localStorage.getItem('theme') || (prefersDarkScheme.matches ? 'dark' : 'light');
-    setTheme(savedTheme);
-
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        setTheme(newTheme);
-    });
-
     // Language Toggle (placeholder functionality)
     const langToggle = document.querySelector('.lang-toggle');
     langToggle.addEventListener('click', () => {
