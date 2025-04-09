@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Professional Modeling Platform - Connect with top agencies and brands worldwide. Find models, photographers, and creative talent.">
+    <meta name="keywords"
+        content="modeling, models, fashion, photographers, agencies, talent management, professional models">
+    <meta name="author" content="Model Management">
+    <meta property="og:title" content="Model Management - Professional Modeling Platform">
+    <meta property="og:description"
+        content="Connect with top agencies and brands worldwide. Find models, photographers, and creative talent.">
+    <meta property="og:type" content="website">
+    <title>Model Management - Professional Modeling Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">
+            <i class="lucide lucide-aperture"></i>
+            Model Management
+        </a>
+
+        <div class="nav-center">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="#castings" class="nav-link">Castings</a>
+            <a href="#models" class="nav-link">Models</a>
+            <a href="#directory" class="nav-link">Pro Directory</a>
+            <a href="#marketplace" class="nav-link">Marketplace</a>
+        </div>
+
+        <div class="nav-auth">
+            <button class="btn-login">Log In</button>
+            <button class="btn-signup">Sign Up</button>
+        </div>
+
+        <button class="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-nav-items">
+            <a href="#castings" class="mobile-nav-link">
+                Castings
+            </a>
+            <a href="#post-casting" class="mobile-nav-link">
+                Post a casting
+            </a>
+            <a href="#academy" class="mobile-nav-link">
+                Model Academy
+            </a>
+            <a href="#rankings" class="mobile-nav-link">
+                Rankings
+            </a>
+
+            <div class="mobile-nav-section">
+                <a href="#blog" class="mobile-nav-link">
+                    Blog
+                </a>
+                <a href="#about" class="mobile-nav-link">
+                    About
+                </a>
+                <a href="#language" class="mobile-nav-link">
+                    Language
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <div class="bottom-nav-items">
+            <a href="index.html" class="bottom-nav-link active">
+                <i class="lucide lucide-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#castings" class="bottom-nav-link">
+                <i class="lucide lucide-camera"></i>
+                <span>Castings</span>
+            </a>
+            <a href="#models" class="bottom-nav-link">
+                <i class="lucide lucide-users"></i>
+                <span>Models</span>
+            </a>
+            <a href="#profile" class="bottom-nav-link">
+                <i class="lucide lucide-user"></i>
+                <span>Profile</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-split">
+                <div class="hero-half models">
+                    <div class="hero-content glass-panel">
+                        <div class="content-wrapper">
+                            <h1 class="hero-title split-text">Find work as a model</h1>
+                            <p class="hero-subtitle">Modeling jobs for newcomers and professional models.</p>
+                            <div class="hero-cta">
+                                <button class="hero-btn primary glass-btn">
+                                    <span class="btn-content">
+                                        <span class="btn-text">For models and talents</span>
+                                        <i class="lucide lucide-arrow-right"></i>
+                                    </span>
+                                    <span class="btn-bg"></span>
+                                </button>
+                            </div>
+                            <div class="quick-info">
+                                <div class="info-item">
+                                    <i class="lucide lucide-briefcase"></i>
+                                    <span>Fashion Shows</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="lucide lucide-camera"></i>
+                                    <span>Photo Shoots</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="lucide lucide-tv-2"></i>
+                                    <span>Commercials</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="overlay gradient-overlay"></div>
+                    <div class="grain-overlay"></div>
+                </div>
+                <div class="hero-half professionals">
+                    <div class="hero-content glass-panel">
+                        <div class="content-wrapper">
+                            <h1 class="hero-title split-text">Find models and talents</h1>
+                            <p class="hero-subtitle">Source models, talents and influencers for all types of projects.
+                            </p>
+                            <div class="hero-cta">
+                                <button class="hero-btn primary glass-btn">
+                                    <span class="btn-content">
+                                        <span class="btn-text">For professionals</span>
+                                        <i class="lucide lucide-arrow-right"></i>
+                                    </span>
+                                    <span class="btn-bg"></span>
+                                </button>
+                            </div>
+                            <div class="quick-info">
+                                <div class="info-item">
+                                    <i class="lucide lucide-users"></i>
+                                    <span>Agencies</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="lucide lucide-building"></i>
+                                    <span>Brands</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="lucide lucide-camera"></i>
+                                    <span>Photographers</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="overlay gradient-overlay"></div>
+                    <div class="grain-overlay"></div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-icon">
+                    <div class="mouse">
+                        <div class="wheel"></div>
+                    </div>
+                    <div class="arrows">
+                        <span class="arrow"></span>
+                        <span class="arrow"></span>
+                        <span class="arrow"></span>
+                    </div>
+                </div>
+                <span class="scroll-text">Scroll to explore</span>
+            </div>
+            <!-- <div class="theme-toggle">
+                <button class="theme-btn" aria-label="Toggle theme">
+                    <i class="lucide lucide-sun"></i>
+                    <i class="lucide lucide-moon"></i>
+                </button>
+            </div> -->
+            <div class="custom-cursor"></div>
+        </div>
+    </section>
+
+    <!-- More than models -->
+    <section class="more-than-models" id="categories">
+        <div class="section-container">
+            <h2>More than models</h2>
+            <p>The world's modeling platform, where diverse talent of all levels can safely connect and collaborate with
+                professionals.</p>
+
+            <div class="category-scroll-container">
+                <button class="scroll-btn prev" aria-label="Previous categories">
+                    <i class="lucide lucide-chevron-left"></i>
+                </button>
+                <div class="category-scroll">
+                    <div class="category-grid">
+                        <div class="category-card">
+                            <img src="images/categories/newcomer.jpeg" alt="Newcomer" loading="lazy">
+                            <div class="category-overlay"></div>
+                            <h3>I'm a Newcomer</h3>
+                            <button>Tell me more</button>
+                        </div>
+                        <div class="category-card">
+                            <img src="images/categories/professional.jpeg" alt="Professional Model" loading="lazy">
+                            <div class="category-overlay"></div>
+                            <h3>I'm a Professional Model</h3>
+                            <button>Tell me more</button>
+                        </div>
+                        <div class="category-card">
+                            <img src="images/categories/influencer.jpeg" alt="Influencer" loading="lazy">
+                            <div class="category-overlay"></div>
+                            <h3>I'm an Influencer / Content creator</h3>
+                            <button>Tell me more</button>
+                        </div>
+                        <div class="category-card">
+                            <img src="images/categories/photographer.jpeg" alt="Photographer" loading="lazy">
+                            <div class="category-overlay"></div>
+                            <h3>I'm a Photographer</h3>
+                            <button>Tell me more</button>
+                        </div>
+                        <div class="category-card">
+                            <img src="images/categories/brand.jpeg" alt="Brand" loading="lazy">
+                            <div class="category-overlay"></div>
+                            <h3>We're a Brand</h3>
+                            <button>Tell us more</button>
+                        </div>
+                        <div class="category-card">
+                            <img src="images/categories/agency.jpeg" alt="Agency" loading="lazy">
+                            <div class="category-overlay"></div>
+                            <h3>We're an Agency</h3>
+                            <button>Tell us more</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="scroll-btn next" aria-label="Next categories">
+                    <i class="lucide lucide-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Models -->
+    <section class="popular-models" id="models">
+        <div class="section-container">
+            <h2>Popular Models</h2>
+            <div class="model-tabs">
+                <button class="tab-btn active" data-tab="unique">Unique</button>
+                <button class="tab-btn" data-tab="fashion">Fashion</button>
+                <button class="tab-btn" data-tab="real-people">Real people</button>
+                <button class="tab-btn" data-tab="plus-sized">Plus sized</button>
+                <button class="tab-btn" data-tab="talents">Talents</button>
+            </div>
+
+            <div class="models-grid active" id="unique-models">
+                <div class="model-card">
+                    <img src="images/models/hero-1.jpeg" alt="Shouta" loading="lazy">
+                    <h3>Shouta</h3>
+                    <p>Tokyo, Japan</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-2.jpeg" alt="Edle" loading="lazy">
+                    <h3>Edle</h3>
+                    <p>Copenhagen, Denmark</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-3.jpeg" alt="Jay" loading="lazy">
+                    <h3>Jay</h3>
+                    <p>London, United Kingdom</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-4.jpeg" alt="Nakiah" loading="lazy">
+                    <h3>Nakiah</h3>
+                    <p>Chicago, United States</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-5.jpeg" alt="Yuki" loading="lazy">
+                    <h3>Yuki</h3>
+                    <p>Seoul, South Korea</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-6.jpeg" alt="Lena" loading="lazy">
+                    <h3>Lena</h3>
+                    <p>Stockholm, Sweden</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-7.jpeg" alt="Marcus" loading="lazy">
+                    <h3>Marcus</h3>
+                    <p>Berlin, Germany</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-8.jpeg" alt="Aria" loading="lazy">
+                    <h3>Aria</h3>
+                    <p>Milan, Italy</p>
+                </div>
+            </div>
+
+            <div class="models-grid" id="fashion-models">
+                <div class="model-card">
+                    <img src="images/models/hero-5.jpeg" alt="Emma" loading="lazy">
+                    <h3>Emma</h3>
+                    <p>Paris, France</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-6.jpeg" alt="Sofia" loading="lazy">
+                    <h3>Sofia</h3>
+                    <p>Milan, Italy</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-7.jpeg" alt="Lucas" loading="lazy">
+                    <h3>Lucas</h3>
+                    <p>New York, USA</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-8.jpeg" alt="Mia" loading="lazy">
+                    <h3>Mia</h3>
+                    <p>London, UK</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-1.jpeg" alt="Alex" loading="lazy">
+                    <h3>Alex</h3>
+                    <p>Berlin, Germany</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-2.jpeg" alt="Nina" loading="lazy">
+                    <h3>Nina</h3>
+                    <p>Stockholm, Sweden</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-3.jpeg" alt="Tom" loading="lazy">
+                    <h3>Tom</h3>
+                    <p>Amsterdam, Netherlands</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-4.jpeg" alt="Lisa" loading="lazy">
+                    <h3>Lisa</h3>
+                    <p>Oslo, Norway</p>
+                </div>
+            </div>
+
+            <div class="models-grid" id="real-people-models">
+                <div class="model-card">
+                    <img src="images/models/hero-5.jpeg" alt="Sarah" loading="lazy">
+                    <h3>Sarah</h3>
+                    <p>Toronto, Canada</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-6.jpeg" alt="Michael" loading="lazy">
+                    <h3>Michael</h3>
+                    <p>Sydney, Australia</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-7.jpeg" alt="Jessica" loading="lazy">
+                    <h3>Jessica</h3>
+                    <p>Madrid, Spain</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-8.jpeg" alt="David" loading="lazy">
+                    <h3>David</h3>
+                    <p>Dublin, Ireland</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-1.jpeg" alt="Maria" loading="lazy">
+                    <h3>Maria</h3>
+                    <p>Rome, Italy</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-2.jpeg" alt="James" loading="lazy">
+                    <h3>James</h3>
+                    <p>Los Angeles, USA</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-3.jpeg" alt="Anna" loading="lazy">
+                    <h3>Anna</h3>
+                    <p>Prague, Czech Republic</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-4.jpeg" alt="Leo" loading="lazy">
+                    <h3>Leo</h3>
+                    <p>Barcelona, Spain</p>
+                </div>
+            </div>
+
+            <div class="models-grid" id="plus-sized-models">
+                <div class="model-card">
+                    <img src="images/models/hero-5.jpeg" alt="Sarah" loading="lazy">
+                    <h3>Sarah</h3>
+                    <p>Toronto, Canada</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-6.jpeg" alt="Michael" loading="lazy">
+                    <h3>Michael</h3>
+                    <p>Sydney, Australia</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-7.jpeg" alt="Jessica" loading="lazy">
+                    <h3>Jessica</h3>
+                    <p>Madrid, Spain</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-8.jpeg" alt="David" loading="lazy">
+                    <h3>David</h3>
+                    <p>Dublin, Ireland</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-1.jpeg" alt="Maria" loading="lazy">
+                    <h3>Maria</h3>
+                    <p>Rome, Italy</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-2.jpeg" alt="James" loading="lazy">
+                    <h3>James</h3>
+                    <p>Los Angeles, USA</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-3.jpeg" alt="Anna" loading="lazy">
+                    <h3>Anna</h3>
+                    <p>Prague, Czech Republic</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-4.jpeg" alt="Leo" loading="lazy">
+                    <h3>Leo</h3>
+                    <p>Barcelona, Spain</p>
+                </div>
+            </div>
+
+            <div class="models-grid" id="talents-models">
+                <div class="model-card">
+                    <img src="images/models/hero-1.jpeg" alt="Maria" loading="lazy">
+                    <h3>Maria</h3>
+                    <p>Rome, Italy</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-2.jpeg" alt="James" loading="lazy">
+                    <h3>James</h3>
+                    <p>Los Angeles, USA</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-3.jpeg" alt="Anna" loading="lazy">
+                    <h3>Anna</h3>
+                    <p>Prague, Czech Republic</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-4.jpeg" alt="Leo" loading="lazy">
+                    <h3>Leo</h3>
+                    <p>Barcelona, Spain</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-5.jpeg" alt="Maria" loading="lazy">
+                    <h3>Maria</h3>
+                    <p>Rome, Italy</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-6.jpeg" alt="James" loading="lazy">
+                    <h3>James</h3>
+                    <p>Los Angeles, USA</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-7.jpeg" alt="Anna" loading="lazy">
+                    <h3>Anna</h3>
+                    <p>Prague, Czech Republic</p>
+                </div>
+                <div class="model-card">
+                    <img src="images/models/hero-8.jpeg" alt="Leo" loading="lazy">
+                    <h3>Leo</h3>
+                    <p>Barcelona, Spain</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-card" data-aos="fade-up">
+                <div class="stat-number">2.6M+</div>
+                <div class="stat-label">Professional Models</div>
+            </div>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-number">380K+</div>
+                <div class="stat-label">Industry Professionals</div>
+            </div>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="stat-number">2.3K+</div>
+                <div class="stat-label">Partner Agencies</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Features -->
+    <section class="safety">
+        <h2>Your safety comes first</h2>
+        <div class="safety-features">
+            <div class="feature-card" data-aos="fade-up">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Verified Members</h3>
+                <p>All professional members are verified by our team</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-user-shield"></i>
+                <h3>Anti-Scam Tools</h3>
+                <p>Advanced tools to stop scammers in their tracks</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-star"></i>
+                <h3>Community Reviews</h3>
+                <p>Community reviews for added peace of mind</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Case Studies -->
+    <section class="case-studies" id="case-studies">
+        <div class="section-container">
+            <h2>Brand case studies</h2>
+            <div class="case-studies-grid">
+                <div class="case-study-card">
+                    <div class="brand-logo">
+                        <span>Y</span>
+                    </div>
+                    <img src="images/case-studies/case-1.jpeg" alt="YOUTIFUL Case Study" loading="lazy">
+                    <div class="case-study-content">
+                        <h3>YOUTIFUL</h3>
+                        <p>Found 50 Content creators for unboxing product videos, reaching over 2M views across social
+                            media platforms.</p>
+                    </div>
+                </div>
+                <div class="case-study-card">
+                    <div class="brand-logo">
+                        <span>M</span>
+                    </div>
+                    <img src="images/case-studies/case-2.jpeg" alt="MYPOSTCARD Case Study" loading="lazy">
+                    <div class="case-study-content">
+                        <h3>MYPOSTCARD</h3>
+                        <p>Achieved over 1000 diverse applicants for its campaign, resulting in a 300% increase in
+                            engagement.</p>
+                    </div>
+                </div>
+                <div class="case-study-card">
+                    <div class="brand-logo">
+                        <span>S</span>
+                    </div>
+                    <img src="images/case-studies/case-3.jpeg" alt="SAUVAGE MAMMA Case Study" loading="lazy">
+                    <div class="case-study-content">
+                        <h3>SAUVAGE MAMMA</h3>
+                        <p>Cast various powerful women for its latest collection, leading to a 200% boost in brand
+                            awareness.</p>
+                    </div>
+                </div>
+                <div class="case-study-card">
+                    <div class="brand-logo">
+                        <span>M</span>
+                    </div>
+                    <img src="images/case-studies/case-4.jpeg" alt="MELLER Case Study" loading="lazy">
+                    <div class="case-study-content">
+                        <h3>MELLER</h3>
+                        <p>Selected 20 content creators from over 1000 applicants, generating 5M+ impressions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="success-stories">
+        <h2>Success Stories</h2>
+        <div class="story-slider">
+            <div class="story-slide active">
+                <div class="story-content">
+                    <img src="https://via.placeholder.com/800x600" alt="Success Story" loading="lazy">
+                    <div class="story-text">
+                        <blockquote>
+                            "ModelHub helped me land my first major campaign with a leading fashion brand."
+                        </blockquote>
+                        <cite>- Sarah Johnson, Model</cite>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="prev-slide"><i class="fas fa-chevron-left"></i></button>
+            <button class="next-slide"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Trusted Brands -->
+    <section class="trusted-brands">
+        <div class="section-container">
+            <h2>Brands that trust us</h2>
+            <div class="brand-logos" data-aos="fade-up">
+                <button class="prev-brand"><i class="fas fa-chevron-left"></i></button>
+                <div class="brand-logo">
+                    <img src="https://via.placeholder.com/200x80" alt="Adidas" loading="lazy">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://via.placeholder.com/200x80" alt="Nike" loading="lazy">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://via.placeholder.com/200x80" alt="Zara" loading="lazy">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://via.placeholder.com/200x80" alt="Audi" loading="lazy">
+                </div>
+                <button class="next-brand"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Discovered -->
+    <section class="get-discovered">
+        <div class="get-discovered-content">
+            <h2>Get Discovered</h2>
+            <button class="signup-btn">Sign up now</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Company</h3>
+                <a href="#">About us</a>
+                <a href="#">Careers</a>
+                <a href="#">Press</a>
+            </div>
+            <div class="footer-section">
+                <h3>Help</h3>
+                <a href="#">FAQ</a>
+                <a href="#">Support</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+            <div class="footer-section">
+                <h3>Download Our App</h3>
+                <div class="app-buttons">
+                    <a href="#" class="app-button">
+                        <i class="fab fa-apple"></i> App Store
+                    </a>
+                    <a href="#" class="app-button">
+                        <i class="fab fa-google-play"></i> Google Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+            <p>&copy; 2024 ModelHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            offset: 100,
+            once: true
+        });
+
+        // Optimize images on load
+        window.addEventListener('load', function () {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                if (img.complete) {
+                    img.classList.add('loaded');
+                } else {
+                    img.addEventListener('load', function () {
+                        img.classList.add('loaded');
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
