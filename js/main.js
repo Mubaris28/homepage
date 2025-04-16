@@ -296,11 +296,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Language Toggle (placeholder functionality)
-    const langToggle = document.querySelector('.lang-toggle');
-    langToggle.addEventListener('click', () => {
-        // Add your language switching logic here
-        console.log('Language toggle clicked');
-    });
+    // const langToggle = document.querySelector('.lang-toggle');
+    // langToggle.addEventListener('click', () => {
+    //     // Add your language switching logic here
+    //     console.log('Language toggle clicked');
+    // });
 
     // Active Link Handling
     const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link, .bottom-nav-link');
@@ -961,3 +961,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 250);
     });
 }); 
+
+
+
+
+ 
