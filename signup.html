@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Model Management</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <h1>Sign Up</h1>
+            <p class="auth-subtitle">I want to</p>
+
+            <div class="auth-options">
+                <label class="auth-option">
+                    <input type="radio" name="userType" value="model">
+                    <span class="option-text">Find modeling jobs</span>
+                </label>
+                <label class="auth-option">
+                    <input type="radio" name="userType" value="professional" checked>
+                    <span class="option-text">Find models</span>
+                </label>
+            </div>
+
+            <div class="auth-social">
+                <p>Sign up with</p>
+                <div class="social-buttons">
+                    <button class="social-btn facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </button>
+                    <button class="social-btn google">
+                        <i class="fab fa-google"></i>
+                    </button>
+                    <button class="social-btn apple">
+                        <i class="fab fa-apple"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="auth-divider">
+                <span>or sign up with email</span>
+            </div>
+
+            <form class="auth-form">
+                <div class="form-group">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" placeholder="Email address..." required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password <span class="required">*</span></label>
+                    <input type="password" id="password" placeholder="Password..." required>
+                    <button type="button" class="toggle-password">
+                        <i class="lucide lucide-eye"></i>
+                    </button>
+                </div>
+                <div class="form-terms">
+                    <p>By creating an account you agree with our <a href="#">Terms and Conditions</a> and <a
+                            href="#">Privacy Policy</a></p>
+                </div>
+                <button type="submit" class="auth-submit">Sign up</button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Already a member? <a href="login.html">Log in</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Toggle password visibility
+        document.querySelector('.toggle-password').addEventListener('click', function () {
+            const input = this.previousElementSibling;
+            const icon = this.querySelector('i');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('lucide-eye');
+                icon.classList.add('lucide-eye-off');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('lucide-eye-off');
+                icon.classList.add('lucide-eye');
+            }
+        });
+    </script>
+</body>
+
+</html>
