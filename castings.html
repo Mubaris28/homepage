@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Castings</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">
+            <img src="images/logo/model-LOGO.png" alt="Logo" class="logo">
+        </a>
+
+        <div class="nav-center">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="castings.html" class="nav-link active">Casting</a>
+            <a href="#" class="nav-link">Models</a>
+            <a href="#directory" class="nav-link">Pro Directory</a>
+            <a href="#marketplace" class="nav-link">Marketplace</a>
+        </div>
+
+        <div class="nav-right">
+            <div class="nav-auth">
+                <a href="login.html" class="btn-login">Log In</a>
+                <a href="signup.html" class="btn-signup">Sign Up</a>
+            </div>
+
+            <button class="hamburger" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <nav class="mobile-nav-links">
+                <div class="mobile-nav-auth">
+                    <a href="login.html" class="btn-login">Log In</a>
+                    <a href="signup.html" class="btn-signup">Sign Up</a>
+                </div>
+                <a href="#" class="mobile-nav-link">
+                    <i class="fas fa-star"></i>
+                    Upgrade now
+                </a>
+                <a href="#castings" class="mobile-nav-link">
+                    <i class="fas fa-camera"></i>
+                    Castings
+                </a>
+                <a href="#models" class="mobile-nav-link">
+                    <i class="fas fa-users"></i>
+                    Models
+                </a>
+            </nav>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Header Section -->
+        <div class="castings-header">
+            <div class="header-content">
+                <h1>Model Castings</h1>
+                <h2>Modeling jobs</h2>
+            </div>
+            <button class="post-casting-btn">
+                <i class="fas fa-plus"></i>
+                Post casting
+            </button>
+        </div>
+
+        <!-- Filters Section -->
+        <div class="filters-section">
+            <div class="filter-group">
+                <!-- Gender Filter -->
+                <div class="filter-wrapper">
+                    <button class="filter-btn" data-dropdown="gender">
+                        <span>Gender</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-panel" id="gender-dropdown">
+                        <div class="dropdown-options">
+                            <label class="dropdown-option">
+                                <input type="radio" name="gender" value="all">
+                                <span>All</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="gender" value="female">
+                                <span>Female</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="gender" value="male">
+                                <span>Male</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="gender" value="non-binary">
+                                <span>Non-binary</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job Type Filter (Locked) -->
+                <button class="filter-btn locked">
+                    <span>Job type</span>
+                    <i class="fas fa-lock"></i>
+                </button>
+
+                <!-- Country Filter -->
+                <div class="filter-wrapper">
+                    <button class="filter-btn" data-dropdown="country">
+                        <span>Country</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-panel" id="country-dropdown">
+                        <div class="dropdown-search">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search country...">
+                        </div>
+                        <div class="dropdown-options">
+                            <label class="dropdown-option">
+                                <input type="radio" name="country" value="all">
+                                <span>All countries</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="country" value="us">
+                                <span>United States</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="country" value="uk">
+                                <span>United Kingdom</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="country" value="fr">
+                                <span>France</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="country" value="de">
+                                <span>Germany</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- City Filter -->
+                <div class="filter-wrapper">
+                    <button class="filter-btn" data-dropdown="city">
+                        <span>City</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-panel" id="city-dropdown">
+                        <div class="dropdown-search">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search city...">
+                        </div>
+                        <div class="dropdown-options">
+                            <label class="dropdown-option">
+                                <input type="radio" name="city" value="all">
+                                <span>All cities</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="city" value="nyc">
+                                <span>New York</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="city" value="london">
+                                <span>London</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="city" value="paris">
+                                <span>Paris</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paid Filter (Locked) -->
+                <button class="filter-btn locked">
+                    <span>Paid shoot or event</span>
+                    <i class="fas fa-lock"></i>
+                </button>
+
+                <!-- Editor's Pick Filter -->
+                <div class="filter-wrapper">
+                    <button class="filter-btn editors-pick" data-dropdown="editors">
+                        <i class="fas fa-bars"></i>
+                        <span>Editor's Pick</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-panel" id="editors-dropdown">
+                        <div class="dropdown-options">
+                            <label class="dropdown-option">
+                                <input type="radio" name="editors" value="all">
+                                <span>All castings</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="editors" value="featured">
+                                <span>Featured castings</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="editors" value="verified">
+                                <span>Verified castings</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Castings Grid -->
+        <div class="castings-grid">
+            <!-- Casting Card 1 -->
+            <div class="casting-card">
+                <div class="casting-image-section">
+                    <div class="casting-image">
+                        <img src="https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?ixlib=rb-4.0.3"
+                            alt="Model in water for hotel lifestyle shoot" loading="lazy" decoding="async">
+                    </div>
+                </div>
+                <div class="casting-content-section">
+                    <div class="tag well-paid">Well Paid</div>
+                    <div class="casting-details">
+                        <h3>Lifestyle Shoot for Hotel Chain</h3>
+                        <div class="casting-info">
+                            <p>
+                                <i class="fas fa-globe"></i>
+                                Worldwide
+                            </p>
+                            <p>
+                                <i class="far fa-calendar"></i>
+                                Casting ends Apr 23, 2025
+                            </p>
+                            <p>
+                                <i class="fas fa-dollar-sign"></i>
+                                Paid shoot or event
+                            </p>
+                        </div>
+                        <div class="price-section">
+                            <span class="amount">$700</span>
+                            <span class="travel-note">
+                                <i class="fas fa-plane"></i>
+                                Travel costs covered
+                            </span>
+                        </div>
+                        <button class="details-btn">More details</button>
+                        <p class="last-activity">Last activity: <span>recently active</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Casting Card 2 -->
+            <div class="casting-card">
+                <div class="casting-image-section">
+                    <div class="casting-image">
+                        <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?ixlib=rb-4.0.3"
+                            alt="Group of diverse models in neutral outfits" loading="lazy" decoding="async">
+                    </div>
+                </div>
+                <div class="casting-content-section">
+                    <div class="trusted-badge">
+                        <i class="fas fa-check"></i>
+                        Trusted by models
+                    </div>
+                    <div class="casting-details">
+                        <h3>We are looking for Various Profiles for Exciting Upcoming Campaigns / UK / Paid</h3>
+                        <div class="casting-info">
+                            <p>
+                                <i class="fas fa-map-marker-alt"></i>
+                                United Kingdom
+                            </p>
+                            <p>
+                                <i class="far fa-calendar"></i>
+                                Casting ends Jun 2, 2025
+                            </p>
+                            <p>
+                                <i class="fas fa-dollar-sign"></i>
+                                Paid shoot or event
+                            </p>
+                        </div>
+                        <button class="details-btn">More details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loader for infinite scroll -->
+        <div class="loader-container">
+            <div class="loader"></div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Company</h3>
+                <a href="#">About us</a>
+                <a href="#">Careers</a>
+                <a href="#">Press</a>
+            </div>
+            <div class="footer-section">
+                <h3>Help</h3>
+                <a href="#">FAQ</a>
+                <a href="#">Support</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+            <div class="footer-section">
+                <h3>Download Our App</h3>
+                <div class="app-buttons">
+                    <a href="#" class="app-button">
+                        <i class="fab fa-apple"></i> App Store
+                    </a>
+                    <a href="#" class="app-button">
+                        <i class="fab fa-google-play"></i> Google Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+            <p>&copy; 2024 . All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const body = document.body;
+
+        menuToggle?.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mobileMenu?.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        });
+
+        // Dropdown functionality
+        const filterButtons = document.querySelectorAll('.filter-btn[data-dropdown]');
+        const dropdownPanels = document.querySelectorAll('.dropdown-panel');
+        let activeDropdown = null;
+
+        // Handle filter button clicks
+        filterButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const dropdownId = button.getAttribute('data-dropdown') + '-dropdown';
+                const dropdown = document.getElementById(dropdownId);
+
+                // Close other dropdowns
+                dropdownPanels.forEach(panel => {
+                    if (panel.id !== dropdownId) {
+                        panel.classList.remove('show');
+                    }
+                });
+
+                filterButtons.forEach(btn => {
+                    if (btn !== button) {
+                        btn.classList.remove('active');
+                    }
+                });
+
+                // Toggle current dropdown
+                if (dropdown) {
+                    const isOpen = dropdown.classList.contains('show');
+                    dropdown.classList.toggle('show');
+                    button.classList.toggle('active');
+                    activeDropdown = isOpen ? null : dropdown;
+                }
+            });
+        });
+
+        // Handle dropdown option selection
+        document.querySelectorAll('.dropdown-option').forEach(option => {
+            option.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const radio = option.querySelector('input[type="radio"]');
+                const dropdownPanel = option.closest('.dropdown-panel');
+                const filterBtn = document.querySelector(`[data-dropdown="${dropdownPanel.id.replace('-dropdown', '')}"]`);
+
+                if (radio) {
+                    radio.checked = true;
+                    const selectedText = option.querySelector('span').textContent;
+                    filterBtn.querySelector('span').textContent = selectedText;
+                    dropdownPanel.classList.remove('show');
+                    filterBtn.classList.remove('active');
+                }
+            });
+        });
+
+        // Handle search functionality
+        document.querySelectorAll('.dropdown-search input').forEach(input => {
+            input.addEventListener('input', (e) => {
+                e.stopPropagation();
+                const filter = input.value.toLowerCase();
+                const options = input.closest('.dropdown-panel').querySelectorAll('.dropdown-option');
+
+                options.forEach(option => {
+                    const text = option.querySelector('span').textContent.toLowerCase();
+                    option.style.display = text.includes(filter) ? '' : 'none';
+                });
+            });
+
+            // Prevent dropdown from closing when clicking search input
+            input.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', () => {
+            if (activeDropdown) {
+                activeDropdown.classList.remove('show');
+                const button = document.querySelector(`[data-dropdown="${activeDropdown.id.replace('-dropdown', '')}"]`);
+                button?.classList.remove('active');
+                activeDropdown = null;
+            }
+        });
+
+        // Prevent dropdown from closing when clicking inside
+        dropdownPanels.forEach(panel => {
+            panel.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        });
+
+        // Infinite scroll
+        let page = 1;
+        let loading = false;
+        const castingsGrid = document.querySelector('.castings-grid');
+        const loader = document.querySelector('.loader-container');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !loading) {
+                    loadMoreCastings();
+                }
+            });
+        }, {
+            rootMargin: '100px',
+            threshold: 0.1
+        });
+
+        loader && observer.observe(loader);
+
+        async function loadMoreCastings() {
+            if (loading) return;
+            loading = true;
+            loader && (loader.style.display = 'flex');
+
+            try {
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                const newCards = generateMoreCastings();
+                castingsGrid?.insertAdjacentHTML('beforeend', newCards);
+                page++;
+            } catch (error) {
+                console.error('Error loading castings:', error);
+            } finally {
+                loading = false;
+                loader && (loader.style.display = 'none');
+            }
+        }
+
+        function generateMoreCastings() {
+            const images = [
+                'https://images.unsplash.com/photo-1581338834647-b0fb40704e21',
+                'https://images.unsplash.com/photo-1534528741775-53994a69daeb',
+                'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6',
+                'https://images.unsplash.com/photo-1517841905240-472988babdf9'
+            ];
+
+            return `
+                <div class="casting-card">
+                    <div class="casting-image-section">
+                        <div class="casting-image">
+                            <img src="${images[page % images.length]}?w=800" 
+                                 alt="Model casting image ${page}"
+                                 loading="lazy"
+                                 decoding="async">
+                        </div>
+                    </div>
+                    <div class="casting-content-section">
+                        <div class="tag well-paid">Well Paid</div>
+                        <div class="casting-details">
+                            <h3>Fashion Campaign ${page}</h3>
+                            <div class="casting-info">
+                                <p><i class="fas fa-globe"></i> Worldwide</p>
+                                <p><i class="far fa-calendar"></i> Casting ends May 15, 2025</p>
+                                <p><i class="fas fa-dollar-sign"></i> Paid shoot or event</p>
+                            </div>
+                            <div class="price-section">
+                                <span class="amount">$${800 + (page * 100)}</span>
+                                <span class="travel-note">
+                                    <i class="fas fa-plane"></i>
+                                    Travel costs covered
+                                </span>
+                            </div>
+                            <button class="details-btn">More details</button>
+                            <p class="last-activity">Last activity: <span>recently active</span></p>
+                        </div>
+                    </div>
+                </div>
+            `.repeat(2);
+        }
+    </script>
+</body>
+
+</html>
