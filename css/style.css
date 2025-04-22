@@ -6347,31 +6347,21 @@ display: block;
 }
 
 @media (max-width: 768px) {
-    .category-scroll-container {
-        margin: 0 -1rem;
-        padding: 0;
-    }
-
     .category-scroll {
-        overflow-x: scroll;
-        scroll-snap-type: x mandatory;
+        overflow-x: auto;
         -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
         padding: 1rem;
         margin: 0;
-        display: flex;
-        gap: 1rem;
     }
 
     .category-grid {
-        display: flex;
+        grid-template-columns: repeat(6, 280px);
         gap: 1rem;
-        padding: 0 1rem;
     }
 
     .category-card {
-        flex: 0 0 280px;
         scroll-snap-align: start;
-        scroll-snap-stop: always;
     }
 }
 
@@ -6416,36 +6406,28 @@ display: block;
 
 @media (max-width: 768px) {
     .discover-grid-container {
-        margin: 0 -1rem;
-        padding: 0;
-        overflow-x: scroll;
-        scroll-snap-type: x mandatory;
+        overflow-x: auto;
         -webkit-overflow-scrolling: touch;
+        padding: 1rem;
+        margin: 0;
     }
 
     .discover-grid {
-        display: flex !important;
+        display: flex;
         gap: 1rem;
-        padding: 1rem;
+        padding: 0;
         width: auto;
         min-width: max-content;
-        position: relative;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateX(100%);
-        transition: all 0.3s ease;
     }
 
     .discover-grid.active {
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(0);
+        display: flex;
     }
 
     .discover-card {
         flex: 0 0 280px;
+        width: 280px;
         scroll-snap-align: start;
-        scroll-snap-stop: always;
     }
 }
 
@@ -6459,92 +6441,4 @@ display: block;
 .discover-grid-container {
     -ms-overflow-style: none;
     scrollbar-width: none;
-}
-
-.category-scroll-container {
-    position: relative;
-    width: 100%;
-    margin-bottom: 3rem;
-    padding: 0 1rem;
-}
-
-.category-scroll {
-    overflow: visible;
-    margin: 0 -1rem;
-    padding: 1rem;
-}
-
-.category-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin: 0 auto;
-    max-width: 1400px;
-}
-
-.category-card {
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    aspect-ratio: 3/4;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 768px) {
-    .category-scroll-container {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-    }
-
-    .category-scroll {
-        overflow-x: scroll;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        padding: 1rem;
-        margin: 0;
-        width: 100%;
-    }
-
-    .category-grid {
-        display: flex;
-        gap: 1rem;
-        padding: 0 1rem;
-        width: max-content;
-    }
-
-    .category-card {
-        flex: 0 0 calc(80vw - 2rem);
-        width: calc(80vw - 2rem);
-        max-width: 300px;
-        min-width: 260px;
-        scroll-snap-align: start;
-        scroll-snap-stop: always;
-        margin-right: 0.5rem;
-    }
-
-    .category-card:last-child {
-        margin-right: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .category-card {
-        flex: 0 0 calc(85vw - 2rem);
-        width: calc(85vw - 2rem);
-        min-width: 240px;
-    }
-}
-
-/* Hide scrollbar but keep functionality */
-.category-scroll {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    scroll-behavior: smooth;
-}
-
-.category-scroll::-webkit-scrollbar {
-    display: none;
 }
