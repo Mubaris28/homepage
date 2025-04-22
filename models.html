@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Models - Model Management</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+
+<body>
+    <header>
+        <!-- Header content will be included via JavaScript -->
+    </header>
+
+    <main>
+        <!-- Navigation -->
+        <nav class="navbar">
+            <a href="index.html" class="nav-brand">
+                <img src="images/logo/model-LOGO.png" alt="Logo" class="logo" />
+
+            </a>
+
+            <div class="nav-center">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="castings.html" class="nav-link">Casting</a>
+                <a href="#" class="nav-link">Models</a>
+                <a href="#directory" class="nav-link">Pro Directory</a>
+                <a href="#marketplace" class="nav-link">Marketplace</a>
+            </div>
+
+            <div class="nav-right">
+                <div class="nav-auth">
+                    <a href="login.html" class="btn-login">Log In</a>
+                    <a href="signup.html" class="btn-signup">Sign Up</a>
+                </div>
+
+                <!-- Hamburger Menu -->
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu">
+                <nav class="mobile-nav-links">
+                    <div class="mobile-nav-auth">
+                        <a href="login.html" class="btn-login">Log In</a>
+                        <a href="signup.html" class="btn-signup">Sign Up</a>
+                    </div>
+                    <a href="#" class="mobile-nav-link upgrade">
+                        <i data-lucide="star"></i>
+                        Upgrade now
+                    </a>
+                    <a href="models-talents.html" class="mobile-nav-link">
+                        <i data-lucide="users"></i>
+                        Models & Talents
+                    </a>
+                    <a href="professionals.html" class="mobile-nav-link">
+                        <i data-lucide="briefcase"></i>
+                        Professionals
+                    </a>
+                    <a href="#castings" class="mobile-nav-link">
+                        <i data-lucide="calendar"></i>
+                        Castings
+                    </a>
+                    <a href="#post-casting" class="mobile-nav-link">
+                        <i data-lucide="plus-circle"></i>
+                        Post a casting
+                    </a>
+                    <a href="#academy" class="mobile-nav-link">
+                        <i data-lucide="graduation-cap"></i>
+                        Model Academy
+                    </a>
+                    <a href="#rankings" class="mobile-nav-link">
+                        <i data-lucide="bar-chart-2"></i>
+                        Rankings
+                    </a>
+                    <a href="#about" class="mobile-nav-link">
+                        <i data-lucide="users"></i>
+                        About us
+                    </a>
+                    <a href="#blog" class="mobile-nav-link">
+                        <i data-lucide="file-text"></i>
+                        Blog
+                    </a>
+                </nav>
+
+                <div class="mobile-menu-footer">
+                    <div class="language-selector">
+                        <i data-lucide="globe"></i>
+                        <span>Language</span>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <div class="bottom-nav-items">
+                <a href="index.html" class="bottom-nav-link active">
+                    <i class="lucide lucide-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="bottom-nav-link">
+                    <i class="lucide lucide-camera"></i>
+                    <span>Castings</span>
+                </a>
+                <a href="#" class="bottom-nav-link">
+                    <i class="lucide lucide-users"></i>
+                    <span>Models</span>
+                </a>
+                <a href="#=" bottom-nav-link">
+                    <i class="lucide lucide-user"></i>
+                    <span>Profile</span>
+                </a>
+            </div>
+        </nav>
+        <section class="section model-filters">
+            <div class="container">
+                <h1 class="title">Models</h1>
+
+                <!-- Disciplines Section -->
+                <div class="disciplines-section">
+                    <div class="disciplines-slider-container">
+                        <div class="swiper-container disciplines-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <button class="filter-button locked">
+                                        <span>Fashion</span>
+                                        <i class="fas fa-lock"></i>
+                                    </button>
+                                </div>
+                                <div class="swiper-slide">
+                                    <button class="filter-button locked">
+                                        <span>Content creator</span>
+                                        <i class="fas fa-lock"></i>
+                                    </button>
+                                </div>
+                                <div class="swiper-slide">
+                                    <button class="filter-button locked">
+                                        <span>Curvy</span>
+                                        <i class="fas fa-lock"></i>
+                                    </button>
+                                </div>
+                                <div class="swiper-slide">
+                                    <button class="filter-button locked">
+                                        <span>Tattoo</span>
+                                        <i class="fas fa-lock"></i>
+                                    </button>
+                                </div>
+                                <div class="swiper-slide">
+                                    <button class="filter-button locked">
+                                        <span>Dancer</span>
+                                        <i class="fas fa-lock"></i>
+                                    </button>
+                                </div>
+                                <div class="swiper-slide">
+                                    <button class="filter-button locked">
+                                        <span>Sport</span>
+                                        <i class="fas fa-lock"></i>
+                                    </button>
+                                </div>
+                                <div class="swiper-slide">
+                                    <button class="filter-button locked">
+                                        <span>Actor</span>
+                                        <i class="fas fa-lock"></i>
+                                    </button>
+                                </div>
+                                <div class="swiper-slide">
+                                    <button class="filter-button locked">
+                                        <span>Senior</span>
+                                        <i class="fas fa-lock"></i>
+                                    </button>
+                                </div>
+                                <div class="swiper-slide">
+                                    <button class="filter-button locked">
+                                        <span>Artistic Nude</span>
+                                        <i class="fas fa-lock"></i>
+                                    </button>
+                                </div>
+                                <div class="swiper-slide">
+                                    <button class="filter-button locked">
+                                        <span>Unique</span>
+                                        <i class="fas fa-lock"></i>
+                                    </button>
+                                </div>
+                                <div class="swiper-slide">
+                                    <button class="filter-button locked">
+                                        <span>Androgynous</span>
+                                        <i class="fas fa-lock"></i>
+                                    </button>
+                                </div>
+                                <div class="swiper-slide">
+                                    <button class="filter-button locked">
+                                        <span>Hostess/Promotional</span>
+                                        <i class="fas fa-lock"></i>
+                                    </button>
+                                </div>
+                                <div class="swiper-slide">
+                                    <button class="filter-button locked">
+                                        <span>Lingerie</span>
+                                        <i class="fas fa-lock"></i>
+                                    </button>
+                                </div>
+                                <div class="swiper-slide">
+                                    <button class="filter-button locked">
+                                        <span>Musician</span>
+                                        <i class="fas fa-lock"></i>
+                                    </button>
+                                </div>
+                                <div class="swiper-slide">
+                                    <button class="filter-button locked">
+                                        <span>Runway</span>
+                                        <i class="fas fa-lock"></i>
+                                    </button>
+                                </div>
+                                <div class="swiper-slide">
+                                    <button class="filter-button locked">
+                                        <span>Swimwear</span>
+                                        <i class="fas fa-lock"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filter Section -->
+                <div class="filter-section">
+                    <div class="filters-container">
+                        <div class="filter-group">
+                            <button class="filter-button dropdown-trigger">
+                                <span>Gender</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="dropdown-content">
+                                <div class="option">
+                                    <input type="radio" id="male" name="gender">
+                                    <label for="male">Male</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" id="female" name="gender">
+                                    <label for="female">Female</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" id="non-binary" name="gender">
+                                    <label for="non-binary">Non-binary</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <button class="filter-button dropdown-trigger">
+                                <span>Country</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+
+                        <div class="filter-group">
+                            <button class="filter-button dropdown-trigger" disabled>
+                                <span>City</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+
+                        <div class="filter-group">
+                            <button class="filter-button dropdown-trigger locked">
+                                <span>Age</span>
+                                <i class="fas fa-lock"></i>
+                            </button>
+                        </div>
+
+                        <div class="filter-group">
+                            <button class="filter-button dropdown-trigger locked">
+                                <span>Ethnicity</span>
+                                <i class="fas fa-lock"></i>
+                            </button>
+                        </div>
+
+                        <div class="filter-group">
+                            <button class="filter-button dropdown-trigger">
+                                <span>Measurements</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+
+                        <div class="filter-group">
+                            <button class="filter-button dropdown-trigger locked">
+                                <span>Height</span>
+                                <i class="fas fa-lock"></i>
+                            </button>
+                        </div>
+
+                        <div class="filter-group">
+                            <button class="filter-button dropdown-trigger">
+                                <span>Eye color</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+
+                        <div class="filter-group">
+                            <button class="filter-button dropdown-trigger">
+                                <span>Hair color</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+
+                        <div class="filter-group">
+                            <button class="filter-button dropdown-trigger locked">
+                                <span>Shoes</span>
+                                <i class="fas fa-lock"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="mobile-filters">
+                        <button class="filter-button">
+                            <i class="fas fa-sliders-h"></i>
+                            Filters & Sort
+                        </button>
+                    </div>
+
+                    <!-- Sort Dropdown -->
+                    <div class="sort-dropdown">
+                        <button class="filter-button dropdown-trigger">
+                            <i class="fas fa-sort"></i>
+                            <span>Editors pick</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Models Grid Section -->
+        <section class="models-grid-section">
+            <div class="container">
+                <div class="models-masonry-grid">
+                    <!-- Premium Model Card -->
+                    <div class="model-card premium">
+                        <div class="premium-badge">
+                            <i class="fas fa-star"></i> Premium
+                        </div>
+                        <img src="images/models/model1.jpg" alt="Model in white outfit">
+                    </div>
+
+                    <!-- Regular Model Cards -->
+                    <div class="model-card">
+                        <img src="images/models/model2.jpg" alt="Model in blue lace">
+                    </div>
+
+                    <div class="model-card">
+                        <img src="images/models/model3.jpg" alt="Model beauty shot">
+                    </div>
+
+                    <div class="model-card">
+                        <img src="images/models/model4.jpg" alt="Model with ruff collar">
+                    </div>
+
+                    <div class="model-card">
+                        <img src="images/models/model5.jpg" alt="Model in black">
+                    </div>
+
+                    <div class="model-card">
+                        <img src="images/models/model6.jpg" alt="Model in bodysuit">
+                    </div>
+
+                    <div class="model-card">
+                        <img src="images/models/model7.jpg" alt="Model headshot">
+                    </div>
+
+                    <div class="model-card">
+                        <img src="images/models/model8.jpg" alt="Model in blazer">
+                    </div>
+
+                    <div class="model-card">
+                        <img src="images/models/model9.jpg" alt="Model in black outfit">
+                    </div>
+
+                    <div class="model-card">
+                        <img src="images/models/model10.jpg" alt="Model artistic shot">
+                    </div>
+
+                    <div class="model-card">
+                        <img src="images/models/model11.jpg" alt="Model ethereal shot">
+                    </div>
+
+                    <div class="model-card">
+                        <img src="images/models/model12.jpg" alt="Model in tank top">
+                    </div>
+
+                    <div class="model-card">
+                        <img src="images/models/model13.jpg" alt="Model in purple">
+                    </div>
+
+                    <div class="model-card">
+                        <img src="images/models/model14.jpg" alt="Model dance pose">
+                    </div>
+
+                    <div class="model-card">
+                        <img src="images/models/model15.jpg" alt="Model casual shot">
+                    </div>
+
+                    <div class="model-card">
+                        <img src="images/models/model16.jpg" alt="Model night shot">
+                    </div>
+                </div>
+
+                <!-- Load More / Sign Up Section -->
+                <div class="models-cta">
+                    <p>Sign up to see more models</p>
+                    <button class="signup-btn">Sign up now</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Footer content will be included via JavaScript -->
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script>
+        // Initialize Swiper
+        const disciplinesSwiper = new Swiper('.disciplines-swiper', {
+            slidesPerView: 'auto',
+            spaceBetween: 4,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 2,
+                },
+                480: {
+                    slidesPerView: 3,
+                },
+                768: {
+                    slidesPerView: 5,
+                },
+                1024: {
+                    slidesPerView: 7,
+                },
+            }
+        });
+
+        // Dropdown functionality
+        document.querySelectorAll('.dropdown-trigger').forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                const content = trigger.nextElementSibling;
+                if (content && content.classList.contains('dropdown-content')) {
+                    content.classList.toggle('show');
+                }
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        window.addEventListener('click', (e) => {
+            if (!e.target.matches('.dropdown-trigger')) {
+                document.querySelectorAll('.dropdown-content').forEach(content => {
+                    if (content.classList.contains('show')) {
+                        content.classList.remove('show');
+                    }
+                });
+            }
+        });
+
+        // Initialize Masonry
+        var grid = document.querySelector('.models-masonry-grid');
+        var masonry = new Masonry(grid, {
+            itemSelector: '.model-card',
+            columnWidth: '.model-card',
+            gutter: 20,
+            percentPosition: true
+        });
+    </script>
+</body>
+
+</html>

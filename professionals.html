@@ -15,42 +15,34 @@
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <a href="index.html" class="nav-brand">
-            <i class="lucide lucide-aperture"></i>
-            Model Management
-        </a>
 
-        <div class="nav-center">
-            <a href="index.html">Home</a>
-            <a href="#castings" class="nav-link">Castings</a>
-            <a href="#models" class="nav-link">Models</a>
-            <a href="#directory" class="nav-link">Pro Directory</a>
-            <a href="#marketplace" class="nav-link">Marketplace</a>
-        </div>
 
-        <div class="nav-right">
-            <div class="language-selector">
-                <i class="lucide lucide-globe"></i>
-                <select>
-                    <option value="en">English</option>
-                    <option value="es">Español</option>
-                    <option value="fr">Français</option>
-                    <option value="de">Deutsch</option>
-                </select>
-            </div>
-        </div>
-    </nav>
 
     <!-- Hero Section -->
-    <section class="professionals-hero">
-        <div class="hero-content">
-            <h1>Need an easier way to find models?</h1>
-            <p>Be in control of your search for models or talent</p>
-            <a href="#signup" class="cta-button">Sign Up Now</a>
+    <div class="models-talents-hero">
+        <div class="models-talents-overlay"></div>
+        <div class="models-talents-language-selector">
+            <div class="language-selector">
+                <button class="language-toggle" aria-label="Select language">
+                    <i class="fas fa-globe"></i>
+                    <span class="current-language">EN</span>
+                </button>
+                <div class="language-dropdown">
+                    <a href="#" data-lang="en">English</a>
+                    <a href="#" data-lang="es">Español</a>
+                    <a href="#" data-lang="fr">Français</a>
+                    <a href="#" data-lang="de">Deutsch</a>
+                </div>
+            </div>
         </div>
-    </section>
+        <div class="models-talents-content">
+            <div class="models-talents-logo font-black">model<br><span
+                    class="logo-subtext font-regular">management.com</span></div>
+            <div class="models-talents-headline font-black">Need an easier way to find models?</div>
+            <div class="models-talents-subtext font-medium">Be in control of your search for models or talent</div>
+            <button class="models-talents-cta-button font-bold">Sign Up Now</button>
+        </div>
+    </div>
 
     <!-- Introduction Section -->
     <section class="professionals-intro">
@@ -62,51 +54,45 @@
             <p>We have models and talent of every type imaginable on our platform, and by creating your account, you'll
                 have the tools to connect, cast and book talent, all in one place.</p>
         </div>
-    </section>
-
-    <!-- Trusted Brands Section -->
-    <section class="trusted-brands">
-        <div class="section-container">
-            <div class="brands-slider">
-                <img src="images/brands/nike.png" alt="Nike" loading="lazy">
-                <img src="images/brands/desigual.png" alt="Desigual" loading="lazy">
-                <img src="images/brands/topmodel.png" alt="Top Model" loading="lazy">
-                <img src="images/brands/fashion.png" alt="Fashion" loading="lazy">
-                <img src="images/brands/elite.png" alt="Elite" loading="lazy">
-                <img src="images/brands/garnier.png" alt="Garnier" loading="lazy">
-                <img src="images/brands/mtv.png" alt="MTV" loading="lazy">
-                <img src="images/brands/superdry.png" alt="Superdry" loading="lazy">
-            </div>
+        <div class="section-challenge">
+            <img src="/images/section-challenge.webp" alt="">
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section class="how-it-works">
-        <div class="section-container">
-            <h2>How Does It Work?</h2>
-            <p>It's fast, simple and efficient to source any type of model</p>
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-icon">
-                        <img src="images/icons/search.svg" alt="Search Directory">
+    <!-- Opportunity Section -->
+    <div class="talent-hub-section">
+        <h1 class="font-black">The place where brands & industry professionals find new talent.</h1>
+        <p class="hub-subheading font-medium">Modeling opportunities for everyone</p>
+
+        <div class="hub-content">
+            <!-- Left: Image -->
+            <div class="hub-image">
+                <img src="https://media.giphy.com/media/2Ygy0khwewW8sFO5Sn/giphy.gif" alt="Model" />
+            </div>
+
+            <!-- Right: Features -->
+            <div class="hub-features">
+                <div class="hub-features-list">
+                    <div class="hub-feature">
+                        <div class="hub-icon">✔️</div>
+                        <div class="hub-text font-bold">Search our directory, or post a casting</div>
                     </div>
-                    <h3>Search our directory, or post a casting</h3>
-                </div>
-                <div class="step-card">
-                    <div class="step-icon">
-                        <img src="images/icons/models.svg" alt="Choose Models">
+                    <div class="hub-feature">
+                        <div class="hub-icon">✔️</div>
+                        <div class="hub-text font-bold">Choose from over 2 million models</div>
                     </div>
-                    <h3>Choose from over 2 million models</h3>
-                </div>
-                <div class="step-card">
-                    <div class="step-icon">
-                        <img src="images/icons/connect.svg" alt="Connect">
+                    <div class="hub-feature">
+                        <div class="hub-icon">✔️</div>
+                        <div class="hub-text font-bold">Connect with models, or book online</div>
                     </div>
-                    <h3>Connect with models, or book online</h3>
+
                 </div>
+                <button class="hub-cta-button font-bold">Sign up now</button>
             </div>
         </div>
-    </section>
+    </div>
+
+
 
     <!-- Why ModelManagement.com Section -->
     <section class="why-us">
@@ -339,6 +325,63 @@
                 this.classList.remove('touch-active');
             });
         });
+
+
+
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Language selector functionality
+        const languageToggle = document.querySelector('.language-toggle');
+        const languageDropdown = document.querySelector('.language-dropdown');
+        const currentLanguage = document.querySelector('.current-language');
+
+        if (languageToggle && languageDropdown) {
+            languageToggle.addEventListener('click', () => {
+                languageDropdown.classList.toggle('active');
+            });
+
+            document.querySelectorAll('.language-dropdown a').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const lang = link.getAttribute('data-lang');
+                    currentLanguage.textContent = lang.toUpperCase();
+                    languageDropdown.classList.remove('active');
+                    // Add your language change logic here
+                });
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!languageToggle.contains(e.target) && !languageDropdown.contains(e.target)) {
+                    languageDropdown.classList.remove('active');
+                }
+            });
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add loading state to buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function () {
+                if (this.classList.contains('loading')) return;
+                this.classList.add('loading');
+                // Add your button click logic here
+                setTimeout(() => this.classList.remove('loading'), 1000);
+            });
+        });
+
     </script>
 </body>
 
