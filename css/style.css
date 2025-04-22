@@ -5997,7 +5997,7 @@ button.loading::after {
 
 /* Discover Models Section */
 .discover-models {
-    padding: 6rem 0;
+    padding: 4rem 0;
     background: linear-gradient(to bottom, var(--bg-primary) 0%, var(--bg-secondary) 100%);
     overflow: hidden;
 }
@@ -6005,31 +6005,43 @@ button.loading::after {
 .discover-container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
 }
 
 .discover-title {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 900;
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
     background: linear-gradient(45deg, var(--text-primary) 0%, var(--text-secondary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: fadeInUp 0.8s ease forwards;
 }
 
+/* Tabs Styling */
 .discover-tabs {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 1rem;
-    margin-bottom: 4rem;
-    padding: 0 2rem;
-    flex-wrap: wrap;
+    margin-bottom: 3rem;
+    padding: 0 1.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.discover-tabs::-webkit-scrollbar {
+    display: none;
 }
 
 .discover-tab {
-    padding: 1rem 2rem;
+    flex: 0 0 auto;
+    padding: 0.8rem 1.5rem;
     border: none;
     background: var(--bg-secondary);
     color: var(--text-secondary);
@@ -6038,107 +6050,136 @@ button.loading::after {
     cursor: pointer;
     transition: all 0.3s ease;
     border-radius: 100px;
-    position: relative;
+    white-space: nowrap;
+    scroll-snap-align: start;
 }
 
-.discover-tab:hover {
+.discover-tab:hover,
+.discover-tab.active {
     background: var(--text-primary);
     color: var(--secondary-color);
     transform: translateY(-2px);
 }
 
-.discover-tab.active {
-    background: var(--text-primary);
-    color: var(--secondary-color);
-}
-
-/* Remove the previous ::before pseudo-element style */
-.discover-tab::before {
-    display: none;
-}
-
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .discover-tabs {
-        gap: 0.5rem;
+        padding: 0 1rem;
         margin-bottom: 2rem;
+        gap: 0.75rem;
     }
 
     .discover-tab {
-        padding: 0.8rem 1.5rem;
+        padding: 0.75rem 1.25rem;
         font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .discover-tab {
-        padding: 0.6rem 1rem;
-        font-size: 0.8rem;
-    }
-}
-
-.discover-grid-container {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.discover-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    padding: 1rem 0;
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
-    width: 100%;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-}
-
-.discover-grid.active {
-    opacity: 1;
-    visibility: visible;
-    position: relative;
-    pointer-events: all;
-}
-
-@media (max-width: 1200px) {
-    .discover-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 992px) {
-    .discover-grid {
-        grid-template-columns: repeat(8, 1fr);
+        scroll-snap-align: center;
     }
 }
 
 @media (max-width: 576px) {
-    .discover-grid {
-        /* grid-template-columns: 1fr; */
+    .discover-tabs {
+        padding: 0 1rem;
+        gap: 0.5rem;
+    }
+
+    .discover-tab {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.85rem;
     }
 }
 
+/* Add smooth scrolling behavior */
+.discover-tabs {
+    scroll-behavior: smooth;
+}
+
+/* Add touch action for better mobile experience */
+.discover-tabs {
+    touch-action: pan-x;
+}
+
+/* Container to ensure proper padding and alignment */
+.discover-tabs-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+/* Grid Container */
+.discover-grid-container {
+    width: 100%;
+    position: relative;
+    margin-bottom: 2rem;
+    overflow: hidden; /* Prevent horizontal scroll */
+}
+
+.discover-grid {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+}
+
+.discover-grid.active {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+    padding: 1rem 0;
+}
+
+@media (max-width: 1200px) {
+    .discover-grid.active {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .discover-grid.active {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .discover-grid-container {
+        margin: 0;
+        padding: 0 1rem;
+    }
+
+    .discover-grid.active {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .discover-grid.active {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+/* Card Styling */
 .discover-card {
     width: 100%;
-    border-radius: 20px;
+    border-radius: 16px;
     overflow: hidden;
-    position: relative;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     background: var(--bg-primary);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
 .discover-card:hover {
     transform: translateY(-10px);
-   
 }
 
 .discover-card-media {
     position: relative;
-    width: 100%;
-    padding-top: 125%; /* 5:4 Aspect Ratio */
+    padding-top: 125%;
     overflow: hidden;
 }
 
@@ -6149,7 +6190,7 @@ button.loading::after {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: transform 0.6s ease;
 }
 
 .discover-card:hover .discover-card-media img {
@@ -6161,7 +6202,7 @@ button.loading::after {
     inset: 0;
     background: linear-gradient(to bottom, 
         rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.2) 50%,
+        rgba(0, 0, 0, 0.4) 50%,
         rgba(0, 0, 0, 0.8) 100%);
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -6176,230 +6217,538 @@ button.loading::after {
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 2rem;
+    padding: 1.5rem;
     color: var(--secondary-color);
-    transform: translateY(100px);
-    transition: transform 0.3s ease;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.3s ease;
 }
 
 .discover-card:hover .discover-card-content {
     transform: translateY(0);
+    opacity: 1;
 }
 
 .discover-card-content h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
 }
 
 .discover-card-content p {
-    font-size: 1rem;
-    opacity: 0.8;
-    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 1rem;
 }
 
 .discover-card-btn {
+    width: 100%;
+    padding: 0.8rem;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: var(--secondary-color);
-    padding: 0.8rem 1.5rem;
     border-radius: 100px;
     font-size: 0.9rem;
     cursor: pointer;
-    backdrop-filter: blur(10px);
     transition: all 0.3s ease;
-    width: 100%;
+    backdrop-filter: blur(4px);
 }
 
 .discover-card-btn:hover {
     background: var(--secondary-color);
     color: var(--text-primary);
-    border-color: var(--secondary-color);
 }
-.discover-cta .cta-button{
-display: block;
-    width: fit-content;
-    color: var(--secondary-color);
-    font-size: 1.1rem;
-    font-weight: var(--font-weight-bold);
-    position: relative;
-    z-index: 1;
-    margin: 3rem auto 0px;
-    padding: 1rem 2.5rem;
-    background: var(--text-primary);
-    border-width: initial;
-    border-style: none;
-    border-color: initial;
-    border-image: initial;
-    border-radius: 100px;
-    text-decoration: none;
-    transition: 0.3s;
-    overflow: hidden;
-    animation: 1s ease-out 0.6s 1 normal backwards running fadeInUp;
+
+/* Large Screens (1400px and up) */
+@media (min-width: 1400px) {
+    .discover-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* Desktop (1200px to 1399px) */
+@media (max-width: 1399px) {
+    .discover-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+/* Small Desktop/Tablet Landscape (992px to 1199px) */
+@media (max-width: 1199px) {
+    .discover-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
     
+    .discover-container {
+        padding: 0 1rem;
+    }
 }
-.discover-cta .cta-button::before {
-    content: '';
+
+/* Tablet (768px to 991px) */
+@media (max-width: 991px) {
+    .discover-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+
+    .discover-tab {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile Landscape (576px to 767px) */
+@media (max-width: 767px) {
+    .discover-models {
+        padding: 3rem 0;
+    }
+
+    .discover-grid-container {
+        margin: 0 -1rem;
+        overflow-x: auto;
+        padding: 1rem;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .discover-grid {
+        display: flex;
+        grid-template-columns: unset;
+        gap: 1rem;
+        padding: 0.5rem;
+        position: relative;
+        width: auto;
+        min-width: max-content;
+    }
+
+    .discover-card {
+        flex: 0 0 280px;
+        scroll-snap-align: start;
+    }
+
+    .discover-tabs {
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        padding: 0 1rem;
+        margin-bottom: 1rem;
+        gap: 0.5rem;
+        justify-content: flex-start;
+    }
+
+    .discover-tab {
+        flex: 0 0 auto;
+        padding: 0.75rem 1.25rem;
+        font-size: 0.9rem;
+    }
+
+    /* Hide scrollbars but keep functionality */
+    .discover-grid-container,
+    .discover-tabs {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .discover-grid-container::-webkit-scrollbar,
+    .discover-tabs::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 576px) {
+    .discover-card {
+        flex: 0 0 260px;
+        width: 260px;
+    }
+
+    .discover-tab {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Add smooth scroll behavior */
+.discover-grid-container {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Card Styling */
+.discover-card {
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--bg-primary);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.discover-card:hover {
+    transform: translateY(-10px);
+}
+
+.discover-card-media {
+    position: relative;
+    padding-top: 125%;
+    overflow: hidden;
+}
+
+.discover-card-media img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, var(--text-primary), var(--text-secondary));
-    z-index: -1;
-    transition: opacity 0.3s ease;
-    opacity: 0;
-}
-.discover-cta.cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    transition: transform 0.6s ease;
 }
 
-.discover-cta .cta-button:hover::before {
+.discover-card:hover .discover-card-media img {
+    transform: scale(1.1);
+}
+
+.discover-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, 
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.4) 50%,
+        rgba(0, 0, 0, 0.8) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.discover-card:hover .discover-card-overlay {
     opacity: 1;
 }
 
+.discover-card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    color: var(--secondary-color);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
 
-@media (max-width: 1024px) {
-    .discover-card {
-        width: 280px;
-        min-width: 280px;
+.discover-card:hover .discover-card-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.discover-card-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.discover-card-content p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 1rem;
+}
+
+.discover-card-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--secondary-color);
+    border-radius: 100px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.discover-card-btn:hover {
+    background: var(--secondary-color);
+    color: var(--text-primary);
+}
+
+/* Large Screens (1400px and up) */
+@media (min-width: 1400px) {
+    .discover-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
     }
 }
 
-@media (max-width: 768px) {
-    .discover-models {
-        padding: 4rem 0;
+/* Desktop (1200px to 1399px) */
+@media (max-width: 1399px) {
+    .discover-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
     }
+}
 
+/* Small Desktop/Tablet Landscape (992px to 1199px) */
+@media (max-width: 1199px) {
+    .discover-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    
     .discover-container {
         padding: 0 1rem;
     }
+}
 
-    .discover-tabs {
-        gap: 0.5rem;
-        margin-bottom: 2rem;
+/* Tablet (768px to 991px) */
+@media (max-width: 991px) {
+    .discover-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
     }
 
     .discover-tab {
-        padding: 0.8rem 1.5rem;
+        padding: 0.7rem 1.2rem;
         font-size: 0.9rem;
-    }
-
-    .discover-card {
-        width: 240px;
-        min-width: 240px;
     }
 }
 
-@media (max-width: 480px) {
-    .discover-title {
-        font-size: 2rem;
+/* Mobile Landscape (576px to 767px) */
+@media (max-width: 767px) {
+    .discover-models {
+        padding: 3rem 0;
     }
 
-    .discover-tab {
-        padding: 0.6rem 1rem;
-        font-size: 0.8rem;
+    .discover-grid-container {
+        margin: 0 -1rem;
+        overflow-x: auto;
+        padding: 1rem;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .discover-grid {
+        display: flex;
+        grid-template-columns: unset;
+        gap: 1rem;
+        padding: 0.5rem;
+        position: relative;
+        width: auto;
+        min-width: max-content;
     }
 
     .discover-card {
-        width: 200px;
-        min-width: 200px;
+        flex: 0 0 280px;
+        scroll-snap-align: start;
+    }
+
+    .discover-tabs {
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 0.5rem;
+        margin-bottom: 2rem;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .discover-tab {
+        flex: 0 0 auto;
+    }
+}
+
+/* Mobile Portrait (up to 575px) */
+@media (max-width: 575px) {
+    .discover-models {
+        padding: 2rem 0;
+    }
+
+    .discover-title {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .discover-card {
+        flex: 0 0 250px;
     }
 
     .discover-card-content {
-        padding: 1.5rem;
+        padding: 1.25rem;
     }
 
     .discover-card-content h3 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .discover-card-content p {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
     .discover-card-btn {
-        padding: 0.6rem 1rem;
-        font-size: 0.8rem;
+        padding: 0.7rem;
+        font-size: 0.85rem;
     }
 }
 
-.category-scroll-container {
-    position: relative;
-    width: 100%;
-    margin-bottom: 3rem;
-    padding: 0 1rem;
+/* Hide scrollbars but keep functionality */
+.discover-grid-container,
+.discover-tabs {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
-.category-scroll {
-    overflow: visible;
-    margin: 0 -1rem;
-    padding: 1rem;
+.discover-grid-container::-webkit-scrollbar,
+.discover-tabs::-webkit-scrollbar {
+    display: none;
 }
 
-.category-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin: 0 auto;
-    max-width: 1400px;
+/* Add smooth scroll behavior */
+.discover-grid-container {
+    scroll-behavior: smooth;
 }
 
-@media (max-width: 768px) {
-    .category-scroll-container {
-        margin: 0 -1rem;
-        padding: 0;
-    }
-
-    .category-scroll {
-        overflow-x: scroll;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        padding: 1rem;
-        margin: 0;
-        display: flex;
-        gap: 1rem;
-    }
-
-    .category-grid {
-        display: flex;
-        gap: 1rem;
-        padding: 0 1rem;
-    }
-
-    .category-card {
-        flex: 0 0 280px;
-        scroll-snap-align: start;
-        scroll-snap-stop: always;
-    }
+/* Add touch action for better mobile experience */
+.discover-grid-container {
+    touch-action: pan-x;
 }
 
-/* Discover Grid Container Styles */
 .discover-grid-container {
     width: 100%;
-    overflow: hidden;
     position: relative;
 }
 
 .discover-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    padding: 1rem 0;
+    display: none;
     opacity: 0;
     visibility: hidden;
-    position: absolute;
-    width: 100%;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
 }
 
 .discover-grid.active {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
     opacity: 1;
     visibility: visible;
+}
+
+@media (max-width: 1200px) {
+    .discover-grid.active {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .discover-grid.active {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .discover-grid-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: 0;
+        margin: 0;
+    }
+
+    .discover-grid {
+        display: none;
+    }
+
+    .discover-grid.active {
+        display: flex;
+        grid-template-columns: unset;
+        padding: 1rem;
+        gap: 1rem;
+        width: 100%;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+
+    .discover-card {
+        flex: 0 0 280px;
+        scroll-snap-align: start;
+    }
+
+    /* Hide scrollbar */
+    .discover-grid-container::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .discover-grid-container {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .discover-grid.active {
+        padding: 0.5rem;
+    }
+
+    .discover-card {
+        flex: 0 0 260px;
+    }
+}
+
+/* Discover Tabs Styling */
+.discover-tabs {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 0.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    width: 100%;
+}
+
+.discover-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.discover-tab {
+    flex: 0 0 auto;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 100px;
+    white-space: nowrap;
+    scroll-snap-align: start;
+}
+
+.discover-tab.active {
+    background: var(--text-primary);
+    color: var(--secondary-color);
+}
+
+/* Grid Container */
+.discover-grid-container {
+    width: 100%;
     position: relative;
-    pointer-events: all;
+    margin-bottom: 2rem;
+}
+
+.discover-grid {
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.discover-grid.active {
+    display: grid;
+    opacity: 1;
+    visibility: visible;
 }
 
 @media (max-width: 1200px) {
@@ -6414,49 +6763,58 @@ display: block;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .discover-grid-container {
-        margin: 0 -1rem;
-        padding: 0;
-        overflow-x: scroll;
-        scroll-snap-type: x mandatory;
+        overflow-x: auto;
         -webkit-overflow-scrolling: touch;
+        padding: 0 1rem;
+        margin: 0;
     }
 
     .discover-grid {
-        display: flex !important;
-        gap: 1rem;
-        padding: 1rem;
-        width: auto;
-        min-width: max-content;
-        position: relative;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateX(100%);
-        transition: all 0.3s ease;
+        display: none;
     }
 
     .discover-grid.active {
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(0);
+        display: flex;
+        grid-template-columns: unset;
+        gap: 1rem;
+        width: max-content;
     }
 
     .discover-card {
         flex: 0 0 280px;
         scroll-snap-align: start;
-        scroll-snap-stop: always;
+    }
+
+    .discover-tabs {
+        padding: 0 1rem;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .discover-tab {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
     }
 }
 
-/* Hide scrollbar but keep functionality */
-.category-scroll::-webkit-scrollbar,
-.discover-grid-container::-webkit-scrollbar {
-    display: none;
-}
+@media (max-width: 576px) {
+    .discover-grid.active {
+        gap: 0.75rem;
+    }
 
-.category-scroll,
-.discover-grid-container {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    .discover-card {
+        flex: 0 0 260px;
+    }
+
+    .discover-tabs {
+        padding: 0 0.75rem;
+        gap: 0.4rem;
+    }
+
+    .discover-tab {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
 }

@@ -983,6 +983,27 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Tab Switching Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const tabs = document.querySelectorAll('.discover-tab');
+    const grids = document.querySelectorAll('.discover-grid');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Remove active class from all tabs and grids
+            tabs.forEach(t => t.classList.remove('active'));
+            grids.forEach(grid => grid.classList.remove('active'));
+
+            // Add active class to clicked tab and corresponding grid
+            tab.classList.add('active');
+            const targetGrid = document.getElementById(`${tab.dataset.tab}-models`);
+            if (targetGrid) {
+                targetGrid.classList.add('active');
+            }
+        });
+    });
+});
+
 
 
 
