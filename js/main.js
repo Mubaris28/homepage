@@ -99,9 +99,12 @@ function scrollBrands(direction) {
     isScrolling = true;
     const scrollAmount = direction === 'next' ? 300 : -300;
     const currentScroll = brandLogosContainer.scrollLeft;
+    const targetScroll = currentScroll + scrollAmount;
+    const maxScroll = brandLogosContainer.scrollWidth - brandLogosContainer.clientWidth;
+    const finalScroll = Math.max(0, Math.min(targetScroll, maxScroll));
 
     brandLogosContainer.scrollTo({
-        left: currentScroll + scrollAmount,
+        left: finalScroll,
         behavior: 'smooth'
     });
 
@@ -111,16 +114,16 @@ function scrollBrands(direction) {
     }, 300);
 }
 
-// Touch events for mobile swipe
+// Touch event handlers
 function handleTouchStart(e) {
-    startX = e.touches[0].pageX - brandLogosContainer.offsetLeft;
+    startX = e.touches[0].pageX;
     scrollLeft = brandLogosContainer.scrollLeft;
 }
 
 function handleTouchMove(e) {
     if (!startX) return;
-
-    const x = e.touches[0].pageX - brandLogosContainer.offsetLeft;
+    e.preventDefault();
+    const x = e.touches[0].pageX;
     const walk = (x - startX) * 2;
     brandLogosContainer.scrollLeft = scrollLeft - walk;
 }
@@ -130,22 +133,83 @@ function handleTouchEnd() {
     updateSliderButtons();
 }
 
-if (brandLogosContainer) {
-    // Initialize buttons state
-    updateSliderButtons();
+// Success Stories Slider
+let currentSlide = 0;
+const slides = document.querySelectorAll('.story-slide');
+const storySlider = document.querySelector('.story-slider');
 
-    // Click events
-    prevBrandBtn?.addEventListener('click', () => scrollBrands('prev'));
-    nextBrandBtn?.addEventListener('click', () => scrollBrands('next'));
-
-    // Touch events
-    brandLogosContainer.addEventListener('touchstart', handleTouchStart);
-    brandLogosContainer.addEventListener('touchmove', handleTouchMove);
-    brandLogosContainer.addEventListener('touchend', handleTouchEnd);
-
-    // Scroll event for updating buttons
-    brandLogosContainer.addEventListener('scroll', updateSliderButtons);
+function updateSlider() {
+    if (!storySlider) return;
+    
+    slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === currentSlide);
+    });
 }
+
+// Initialize sliders
+document.addEventListener('DOMContentLoaded', () => {
+    // Brand Logo Slider
+    if (brandLogosContainer) {
+        updateSliderButtons();
+        
+        prevBrandBtn?.addEventListener('click', () => scrollBrands('prev'));
+        nextBrandBtn?.addEventListener('click', () => scrollBrands('next'));
+        
+        brandLogosContainer.addEventListener('touchstart', handleTouchStart);
+        brandLogosContainer.addEventListener('touchmove', handleTouchMove);
+        brandLogosContainer.addEventListener('touchend', handleTouchEnd);
+        brandLogosContainer.addEventListener('scroll', updateSliderButtons);
+    }
+
+    // Success Stories Slider
+    updateSlider();
+    
+    const prevButton = document.querySelector('.prev-slide');
+    const nextButton = document.querySelector('.next-slide');
+
+    if (prevButton && nextButton) {
+        prevButton.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateSlider();
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlider();
+        });
+
+        // Touch events for story slider
+        storySlider?.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        storySlider?.addEventListener('touchend', (e) => {
+            if (!startX) return;
+            const endX = e.changedTouches[0].clientX;
+            const diff = startX - endX;
+            
+            if (Math.abs(diff) > 50) { // Minimum swipe distance
+                if (diff > 0) {
+                    currentSlide = (currentSlide + 1) % slides.length;
+                } else {
+                    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                }
+                updateSlider();
+            }
+            startX = null;
+        });
+    }
+});
+
+// Handle window resize
+let resizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        updateSliderButtons();
+        updateSlider();
+    }, 250);
+});
 
 // Image Loading Optimization
 function handleImageLoad(img) {
@@ -178,106 +242,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             mobileMenu.classList.remove('active');
         }
     });
-});
-
-// Success Stories Slider
-const slides = [
-    {
-        image: 'images/models/hero-1.jpeg', // Using hero images as fallback
-        quote: 'ModelHub helped me land my first major campaign with a leading fashion brand.',
-        author: 'Sarah Johnson, Model'
-    },
-    {
-        image: 'images/models/hero-2.jpeg',
-        quote: 'The platform made it easy to connect with top agencies and build my portfolio.',
-        author: 'Michael Chen, Photographer'
-    },
-    {
-        image: 'images/models/hero-3.jpeg',
-        quote: 'As an agency, we found amazing talent through ModelHub that exceeded our expectations.',
-        author: 'Emma Roberts, Agency Director'
-    }
-];
-
-let currentSlide = 0;
-
-function updateSlider() {
-    const slider = document.querySelector('.story-slider');
-    const slide = slides[currentSlide];
-
-    if (slider) {
-        const slideHTML = `
-            <div class="story-slide fade-in">
-                <div class="story-content">
-                    <img src="${slide.image}" alt="Success Story" loading="lazy" onerror="this.src='images/models/hero-1.jpeg'">
-                    <div class="story-text">
-                        <blockquote>${slide.quote}</blockquote>
-                        <cite>- ${slide.author}</cite>
-                    </div>
-                </div>
-            </div>
-        `;
-
-        slider.innerHTML = slideHTML;
-    }
-}
-
-// Initialize slider and controls
-document.addEventListener('DOMContentLoaded', () => {
-    updateSlider();
-
-    const prevButton = document.querySelector('.prev-slide');
-    const nextButton = document.querySelector('.next-slide');
-
-    if (prevButton && nextButton) {
-        prevButton.addEventListener('click', () => {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            updateSlider();
-        });
-
-        nextButton.addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            updateSlider();
-        });
-
-        // Auto-rotate slider
-        setInterval(() => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            updateSlider();
-        }, 5000);
-    }
-
-    // Navbar scroll effect
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-
-    // Handle missing images
-    document.querySelectorAll('img').forEach(img => {
-        img.onerror = function () {
-            // Use hero-1.jpeg as fallback for model images
-            if (this.src.includes('model-')) {
-                this.src = 'images/models/hero-1.jpeg';
-            }
-            // Use adidas.png as fallback for brand logos
-            else if (this.src.includes('brands/')) {
-                this.src = 'images/brands/adidas.png';
-            }
-        };
-    });
-
-    // Update Stats Section Title
-    const statsSection = document.querySelector('.stats');
-    if (statsSection) {
-        const title = document.createElement('h2');
-        title.textContent = 'Community';
-        statsSection.insertBefore(title, statsSection.firstChild);
-    }
 });
 
 // Navigation Functionality
