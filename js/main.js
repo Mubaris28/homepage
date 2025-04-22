@@ -342,7 +342,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let lastScrollTop = 0;
     window.addEventListener('scroll', () => {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
+
         if (scrollTop > lastScrollTop) {
             // Scrolling down
             if (bottomNav) bottomNav.style.transform = 'translateY(60px)';
@@ -404,11 +404,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Custom Cursor
     const cursor = document.querySelector('.custom-cursor');
-    
+
     if (cursor && window.matchMedia('(pointer: fine)').matches) {
         // Initial setup
         cursor.classList.add('active');
-        
+
         // Mouse movement
         document.addEventListener('mousemove', (e) => {
             requestAnimationFrame(() => {
@@ -419,7 +419,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Hover effects for interactive elements
         const interactiveElements = document.querySelectorAll('a, button, .hero-btn, .model-card, .case-study-card, .category-card, .nav-link, input, .scroll-indicator');
-        
+
         interactiveElements.forEach(element => {
             element.addEventListener('mouseenter', () => cursor.classList.add('hover'));
             element.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
@@ -494,7 +494,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Category Slider Functionality
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const categoryScroll = document.querySelector('.category-scroll');
     const categoryGrid = document.querySelector('.category-grid');
     const prevBtn = document.querySelector('.scroll-btn.prev');
@@ -614,7 +614,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const brandLogosWrapper = document.querySelector('.brand-logos-wrapper');
     const prevButton = document.querySelector('.prev-brand');
     const nextButton = document.querySelector('.next-brand');
-    
+
     if (!brandLogosWrapper || !prevButton || !nextButton) return;
 
     let currentPosition = 0;
@@ -632,7 +632,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (direction === 'next' && currentPosition < maxScroll) {
             currentPosition = Math.min(maxScroll, currentPosition + step);
         }
-        
+
         brandLogosWrapper.style.transform = `translateX(-${currentPosition}px)`;
         updateButtonStates();
     }
@@ -665,7 +665,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const x = e.pageX - brandLogosWrapper.offsetLeft;
         const walk = (x - startX) * 2;
         const newPosition = scrollLeft - walk;
-        
+
         if (newPosition >= 0 && newPosition <= maxScroll) {
             currentPosition = newPosition;
             brandLogosWrapper.style.transform = `translateX(-${currentPosition}px)`;
@@ -690,7 +690,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const x = e.touches[0].pageX - brandLogosWrapper.offsetLeft;
         const walk = (x - startX) * 2;
         const newPosition = scrollLeft - walk;
-        
+
         if (newPosition >= 0 && newPosition <= maxScroll) {
             currentPosition = newPosition;
             brandLogosWrapper.style.transform = `translateX(-${currentPosition}px)`;
@@ -706,48 +706,48 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize all sliders
     const sliders = document.querySelectorAll('.slider-container');
-    
+
     sliders.forEach(slider => {
         const slides = slider.querySelector('.slides');
         const prevBtn = slider.querySelector('.prev-btn');
         const nextBtn = slider.querySelector('.next-btn');
         const slideItems = slides.querySelectorAll('.slide');
-        
+
         let currentSlide = 0;
         const slideCount = slideItems.length;
-        
+
         // Update button states
         function updateButtons() {
             prevBtn.style.opacity = currentSlide === 0 ? '0.5' : '1';
             nextBtn.style.opacity = currentSlide === slideCount - 1 ? '0.5' : '1';
         }
-        
+
         // Slide to specific index
         function slideTo(index) {
             if (index < 0 || index >= slideCount) return;
-            
+
             currentSlide = index;
             slides.style.transform = `translateX(-${currentSlide * 100}%)`;
             updateButtons();
         }
-        
+
         // Event listeners for buttons
         prevBtn.addEventListener('click', () => slideTo(currentSlide - 1));
         nextBtn.addEventListener('click', () => slideTo(currentSlide + 1));
-        
+
         // Touch functionality
         let touchStartX = 0;
         let touchEndX = 0;
-        
+
         slides.addEventListener('touchstart', (e) => {
             touchStartX = e.touches[0].clientX;
         });
-        
+
         slides.addEventListener('touchend', (e) => {
             touchEndX = e.changedTouches[0].clientX;
             handleSwipe();
         });
-        
+
         function handleSwipe() {
             const diff = touchStartX - touchEndX;
             if (Math.abs(diff) > 50) { // Minimum swipe distance
@@ -758,7 +758,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         }
-        
+
         // Initialize
         updateButtons();
     });
@@ -916,7 +916,7 @@ if (customCursor) {
 }
 
 // Mobile category slider functionality
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const categoryGrid = document.querySelector('.category-grid');
     const dots = document.querySelectorAll('.slider-dot');
     let currentSlide = 0;
@@ -963,7 +963,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Discover Section Tabs
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const tabs = document.querySelectorAll('.discover-tab');
     const grids = document.querySelectorAll('.discover-grid');
 
@@ -986,6 +986,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
- 
 
- 
+
