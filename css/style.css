@@ -1711,7 +1711,7 @@ body.menu-open {
 }
 
 .bottom-nav-link.active {
-    color: var(--hero-pink);
+    color: #000000;
 }
 
 @media (max-width: 768px) {
@@ -3168,7 +3168,7 @@ text-align: center;
 }
 
 .bottom-nav-link.active {
-    color: var(--hero-pink);
+    color: #000000;
 }
 
 .case-studies {
