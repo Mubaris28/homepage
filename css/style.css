@@ -7034,38 +7034,38 @@ button.loading::after {
         margin-bottom: 1.5rem;
     }
 
-    .discover-card {
+.discover-card {
         flex: 0 0 250px;
-    }
+}
 
-    .discover-card-content {
+.discover-card-content {
         padding: 1.25rem;
-    }
+}
 
-    .discover-card-content h3 {
+.discover-card-content h3 {
         font-size: 1.1rem;
-    }
+}
 
-    .discover-card-content p {
+.discover-card-content p {
         font-size: 0.85rem;
-    }
+}
 
-    .discover-card-btn {
+.discover-card-btn {
         padding: 0.7rem;
         font-size: 0.85rem;
     }
-}
+    }
 
-/* Hide scrollbars but keep functionality */
-.discover-grid-container,
-.discover-tabs {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
+    /* Hide scrollbars but keep functionality */
+    .discover-grid-container,
+    .discover-tabs {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
 
-.discover-grid-container::-webkit-scrollbar,
-.discover-tabs::-webkit-scrollbar {
-    display: none;
+    .discover-grid-container::-webkit-scrollbar,
+    .discover-tabs::-webkit-scrollbar {
+        display: none;
 }
 
 /* Add smooth scroll behavior */
@@ -7091,8 +7091,8 @@ button.loading::after {
 
 .discover-grid.active {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
     opacity: 1;
     visibility: visible;
 }
@@ -7152,32 +7152,32 @@ button.loading::after {
         padding: 0.5rem;
     }
 
-    .discover-card {
+.discover-card {
         flex: 0 0 260px;
     }
 }
 
 /* Discover Tabs Styling */
 .discover-tabs {
-    display: flex;
+        display: flex;
     align-items: center;
-    gap: 1rem;
+        gap: 1rem;
     margin-bottom: 2rem;
-    padding: 0.5rem;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
+        padding: 0.5rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
     width: 100%;
-}
+    }
 
-.discover-tabs::-webkit-scrollbar {
-    display: none;
-}
+    .discover-tabs::-webkit-scrollbar {
+        display: none;
+    }
 
-.discover-tab {
+    .discover-tab {
     flex: 0 0 auto;
     padding: 0.8rem 1.5rem;
     border: none;
@@ -7204,9 +7204,9 @@ button.loading::after {
     margin-bottom: 2rem;
 }
 
-.discover-grid {
+    .discover-grid {
     display: none;
-    grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
     opacity: 0;
     visibility: hidden;
@@ -7451,7 +7451,7 @@ text-align: center;
 }
 
 /* Discover Cards - Updated to match category cards */
-.discover-card {
+    .discover-card {
     position: relative;
     border-radius: 20px;
     overflow: hidden;
@@ -7567,38 +7567,38 @@ text-align: center;
 }
 
 @media (max-width: 768px) {
-    .discover-card-media {
+.discover-card-media {
         height: 300px;
-    }
+}
 
-    .discover-card-content {
+.discover-card-content {
         padding: 20px;
-    }
+}
 
-    .discover-card-content h3 {
+.discover-card-content h3 {
         font-size: 1.3rem;
-    }
+}
 
-    .discover-card-btn {
+.discover-card-btn {
         padding: 10px 20px;
-        font-size: 0.9rem;
+    font-size: 0.9rem;
     }
 }
 
 @media (max-width: 480px) {
-    .discover-card-media {
+.discover-card-media {
         height: 250px;
-    }
+}
 
-    .discover-card-content h3 {
+.discover-card-content h3 {
         font-size: 1.2rem;
-    }
+}
 
-    .discover-card-content p {
-        font-size: 0.9rem;
-    }
+.discover-card-content p {
+    font-size: 0.9rem;
+}
 
-    .discover-card-btn {
+.discover-card-btn {
         padding: 8px 16px;
         font-size: 0.8rem;
     }
