@@ -134,69 +134,94 @@ function handleTouchEnd() {
 }
 
 // Success Stories Slider
-let currentSlide = 0;
-const slides = document.querySelectorAll('.story-slide');
-const storySlider = document.querySelector('.story-slider');
+const successStoriesSlider = {
+    currentSlide: 0,
+    slides: [
+        {
+            image: 'images/models/hero-1.jpeg',
+            quote: 'ModelHub helped me land my first major campaign with a leading fashion brand.',
+            author: 'Sarah Johnson, Model'
+        },
+        {
+            image: 'images/models/hero-2.jpeg',
+            quote: 'Through ModelHub, I\'ve connected with amazing photographers and brands worldwide.',
+            author: 'James Wilson, Photographer'
+        },
+        {
+            image: 'images/models/hero-3.jpeg',
+            quote: 'The platform made it easy to find diverse talent for our latest campaign.',
+            author: 'Emma Davis, Brand Manager'
+        }
+    ],
 
-function updateSlider() {
-    if (!storySlider) return;
-    
-    slides.forEach((slide, index) => {
-        slide.classList.toggle('active', index === currentSlide);
-    });
-}
+    init() {
+        this.slider = document.querySelector('.story-slider');
+        this.prevBtn = document.querySelector('.prev-slide');
+        this.nextBtn = document.querySelector('.next-slide');
 
-// Success Stories Navigation
-const stories = [
-    {
-        image: 'images/models/success-1.jpeg',
-        quote: 'The platform made it easy to connect with top agencies and build my portfolio.',
-        author: 'Michael Chen, Photographer'
+        if (!this.slider) return;
+
+        this.setupEventListeners();
+        this.updateSlider();
     },
-    {
-        image: 'images/models/success-2.jpeg',
-        quote: 'Found my breakthrough opportunity through the platform\'s exclusive castings.',
-        author: 'Sarah Johnson, Model'
+
+    setupEventListeners() {
+        if (this.prevBtn) {
+            this.prevBtn.addEventListener('click', () => this.navigate(-1));
+        }
+        if (this.nextBtn) {
+            this.nextBtn.addEventListener('click', () => this.navigate(1));
+        }
+
+        // Touch events
+        let touchStartX = 0;
+        this.slider.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+        });
+
+        this.slider.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].clientX;
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > 50) { // Minimum swipe distance
+                this.navigate(diff > 0 ? 1 : -1);
+            }
+        });
     },
-    {
-        image: 'images/models/success-3.jpeg',
-        quote: 'The networking possibilities here are incredible. It transformed my career.',
-        author: 'Emma Rodriguez, Creative Director'
+
+    navigate(direction) {
+        this.currentSlide = (this.currentSlide + direction + this.slides.length) % this.slides.length;
+        this.updateSlider();
+    },
+
+    updateSlider() {
+        if (!this.slider) return;
+
+        const slide = this.slides[this.currentSlide];
+        this.slider.innerHTML = `
+            <div class="story-slide active">
+                <div class="story-content">
+                    <img src="${slide.image}" alt="Success Story" loading="lazy" onerror="this.src='images/models/hero-1.jpeg'">
+                    <div class="story-text">
+                        <blockquote>${slide.quote}</blockquote>
+                        <cite>${slide.author}</cite>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // Fade in animation
+        const storySlide = this.slider.querySelector('.story-slide');
+        storySlide.style.opacity = '0';
+        setTimeout(() => {
+            storySlide.style.opacity = '1';
+        }, 50);
     }
-];
+};
 
-let currentStoryIndex = 0;
-
-function updateStory(index) {
-    const storyImage = document.querySelector('.story-image img');
-    const storyQuote = document.querySelector('.story-text .quote');
-    const storyAuthor = document.querySelector('.story-text .author p');
-    
-    // Add fade out class
-    storyImage.style.opacity = '0';
-    storyQuote.style.opacity = '0';
-    storyAuthor.style.opacity = '0';
-    
-    setTimeout(() => {
-        storyImage.src = stories[index].image;
-        storyQuote.textContent = stories[index].quote;
-        storyAuthor.textContent = '- ' + stories[index].author;
-        
-        // Add fade in class
-        storyImage.style.opacity = '1';
-        storyQuote.style.opacity = '1';
-        storyAuthor.style.opacity = '1';
-    }, 300);
-}
-
-document.querySelector('.nav-arrow.prev').addEventListener('click', () => {
-    currentStoryIndex = (currentStoryIndex - 1 + stories.length) % stories.length;
-    updateStory(currentStoryIndex);
-});
-
-document.querySelector('.nav-arrow.next').addEventListener('click', () => {
-    currentStoryIndex = (currentStoryIndex + 1) % stories.length;
-    updateStory(currentStoryIndex);
+// Initialize success stories slider when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    successStoriesSlider.init();
 });
 
 // Add transition styles
@@ -226,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Success Stories Slider
-    updateSlider();
+    successStoriesSlider.init();
     
     const prevButton = document.querySelector('.prev-slide');
     const nextButton = document.querySelector('.next-slide');
@@ -1031,9 +1056,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
-
-
 
 
 
