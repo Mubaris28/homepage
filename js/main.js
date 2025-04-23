@@ -7,11 +7,7 @@ AOS.init({
 
 // Mobile Menu
 const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-const navLinks = document.querySelector('.nav-links');
-const navAuth = document.querySelector('.nav-auth');
 const mobileMenu = document.querySelector('.mobile-menu');
-const mobileMenuClose = document.querySelector('.mobile-menu-close');
 const body = document.body;
 let isMenuOpen = false;
 
@@ -77,60 +73,33 @@ tabBtns.forEach(btn => {
     });
 });
 
-// Brand Logo Slider
-const brandLogosContainer = document.querySelector('.brand-logos');
-const prevBrandBtn = document.querySelector('.prev-brand');
-const nextBrandBtn = document.querySelector('.next-brand');
-let isScrolling = false;
-let startX;
-let scrollLeft;
+// Brand Logos Slider
+function updateBrandSliderButtons() {
+    const prevButton = document.querySelector('.prev-brand');
+    const nextButton = document.querySelector('.next-brand');
+    const brandLogosContainer = document.querySelector('.brand-logos-container');
 
-function updateSliderButtons() {
-    if (brandLogosContainer) {
-        const maxScroll = brandLogosContainer.scrollWidth - brandLogosContainer.clientWidth;
-        prevBrandBtn.style.opacity = brandLogosContainer.scrollLeft <= 0 ? '0.5' : '1';
-        nextBrandBtn.style.opacity = brandLogosContainer.scrollLeft >= maxScroll ? '0.5' : '1';
-    }
+    if (!brandLogosContainer || !prevButton || !nextButton) return;
+
+    const scrollLeft = brandLogosContainer.scrollLeft;
+    const scrollWidth = brandLogosContainer.scrollWidth;
+    const clientWidth = brandLogosContainer.clientWidth;
+
+    prevButton.disabled = scrollLeft <= 0;
+    nextButton.disabled = scrollLeft >= scrollWidth - clientWidth;
 }
 
 function scrollBrands(direction) {
-    if (!brandLogosContainer || isScrolling) return;
+    const brandLogosContainer = document.querySelector('.brand-logos-container');
+    if (!brandLogosContainer) return;
 
-    isScrolling = true;
-    const scrollAmount = direction === 'next' ? 300 : -300;
-    const currentScroll = brandLogosContainer.scrollLeft;
-    const targetScroll = currentScroll + scrollAmount;
-    const maxScroll = brandLogosContainer.scrollWidth - brandLogosContainer.clientWidth;
-    const finalScroll = Math.max(0, Math.min(targetScroll, maxScroll));
-
-    brandLogosContainer.scrollTo({
-        left: finalScroll,
+    const scrollAmount = direction * brandLogosContainer.clientWidth;
+    brandLogosContainer.scrollBy({
+        left: scrollAmount,
         behavior: 'smooth'
     });
 
-    setTimeout(() => {
-        isScrolling = false;
-        updateSliderButtons();
-    }, 300);
-}
-
-// Touch event handlers
-function handleTouchStart(e) {
-    startX = e.touches[0].pageX;
-    scrollLeft = brandLogosContainer.scrollLeft;
-}
-
-function handleTouchMove(e) {
-    if (!startX) return;
-    e.preventDefault();
-    const x = e.touches[0].pageX;
-    const walk = (x - startX) * 2;
-    brandLogosContainer.scrollLeft = scrollLeft - walk;
-}
-
-function handleTouchEnd() {
-    startX = null;
-    updateSliderButtons();
+    setTimeout(updateBrandSliderButtons, 300);
 }
 
 // Success Stories Slider
@@ -140,9 +109,9 @@ const successStoriesSlider = {
         {
             image: 'images/models/hero-1.jpeg',
             quote: 'ModelHub helped me land my first major campaign with a leading fashion brand.',
-        author: 'Sarah Johnson, Model'
-    },
-    {
+            author: 'Sarah Johnson, Model'
+        },
+        {
             image: 'images/models/hero-2.jpeg',
             quote: 'Through ModelHub, I\'ve connected with amazing photographers and brands worldwide.',
             author: 'James Wilson, Photographer'
@@ -219,44 +188,8 @@ const successStoriesSlider = {
     }
 };
 
-// Brand Logos Slider
-function updateBrandSliderButtons() {
-    const prevButton = document.querySelector('.prev-brand');
-    const nextButton = document.querySelector('.next-brand');
-    const brandLogosContainer = document.querySelector('.brand-logos-container');
-
-    if (!brandLogosContainer || !prevButton || !nextButton) return;
-
-    const scrollLeft = brandLogosContainer.scrollLeft;
-    const scrollWidth = brandLogosContainer.scrollWidth;
-    const clientWidth = brandLogosContainer.clientWidth;
-
-    prevButton.disabled = scrollLeft <= 0;
-    nextButton.disabled = scrollLeft >= scrollWidth - clientWidth;
-}
-
-function scrollBrands(direction) {
-    const brandLogosContainer = document.querySelector('.brand-logos-container');
-    if (!brandLogosContainer) return;
-
-    const scrollAmount = direction * brandLogosContainer.clientWidth;
-    brandLogosContainer.scrollBy({
-        left: scrollAmount,
-        behavior: 'smooth'
-    });
-
-    setTimeout(updateBrandSliderButtons, 300);
-}
-
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize AOS
-    AOS.init({
-        duration: 800,
-        offset: 100,
-        once: true
-    });
-
     // Initialize success stories slider
     successStoriesSlider.init();
 
@@ -271,28 +204,6 @@ document.addEventListener('DOMContentLoaded', function() {
         brandLogosContainer.addEventListener('scroll', updateBrandSliderButtons);
         updateBrandSliderButtons();
     }
-
-    // Handle mobile menu
-    const hamburger = document.querySelector('.hamburger');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const body = document.body;
-
-    if (hamburger) {
-        hamburger.addEventListener('click', function() {
-            this.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-            body.classList.toggle('menu-open');
-        });
-    }
-
-    // Close menu when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target) && mobileMenu.classList.contains('active')) {
-            mobileMenu.classList.remove('active');
-            hamburger.classList.remove('active');
-            body.classList.remove('menu-open');
-        }
-    });
 
     // Initialize Lucide icons
     lucide.createIcons();
@@ -312,8 +223,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Add active class to clicked tab and corresponding grid
             tab.classList.add('active');
             document.getElementById(`${target}-models`).classList.add('active');
+        });
     });
-});
 
     // Initialize first tab
     if (tabs.length > 0) {
