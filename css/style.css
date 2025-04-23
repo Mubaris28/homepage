@@ -1726,10 +1726,8 @@ body.menu-open {
 
 /* Stats Section */
 .stats {
-    padding-bottom:5rem;
-    padding-top:1rem;
-    background: var(--secondary-color);
-    position: relative;
+    padding: 80px 0;
+    background-color: #f8f9fa;
 }
 
 .stats h2 {
@@ -2988,16 +2986,16 @@ footer {
     }
 
     .category-grid {
-        grid-template-columns: repeat(6, 260px);
+        grid-template-columns: repeat(6, 187px);
     }
 
     .category-card h3 {
         font-size: 1rem;
-        bottom: 4rem;
+        /* bottom: 4rem; */
     }
 
     .category-card button {
-        padding: 0.6rem 1.2rem;
+        padding: 0.6rem 1rem;
         font-size: 0.8rem;
     }
 }
@@ -6626,6 +6624,434 @@ button.loading::after {
 
     .discover-tabs {
         overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        padding: 0 1rem;
+        margin-bottom: 1rem;
+        gap: 0.5rem;
+        justify-content: flex-start;
+    }
+
+    .discover-tab {
+        flex: 0 0 auto;
+        padding: 0.75rem 1.25rem;
+        font-size: 0.9rem;
+    }
+
+    /* Hide scrollbars but keep functionality */
+    .discover-grid-container,
+    .discover-tabs {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .discover-grid-container::-webkit-scrollbar,
+    .discover-tabs::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 576px) {
+    .discover-card {
+        flex: 0 0 260px;
+        width: 260px;
+    }
+
+    .discover-tab {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Add smooth scroll behavior */
+.discover-grid-container {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Card Styling */
+.discover-card {
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--bg-primary);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.discover-card:hover {
+    transform: translateY(-10px);
+}
+
+.discover-card-media {
+    position: relative;
+    padding-top: 125%;
+    overflow: hidden;
+}
+
+.discover-card-media img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.discover-card:hover .discover-card-media img {
+    transform: scale(1.1);
+}
+
+.discover-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, 
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.4) 50%,
+        rgba(0, 0, 0, 0.8) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.discover-card:hover .discover-card-overlay {
+    opacity: 1;
+}
+
+.discover-card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    color: var(--secondary-color);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.discover-card:hover .discover-card-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.discover-card-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.discover-card-content p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 1rem;
+}
+
+.discover-card-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--secondary-color);
+    border-radius: 100px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.discover-card-btn:hover {
+    background: var(--secondary-color);
+    color: var(--text-primary);
+}
+
+/* Large Screens (1400px and up) */
+@media (min-width: 1400px) {
+    .discover-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* Desktop (1200px to 1399px) */
+@media (max-width: 1399px) {
+    .discover-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+/* Small Desktop/Tablet Landscape (992px to 1199px) */
+@media (max-width: 1199px) {
+    .discover-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .discover-container {
+        padding: 0 1rem;
+    }
+}
+
+/* Tablet (768px to 991px) */
+@media (max-width: 991px) {
+    .discover-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+
+    .discover-tab {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile Landscape (576px to 767px) */
+@media (max-width: 767px) {
+    .discover-models {
+        padding: 3rem 0;
+    }
+
+    .discover-grid-container {
+        margin: 0 -1rem;
+        overflow-x: auto;
+        padding: 1rem;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .discover-grid {
+        display: flex;
+        grid-template-columns: unset;
+        gap: 1rem;
+        padding: 0.5rem;
+        position: relative;
+        width: auto;
+        min-width: max-content;
+    }
+
+    .discover-card {
+        flex: 0 0 280px;
+        scroll-snap-align: start;
+    }
+
+    .discover-tabs {
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        padding: 0 1rem;
+        margin-bottom: 1rem;
+        gap: 0.5rem;
+        justify-content: flex-start;
+    }
+
+    .discover-tab {
+        flex: 0 0 auto;
+        padding: 0.75rem 1.25rem;
+        font-size: 0.9rem;
+    }
+
+    /* Hide scrollbars but keep functionality */
+    .discover-grid-container,
+    .discover-tabs {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .discover-grid-container::-webkit-scrollbar,
+    .discover-tabs::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 576px) {
+    .discover-card {
+        flex: 0 0 260px;
+        width: 260px;
+    }
+
+    .discover-tab {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Add smooth scroll behavior */
+.discover-grid-container {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Card Styling */
+.discover-card {
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--bg-primary);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.discover-card:hover {
+    transform: translateY(-10px);
+}
+
+.discover-card-media {
+    position: relative;
+    padding-top: 125%;
+    overflow: hidden;
+}
+
+.discover-card-media img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.discover-card:hover .discover-card-media img {
+    transform: scale(1.1);
+}
+
+.discover-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, 
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.4) 50%,
+        rgba(0, 0, 0, 0.8) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.discover-card:hover .discover-card-overlay {
+    opacity: 1;
+}
+
+.discover-card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    color: var(--secondary-color);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.discover-card:hover .discover-card-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.discover-card-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.discover-card-content p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 1rem;
+}
+
+.discover-card-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--secondary-color);
+    border-radius: 100px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.discover-card-btn:hover {
+    background: var(--secondary-color);
+    color: var(--text-primary);
+}
+
+/* Large Screens (1400px and up) */
+@media (min-width: 1400px) {
+    .discover-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* Desktop (1200px to 1399px) */
+@media (max-width: 1399px) {
+    .discover-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+/* Small Desktop/Tablet Landscape (992px to 1199px) */
+@media (max-width: 1199px) {
+    .discover-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .discover-container {
+        padding: 0 1rem;
+    }
+}
+
+/* Tablet (768px to 991px) */
+@media (max-width: 991px) {
+    .discover-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+
+    .discover-tab {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile Landscape (576px to 767px) */
+@media (max-width: 767px) {
+    .discover-models {
+        padding: 3rem 0;
+    }
+
+    .discover-grid-container {
+        margin: 0 -1rem;
+        overflow-x: auto;
+        padding: 1rem;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .discover-grid {
+        display: flex;
+        grid-template-columns: unset;
+        gap: 1rem;
+        padding: 0.5rem;
+        position: relative;
+        width: auto;
+        min-width: max-content;
+    }
+
+    .discover-card {
+        flex: 0 0 280px;
+        scroll-snap-align: start;
+    }
+
+    .discover-tabs {
+        overflow-x: auto;
         justify-content: flex-start;
         padding-bottom: 0.5rem;
         margin-bottom: 2rem;
@@ -6897,5 +7323,167 @@ button.loading::after {
     .discover-tab {
         padding: 0.6rem 1rem;
         font-size: 0.85rem;
+    }
+}
+
+/* Success Stories Section */
+.success-stories {
+    padding: 80px 20px;
+    background-color: #fff;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.success-stories h2 {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 60px;
+    color: #000;
+    font-weight: 700;
+}
+
+.story-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 40px;
+    background: #fff;
+    border-radius: 24px;
+    padding: 40px;
+}
+
+.story-image {
+    flex: 1;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.story-image img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 20px;
+    filter: brightness(0.9);
+}
+
+.story-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(0,0,255,0.3), transparent);
+    z-index: 1;
+    border-radius: 20px;
+}
+
+.story-text {
+    flex: 1;
+    padding: 20px;
+}
+
+.story-text .quote {
+    font-size: 36px;
+    line-height: 1.4;
+    color: #000;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.story-text .author {
+    font-size: 20px;
+    color: #666;
+}
+
+.story-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.nav-arrow {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #000;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.nav-arrow:hover {
+    background: #333;
+    transform: scale(1.05);
+}
+
+.nav-arrow i {
+    font-size: 20px;
+}
+
+@media (max-width: 1024px) {
+    .story-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .story-image img {
+        height: 400px;
+    }
+
+    .story-text .quote {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .success-stories {
+        padding: 60px 20px;
+    }
+
+    .success-stories h2 {
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
+
+    .story-image img {
+        height: 300px;
+    }
+
+    .story-text .quote {
+        font-size: 24px;
+    }
+
+    .story-text .author {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .success-stories h2 {
+        font-size: 28px;
+    }
+
+    .story-content {
+        padding: 20px;
+    }
+
+    .story-image img {
+        height: 250px;
+    }
+
+    .story-text .quote {
+        font-size: 20px;
+    }
+
+    .nav-arrow {
+        width: 40px;
+        height: 40px;
     }
 }

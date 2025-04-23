@@ -146,6 +146,70 @@ function updateSlider() {
     });
 }
 
+// Success Stories Navigation
+const stories = [
+    {
+        image: 'images/models/success-1.jpeg',
+        quote: 'The platform made it easy to connect with top agencies and build my portfolio.',
+        author: 'Michael Chen, Photographer'
+    },
+    {
+        image: 'images/models/success-2.jpeg',
+        quote: 'Found my breakthrough opportunity through the platform\'s exclusive castings.',
+        author: 'Sarah Johnson, Model'
+    },
+    {
+        image: 'images/models/success-3.jpeg',
+        quote: 'The networking possibilities here are incredible. It transformed my career.',
+        author: 'Emma Rodriguez, Creative Director'
+    }
+];
+
+let currentStoryIndex = 0;
+
+function updateStory(index) {
+    const storyImage = document.querySelector('.story-image img');
+    const storyQuote = document.querySelector('.story-text .quote');
+    const storyAuthor = document.querySelector('.story-text .author p');
+    
+    // Add fade out class
+    storyImage.style.opacity = '0';
+    storyQuote.style.opacity = '0';
+    storyAuthor.style.opacity = '0';
+    
+    setTimeout(() => {
+        storyImage.src = stories[index].image;
+        storyQuote.textContent = stories[index].quote;
+        storyAuthor.textContent = '- ' + stories[index].author;
+        
+        // Add fade in class
+        storyImage.style.opacity = '1';
+        storyQuote.style.opacity = '1';
+        storyAuthor.style.opacity = '1';
+    }, 300);
+}
+
+document.querySelector('.nav-arrow.prev').addEventListener('click', () => {
+    currentStoryIndex = (currentStoryIndex - 1 + stories.length) % stories.length;
+    updateStory(currentStoryIndex);
+});
+
+document.querySelector('.nav-arrow.next').addEventListener('click', () => {
+    currentStoryIndex = (currentStoryIndex + 1) % stories.length;
+    updateStory(currentStoryIndex);
+});
+
+// Add transition styles
+const styleSheet = document.createElement('style');
+styleSheet.textContent = `
+    .story-image img,
+    .story-text .quote,
+    .story-text .author p {
+        transition: opacity 0.3s ease;
+    }
+`;
+document.head.appendChild(styleSheet);
+
 // Initialize sliders
 document.addEventListener('DOMContentLoaded', () => {
     // Brand Logo Slider
