@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Models - Model Management</title>
+    <link rel="stylesheet" href="css/model.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/external/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/external/aos.css">
+    <link rel="stylesheet" href="css/external/satoshi.css">
+    <link rel="stylesheet" href="css/external/swiper-bundle.min.css">
+    <script src="js/external/swiper-bundle.min.js"></script>
 </head>
 
 <body>
@@ -22,15 +25,14 @@
         <nav class="navbar">
             <a href="index.html" class="nav-brand">
                 <img src="images/logo/model-LOGO.png" alt="Logo" class="logo" />
-
             </a>
 
             <div class="nav-center">
-                <a href="index.html" class="nav-link active">Home</a>
+                <a href="index.html" class="nav-link">Home</a>
                 <a href="castings.html" class="nav-link">Casting</a>
-                <a href="#" class="nav-link">Models</a>
-                <a href="#directory" class="nav-link">Pro Directory</a>
-                <a href="#marketplace" class="nav-link">Marketplace</a>
+                <a href="models.html" class="nav-link active">Models</a>
+                <a href="directory.html" class="nav-link">Pro Directory</a>
+                <a href="marketplace.html" class="nav-link">Marketplace</a>
             </div>
 
             <div class="nav-right">
@@ -105,7 +107,7 @@
         <!-- Bottom Navigation -->
         <nav class="bottom-nav">
             <div class="bottom-nav-items">
-                <a href="index.html" class="bottom-nav-link active">
+                <a href="index.html" class="bottom-nav-link">
                     <i class="lucide lucide-home"></i>
                     <span>Home</span>
                 </a>
@@ -113,11 +115,11 @@
                     <i class="lucide lucide-camera"></i>
                     <span>Castings</span>
                 </a>
-                <a href="#" class="bottom-nav-link">
+                <a href="#" class="bottom-nav-link active">
                     <i class="lucide lucide-users"></i>
                     <span>Models</span>
                 </a>
-                <a href="#=" bottom-nav-link">
+                <a href="#" class="bottom-nav-link">
                     <i class="lucide lucide-user"></i>
                     <span>Profile</span>
                 </a>
@@ -134,103 +136,107 @@
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <button class="filter-button locked">
+                                        <i class="fas fa-lock"></i>
                                         <span>Fashion</span>
-                                        <i class="fas fa-lock"></i>
                                     </button>
                                 </div>
                                 <div class="swiper-slide">
                                     <button class="filter-button locked">
+                                        <i class="fas fa-lock"></i>
                                         <span>Content creator</span>
-                                        <i class="fas fa-lock"></i>
                                     </button>
                                 </div>
                                 <div class="swiper-slide">
                                     <button class="filter-button locked">
+                                        <i class="fas fa-lock"></i>
                                         <span>Curvy</span>
-                                        <i class="fas fa-lock"></i>
                                     </button>
                                 </div>
                                 <div class="swiper-slide">
                                     <button class="filter-button locked">
+                                        <i class="fas fa-lock"></i>
                                         <span>Tattoo</span>
-                                        <i class="fas fa-lock"></i>
                                     </button>
                                 </div>
                                 <div class="swiper-slide">
                                     <button class="filter-button locked">
+                                        <i class="fas fa-lock"></i>
                                         <span>Dancer</span>
-                                        <i class="fas fa-lock"></i>
                                     </button>
                                 </div>
                                 <div class="swiper-slide">
                                     <button class="filter-button locked">
+                                        <i class="fas fa-lock"></i>
                                         <span>Sport</span>
-                                        <i class="fas fa-lock"></i>
                                     </button>
                                 </div>
                                 <div class="swiper-slide">
                                     <button class="filter-button locked">
+                                        <i class="fas fa-lock"></i>
                                         <span>Actor</span>
-                                        <i class="fas fa-lock"></i>
                                     </button>
                                 </div>
                                 <div class="swiper-slide">
                                     <button class="filter-button locked">
+                                        <i class="fas fa-lock"></i>
                                         <span>Senior</span>
-                                        <i class="fas fa-lock"></i>
                                     </button>
                                 </div>
                                 <div class="swiper-slide">
                                     <button class="filter-button locked">
+                                        <i class="fas fa-lock"></i>
                                         <span>Artistic Nude</span>
-                                        <i class="fas fa-lock"></i>
                                     </button>
                                 </div>
                                 <div class="swiper-slide">
                                     <button class="filter-button locked">
+                                        <i class="fas fa-lock"></i>
                                         <span>Unique</span>
-                                        <i class="fas fa-lock"></i>
                                     </button>
                                 </div>
                                 <div class="swiper-slide">
                                     <button class="filter-button locked">
+                                        <i class="fas fa-lock"></i>
                                         <span>Androgynous</span>
-                                        <i class="fas fa-lock"></i>
                                     </button>
                                 </div>
                                 <div class="swiper-slide">
                                     <button class="filter-button locked">
+                                        <i class="fas fa-lock"></i>
                                         <span>Hostess/Promotional</span>
-                                        <i class="fas fa-lock"></i>
                                     </button>
                                 </div>
                                 <div class="swiper-slide">
                                     <button class="filter-button locked">
+                                        <i class="fas fa-lock"></i>
                                         <span>Lingerie</span>
-                                        <i class="fas fa-lock"></i>
                                     </button>
                                 </div>
                                 <div class="swiper-slide">
                                     <button class="filter-button locked">
+                                        <i class="fas fa-lock"></i>
                                         <span>Musician</span>
-                                        <i class="fas fa-lock"></i>
                                     </button>
                                 </div>
                                 <div class="swiper-slide">
                                     <button class="filter-button locked">
+                                        <i class="fas fa-lock"></i>
                                         <span>Runway</span>
-                                        <i class="fas fa-lock"></i>
                                     </button>
                                 </div>
                                 <div class="swiper-slide">
                                     <button class="filter-button locked">
-                                        <span>Swimwear</span>
                                         <i class="fas fa-lock"></i>
+                                        <span>Swimwear</span>
                                     </button>
                                 </div>
                             </div>
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev">
+                                <i class="fas fa-chevron-left"></i>
+                            </div>
+                            <div class="swiper-button-next">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -240,6 +246,7 @@
                     <div class="filters-container">
                         <div class="filter-group">
                             <button class="filter-button dropdown-trigger">
+                                <i class="fas fa-venus-mars"></i>
                                 <span>Gender</span>
                                 <i class="fas fa-chevron-down"></i>
                             </button>
@@ -261,6 +268,7 @@
 
                         <div class="filter-group">
                             <button class="filter-button dropdown-trigger">
+                                <i class="fas fa-globe"></i>
                                 <span>Country</span>
                                 <i class="fas fa-chevron-down"></i>
                             </button>
@@ -268,6 +276,7 @@
 
                         <div class="filter-group">
                             <button class="filter-button dropdown-trigger" disabled>
+                                <i class="fas fa-city"></i>
                                 <span>City</span>
                                 <i class="fas fa-chevron-down"></i>
                             </button>
@@ -275,20 +284,21 @@
 
                         <div class="filter-group">
                             <button class="filter-button dropdown-trigger locked">
-                                <span>Age</span>
                                 <i class="fas fa-lock"></i>
+                                <span>Age</span>
                             </button>
                         </div>
 
                         <div class="filter-group">
                             <button class="filter-button dropdown-trigger locked">
-                                <span>Ethnicity</span>
                                 <i class="fas fa-lock"></i>
+                                <span>Ethnicity</span>
                             </button>
                         </div>
 
                         <div class="filter-group">
                             <button class="filter-button dropdown-trigger">
+                                <i class="fas fa-ruler"></i>
                                 <span>Measurements</span>
                                 <i class="fas fa-chevron-down"></i>
                             </button>
@@ -296,13 +306,14 @@
 
                         <div class="filter-group">
                             <button class="filter-button dropdown-trigger locked">
-                                <span>Height</span>
                                 <i class="fas fa-lock"></i>
+                                <span>Height</span>
                             </button>
                         </div>
 
                         <div class="filter-group">
                             <button class="filter-button dropdown-trigger">
+                                <i class="fas fa-eye"></i>
                                 <span>Eye color</span>
                                 <i class="fas fa-chevron-down"></i>
                             </button>
@@ -310,6 +321,7 @@
 
                         <div class="filter-group">
                             <button class="filter-button dropdown-trigger">
+                                <i class="fas fa-cut"></i>
                                 <span>Hair color</span>
                                 <i class="fas fa-chevron-down"></i>
                             </button>
@@ -317,8 +329,8 @@
 
                         <div class="filter-group">
                             <button class="filter-button dropdown-trigger locked">
-                                <span>Shoes</span>
                                 <i class="fas fa-lock"></i>
+                                <span>Shoes</span>
                             </button>
                         </div>
                     </div>
@@ -326,7 +338,7 @@
                     <div class="mobile-filters">
                         <button class="filter-button">
                             <i class="fas fa-sliders-h"></i>
-                            Filters & Sort
+                            <span>Filters & Sort</span>
                         </button>
                     </div>
 
@@ -349,90 +361,250 @@
                     <!-- Premium Model Card -->
                     <div class="model-card premium">
                         <div class="premium-badge">
-                            <i class="fas fa-star"></i> Premium
+                            <i class="fas fa-star"></i>
+                            <span>Premium</span>
                         </div>
-                        <img src="images/models/model1.jpg" alt="Model in white outfit">
+                        <div class="model-image">
+                            <img src="images/models/hero-1.jpeg" alt="Model in white outfit">
+                        </div>
+                        <div class="model-info">
+                            <h3 class="model-name">Sarah Johnson</h3>
+                            <p class="model-location">New York, USA</p>
+                        </div>
                     </div>
 
                     <!-- Regular Model Cards -->
                     <div class="model-card">
-                        <img src="images/models/model2.jpg" alt="Model in blue lace">
+                        <div class="model-image">
+                            <img src="images/models/hero-2.jpeg" alt="Model in blue lace">
+                        </div>
+                        <div class="model-info">
+                            <h3 class="model-name">Emma Wilson</h3>
+                            <p class="model-location">London, UK</p>
+                        </div>
                     </div>
 
                     <div class="model-card">
-                        <img src="images/models/model3.jpg" alt="Model beauty shot">
+                        <div class="model-image">
+                            <img src="images/models/hero-2.jpeg" alt="Model beauty shot">
+                        </div>
+                        <div class="model-info">
+                            <h3 class="model-name">Sophia Chen</h3>
+                            <p class="model-location">Shanghai, China</p>
+                        </div>
                     </div>
 
                     <div class="model-card">
-                        <img src="images/models/model4.jpg" alt="Model with ruff collar">
+                        <div class="model-image">
+                            <img src="images/models/hero-2.jpeg" alt="Model with ruff collar">
+                        </div>
+                        <div class="model-info">
+                            <h3 class="model-name">Olivia Martinez</h3>
+                            <p class="model-location">Madrid, Spain</p>
+                        </div>
                     </div>
 
                     <div class="model-card">
-                        <img src="images/models/model5.jpg" alt="Model in black">
+                        <div class="model-image">
+                            <img src="images/models/hero-2.jpeg" alt="Model in black">
+                        </div>
+                        <div class="model-info">
+                            <h3 class="model-name">Ava Thompson</h3>
+                            <p class="model-location">Toronto, Canada</p>
+                        </div>
                     </div>
 
                     <div class="model-card">
-                        <img src="images/models/model6.jpg" alt="Model in bodysuit">
+                        <div class="model-image">
+                            <img src="images/models/hero-2.jpeg" alt="Model in bodysuit">
+                        </div>
+                        <div class="model-info">
+                            <h3 class="model-name">Isabella Lee</h3>
+                            <p class="model-location">Seoul, South Korea</p>
+                        </div>
                     </div>
 
                     <div class="model-card">
-                        <img src="images/models/model7.jpg" alt="Model headshot">
+                        <div class="model-image">
+                            <img src="images/models/hero-2.jpeg" alt="Model headshot">
+                        </div>
+                        <div class="model-info">
+                            <h3 class="model-name">Mia Rodriguez</h3>
+                            <p class="model-location">Mexico City, Mexico</p>
+                        </div>
                     </div>
 
                     <div class="model-card">
-                        <img src="images/models/model8.jpg" alt="Model in blazer">
+                        <div class="model-image">
+                            <img src="images/models/hero-2.jpeg" alt="Model in blazer">
+                        </div>
+                        <div class="model-info">
+                            <h3 class="model-name">Charlotte Brown</h3>
+                            <p class="model-location">Sydney, Australia</p>
+                        </div>
                     </div>
 
                     <div class="model-card">
-                        <img src="images/models/model9.jpg" alt="Model in black outfit">
+                        <div class="model-image">
+                            <img src="images/models/hero-2.jpeg" alt="Model in black outfit">
+                        </div>
+                        <div class="model-info">
+                            <h3 class="model-name">Amelia Davis</h3>
+                            <p class="model-location">Chicago, USA</p>
+                        </div>
                     </div>
 
                     <div class="model-card">
-                        <img src="images/models/model10.jpg" alt="Model artistic shot">
+                        <div class="model-image">
+                            <img src="images/models/hero-2.jpeg" alt="Model artistic shot">
+                        </div>
+                        <div class="model-info">
+                            <h3 class="model-name">Harper Wilson</h3>
+                            <p class="model-location">Vancouver, Canada</p>
+                        </div>
                     </div>
 
                     <div class="model-card">
-                        <img src="images/models/model11.jpg" alt="Model ethereal shot">
+                        <div class="model-image">
+                            <img src="images/models/hero-2.jpeg" alt="Model ethereal shot">
+                        </div>
+                        <div class="model-info">
+                            <h3 class="model-name">Evelyn Taylor</h3>
+                            <p class="model-location">Paris, France</p>
+                        </div>
                     </div>
 
                     <div class="model-card">
-                        <img src="images/models/model12.jpg" alt="Model in tank top">
+                        <div class="model-image">
+                            <img src="images/models/hero-2.jpeg" alt="Model in tank top">
+                        </div>
+                        <div class="model-info">
+                            <h3 class="model-name">Abigail Anderson</h3>
+                            <p class="model-location">Berlin, Germany</p>
+                        </div>
                     </div>
 
                     <div class="model-card">
-                        <img src="images/models/model13.jpg" alt="Model in purple">
+                        <div class="model-image">
+                            <img src="images/models/hero-2.jpeg" alt="Model in purple">
+                        </div>
+                        <div class="model-info">
+                            <h3 class="model-name">Emily Thomas</h3>
+                            <p class="model-location">Rome, Italy</p>
+                        </div>
                     </div>
 
                     <div class="model-card">
-                        <img src="images/models/model14.jpg" alt="Model dance pose">
+                        <div class="model-image">
+                            <img src="images/models/hero-2.jpeg" alt="Model dance pose">
+                        </div>
+                        <div class="model-info">
+                            <h3 class="model-name">Elizabeth White</h3>
+                            <p class="model-location">Barcelona, Spain</p>
+                        </div>
                     </div>
 
                     <div class="model-card">
-                        <img src="images/models/model15.jpg" alt="Model casual shot">
+                        <div class="model-image">
+                            <img src="images/models/hero-2.jpeg" alt="Model casual shot">
+                        </div>
+                        <div class="model-info">
+                            <h3 class="model-name">Sofia Garcia</h3>
+                            <p class="model-location">Lisbon, Portugal</p>
+                        </div>
                     </div>
 
                     <div class="model-card">
-                        <img src="images/models/model16.jpg" alt="Model night shot">
+                        <div class="model-image">
+                            <img src="images/models/hero-2.jpeg" alt="Model night shot">
+                        </div>
+                        <div class="model-info">
+                            <h3 class="model-name">Victoria Clark</h3>
+                            <p class="model-location">Amsterdam, Netherlands</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Load More / Sign Up Section -->
                 <div class="models-cta">
-                    <p>Sign up to see more models</p>
-                    <button class="signup-btn">Sign up now</button>
+                    <p>Sign up to see more models and access premium features</p>
+                    <button class="signup-btn">
+                        <i class="fas fa-user-plus"></i>
+                        Sign up now
+                    </button>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <!-- Footer content will be included via JavaScript -->
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Company</h3>
+                <a href="#">About us</a>
+                <a href="#">Careers</a>
+                <a href="#">Press</a>
+            </div>
+            <div class="footer-section">
+                <h3>Help</h3>
+                <a href="#">FAQ</a>
+                <a href="#">Support</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+            <div class="footer-section">
+                <h3>Download Our App</h3>
+                <div class="app-buttons">
+                    <a href="#" class="app-button">
+                        <i class="fab fa-apple"></i> App Store
+                    </a>
+                    <a href="#" class="app-button">
+                        <i class="fab fa-google-play"></i> Google Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+            <p>&copy; 2024 . All rights reserved.</p>
+        </div>
     </footer>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="js/header.js"></script>
     <script src="js/footer.js"></script>
+    <script src="js/external/lucide.min.js"></script>
     <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu functionality
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
+
         // Initialize Swiper
         const disciplinesSwiper = new Swiper('.disciplines-swiper', {
             slidesPerView: 'auto',

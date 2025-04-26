@@ -1,0 +1,235 @@
+/* Success Stories Section */
+.success-stories {
+    padding: 8rem 0;
+    background-color: var(--bg-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.success-stories::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.05) 100%);
+    z-index: 1;
+}
+
+.success-stories h2 {
+    text-align: center;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 900;
+    margin-bottom: 4rem;
+    color: var(--text-primary);
+}
+
+.story-slider {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.story-slide {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.story-slide.active {
+    display: block;
+    opacity: 1;
+}
+
+.story-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.story-content img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.story-content img:hover {
+    transform: translateY(-10px);
+}
+
+.story-text {
+    padding: 2rem;
+}
+
+.story-text blockquote {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    font-style: italic;
+    position: relative;
+}
+
+.story-text blockquote::before,
+.story-text blockquote::after {
+    content: '"';
+    font-size: 4rem;
+    color: var(--primary-color);
+    opacity: 0.2;
+    position: absolute;
+    font-family: serif;
+}
+
+.story-text blockquote::before {
+    top: -2rem;
+    left: -2rem;
+}
+
+.story-text blockquote::after {
+    bottom: -1rem;
+    right: -2rem;
+}
+
+.story-text cite {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    font-style: normal;
+    display: block;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+.slider-controls {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+    z-index: 3;
+}
+
+.prev-slide,
+.next-slide {
+    background: var(--bg-primary);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.prev-slide:hover,
+.next-slide:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.prev-slide i,
+.next-slide i {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+}
+
+.prev-slide:hover i,
+.next-slide:hover i {
+    color: var(--bg-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .success-stories {
+        padding: 6rem 0;
+    }
+
+    .story-content {
+        gap: 3rem;
+    }
+
+    .story-content img {
+        height: 400px;
+    }
+
+    .story-text blockquote {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .success-stories {
+        padding: 4rem 0;
+    }
+
+    .story-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .story-content img {
+        height: 300px;
+    }
+
+    .story-text {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .story-text blockquote {
+        font-size: 1.4rem;
+    }
+
+    .story-text blockquote::before,
+    .story-text blockquote::after {
+        font-size: 3rem;
+    }
+
+    .story-text blockquote::before {
+        top: -1.5rem;
+        left: -1.5rem;
+    }
+
+    .story-text blockquote::after {
+        bottom: -0.5rem;
+        right: -1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .success-stories {
+        padding: 3rem 0;
+    }
+
+    .story-content img {
+        height: 250px;
+    }
+
+    .story-text blockquote {
+        font-size: 1.2rem;
+    }
+
+    .story-text cite {
+        font-size: 1rem;
+    }
+
+    .slider-controls {
+        bottom: 1rem;
+    }
+
+    .prev-slide,
+    .next-slide {
+        width: 40px;
+        height: 40px;
+    }
+} 

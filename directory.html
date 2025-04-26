@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Directory - Black & White</title>
+    <link rel="stylesheet" href="css/directory-style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/external/satoshi.css">
+    <script src="js/external/lucide.min.js"></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">
+            <img src="images/logo/model-LOGO.png" alt="Logo" class="logo" />
+        </a>
+
+        <div class="nav-center">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="castings.html" class="nav-link">Casting</a>
+            <a href="models.html" class="nav-link">Models</a>
+            <a href="directory.html" class="nav-link active">Pro Directory</a>
+            <a href="marketplace.html" class="nav-link">Marketplace</a>
+        </div>
+
+        <div class="nav-right">
+            <div class="nav-auth">
+                <a href="login.html" class="btn-login">Log In</a>
+                <a href="signup.html" class="btn-signup">Sign Up</a>
+            </div>
+
+            <!-- Hamburger Menu -->
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <nav class="mobile-nav-links">
+                <div class="mobile-nav-auth">
+                    <a href="login.html" class="btn-login">Log In</a>
+                    <a href="signup.html" class="btn-signup">Sign Up</a>
+                </div>
+                <a href="#" class="mobile-nav-link upgrade">
+                    <i data-lucide="star"></i>
+                    Upgrade now
+                </a>
+                <a href="models-talents.html" class="mobile-nav-link">
+                    <i data-lucide="users"></i>
+                    Models & Talents
+                </a>
+                <a href="professionals.html" class="mobile-nav-link">
+                    <i data-lucide="briefcase"></i>
+                    Professionals
+                </a>
+                <a href="castings.html" class="mobile-nav-link">
+                    <i data-lucide="calendar"></i>
+                    Castings
+                </a>
+                <a href="#post-casting" class="mobile-nav-link">
+                    <i data-lucide="plus-circle"></i>
+                    Post a casting
+                </a>
+                <a href="#academy" class="mobile-nav-link">
+                    <i data-lucide="graduation-cap"></i>
+                    Model Academy
+                </a>
+                <a href="#rankings" class="mobile-nav-link">
+                    <i data-lucide="bar-chart-2"></i>
+                    Rankings
+                </a>
+                <a href="#about" class="mobile-nav-link">
+                    <i data-lucide="users"></i>
+                    About us
+                </a>
+                <a href="#blog" class="mobile-nav-link">
+                    <i data-lucide="file-text"></i>
+                    Blog
+                </a>
+            </nav>
+
+            <div class="mobile-menu-footer">
+                <div class="language-selector">
+                    <i data-lucide="globe"></i>
+                    <span>Language</span>
+                    <i data-lucide="chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <div class="bottom-nav-items">
+            <a href="index.html" class="bottom-nav-link">
+                <i class="lucide lucide-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="castings.html" class="bottom-nav-link">
+                <i class="lucide lucide-camera"></i>
+                <span>Castings</span>
+            </a>
+            <a href="models.html" class="bottom-nav-link">
+                <i class="lucide lucide-users"></i>
+                <span>Models</span>
+            </a>
+            <a href="#" class="bottom-nav-link">
+                <i class="lucide lucide-user"></i>
+                <span>Profile</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <header>
+            <h1>Pro Directory</h1>
+            <p class="subtitle">Find the best photographers, modeling agencies, brands and other professionals</p>
+        </header>
+
+        <!-- Filters Section -->
+        <div class="filters-section">
+            <div class="filter-group">
+                <!-- Type Filter -->
+                <div class="filter-wrapper">
+                    <button class="filter-btn" data-dropdown="type">
+                        <span>Type</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-panel" id="type-dropdown">
+                        <div class="dropdown-options">
+                            <label class="dropdown-option">
+                                <input type="radio" name="type" value="all">
+                                <span>All</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="type" value="photographer">
+                                <span>Photographer</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="type" value="agency">
+                                <span>Agency</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="type" value="brand">
+                                <span>Brand</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="type" value="professional">
+                                <span>Professional</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Country Filter -->
+                <div class="filter-wrapper">
+                    <button class="filter-btn" data-dropdown="country">
+                        <span>Country</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-panel" id="country-dropdown">
+                        <div class="dropdown-search">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search country...">
+                        </div>
+                        <div class="dropdown-options">
+                            <label class="dropdown-option">
+                                <input type="radio" name="country" value="all">
+                                <span>All countries</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="country" value="us">
+                                <span>United States</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="country" value="uk">
+                                <span>United Kingdom</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="country" value="fr">
+                                <span>France</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="country" value="de">
+                                <span>Germany</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- City Filter -->
+                <div class="filter-wrapper">
+                    <button class="filter-btn" data-dropdown="city">
+                        <span>City</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-panel" id="city-dropdown">
+                        <div class="dropdown-search">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search city...">
+                        </div>
+                        <div class="dropdown-options">
+                            <label class="dropdown-option">
+                                <input type="radio" name="city" value="all">
+                                <span>All cities</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="city" value="nyc">
+                                <span>New York</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="city" value="london">
+                                <span>London</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="city" value="paris">
+                                <span>Paris</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Editor's Pick Filter -->
+                <div class="filter-wrapper">
+                    <button class="filter-btn editors-pick" data-dropdown="editors">
+                        <i class="fas fa-bars"></i>
+                        <span>Editor's Pick</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-panel" id="editors-dropdown">
+                        <div class="dropdown-options">
+                            <label class="dropdown-option">
+                                <input type="radio" name="editors" value="all">
+                                <span>All</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="editors" value="featured">
+                                <span>Featured</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="editors" value="trending">
+                                <span>Trending</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="editors" value="new">
+                                <span>New</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="want-listed">
+            <button class="listing-btn">
+                <span>+</span> Want to be listed?
+            </button>
+        </div>
+
+        <!-- Directory Items Grid -->
+        <div class="directory-grid">
+            <!-- Photographer -->
+            <div class="directory-card" data-type="photographer" data-country="us" data-city="new-york">
+                <div class="directory-card-media">
+                    <img src="images/directory/photographer-1.jpeg" alt="John Smith" loading="lazy">
+                    <div class="directory-card-overlay"></div>
+                    <button class="favorite-btn">♡</button>
+                </div>
+                <div class="directory-card-content">
+                    <h3>John Smith</h3>
+                    <p class="location">New York, USA</p>
+                    <p class="profession">Photographer</p>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <!-- Agency -->
+            <div class="directory-card" data-type="agency" data-country="uk" data-city="london">
+                <div class="directory-card-media">
+                    <img src="images/directory/agency-1.jpeg" alt="Elite Models London" loading="lazy">
+                    <div class="directory-card-overlay"></div>
+                    <button class="favorite-btn">♡</button>
+                </div>
+                <div class="directory-card-content">
+                    <h3>Elite Models London</h3>
+                    <p class="location">London, UK</p>
+                    <p class="profession">Modeling Agency</p>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <!-- Brand -->
+            <div class="directory-card" data-type="brand" data-country="fr" data-city="paris">
+                <div class="directory-card-media">
+                    <img src="images/directory/brand-1.jpeg" alt="Chic Fashion" loading="lazy">
+                    <div class="directory-card-overlay"></div>
+                    <button class="favorite-btn">♡</button>
+                </div>
+                <div class="directory-card-content">
+                    <h3>Chic Fashion</h3>
+                    <p class="location">Paris, France</p>
+                    <p class="profession">Fashion Brand</p>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <!-- Professional -->
+            <div class="directory-card" data-type="professional" data-country="de" data-city="berlin">
+                <div class="directory-card-media">
+                    <img src="images/directory/professional-1.jpeg" alt="Maria Schmidt" loading="lazy">
+                    <div class="directory-card-overlay"></div>
+                    <button class="favorite-btn">♡</button>
+                </div>
+                <div class="directory-card-content">
+                    <h3>Maria Schmidt</h3>
+                    <p class="location">Berlin, Germany</p>
+                    <p class="profession">Makeup Artist</p>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <!-- More cards... -->
+            <div class="directory-card" data-type="photographer" data-country="us" data-city="los-angeles">
+                <div class="directory-card-media">
+                    <img src="images/directory/photographer-2.jpeg" alt="Emily Davis" loading="lazy">
+                    <div class="directory-card-overlay"></div>
+                    <button class="favorite-btn">♡</button>
+                </div>
+                <div class="directory-card-content">
+                    <h3>Emily Davis</h3>
+                    <p class="location">Los Angeles, USA</p>
+                    <p class="profession">Photographer</p>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <div class="directory-card" data-type="agency" data-country="fr" data-city="paris">
+                <div class="directory-card-media">
+                    <img src="images/directory/agency-2.jpeg" alt="Paris Models" loading="lazy">
+                    <div class="directory-card-overlay"></div>
+                    <button class="favorite-btn">♡</button>
+                </div>
+                <div class="directory-card-content">
+                    <h3>Paris Models</h3>
+                    <p class="location">Paris, France</p>
+                    <p class="profession">Modeling Agency</p>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <div class="directory-card" data-type="brand" data-country="it" data-city="milan">
+                <div class="directory-card-media">
+                    <img src="images/directory/brand-2.jpeg" alt="Milano Style" loading="lazy">
+                    <div class="directory-card-overlay"></div>
+                    <button class="favorite-btn">♡</button>
+                </div>
+                <div class="directory-card-content">
+                    <h3>Milano Style</h3>
+                    <p class="location">Milan, Italy</p>
+                    <p class="profession">Fashion Brand</p>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+
+            <div class="directory-card" data-type="professional" data-country="uk" data-city="london">
+                <div class="directory-card-media">
+                    <img src="images/directory/professional-2.jpeg" alt="James Wilson" loading="lazy">
+                    <div class="directory-card-overlay"></div>
+                    <button class="favorite-btn">♡</button>
+                </div>
+                <div class="directory-card-content">
+                    <h3>James Wilson</h3>
+                    <p class="location">London, UK</p>
+                    <p class="profession">Stylist</p>
+                    <button class="view-profile-btn">View Profile</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Company</h3>
+                <a href="#about">About us</a>
+                <a href="#careers">Careers</a>
+                <a href="#press">Press</a>
+                <a href="#blog">Blog</a>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <a href="#help">Help Center</a>
+                <a href="#safety">Safety Center</a>
+                <a href="#community">Community Guidelines</a>
+                <a href="#cookies">Cookies Policy</a>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="#copyright">Copyright Policy</a>
+                <a href="#accessibility">Accessibility</a>
+            </div>
+            <div class="footer-section">
+                <h3>Mobile App</h3>
+                <div class="app-buttons">
+                    <a href="#" class="app-button">
+                        <img src="images/app-store.png" alt="Download on App Store">
+                    </a>
+                    <a href="#" class="app-button">
+                        <img src="images/google-play.png" alt="Get it on Google Play">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+            <p>&copy; 2024 . All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu functionality
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
+    </script>
+
+    <script src="js/directory.js"></script>
+</body>
+
+</html>

@@ -6,12 +6,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In - Model Management</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/external/font-awesome.min.css">
+    <link rel="stylesheet" href="css/external/satoshi.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <link rel="stylesheet" href="css/external/swiper-bundle.min.css">
+    <script src="js/external/lucide.min.js"></script>
+    <script src="js/external/swiper-bundle.min.js"></script>
 </head>
 
 <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">
+            <img src="images/logo/model-LOGO.png" alt="Logo" class="logo" />
+        </a>
+
+        <div class="nav-center">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="castings.html" class="nav-link">Casting</a>
+            <a href="models.html" class="nav-link">Models</a>
+            <a href="directory.html" class="nav-link">Pro Directory</a>
+            <a href="#marketplace" class="nav-link">Marketplace</a>
+        </div>
+
+        <div class="nav-right">
+            <div class="nav-auth">
+                <a href="login.html" class="btn-login active">Log In</a>
+                <a href="signup.html" class="btn-signup">Sign Up</a>
+            </div>
+
+            <!-- Hamburger Menu -->
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <nav class="mobile-nav-links">
+                <div class="mobile-nav-auth">
+                    <a href="login.html" class="btn-login active">Log In</a>
+                    <a href="signup.html" class="btn-signup">Sign Up</a>
+                </div>
+                <a href="#" class="mobile-nav-link upgrade">
+                    <i data-lucide="star"></i>
+                    Upgrade now
+                </a>
+                <a href="models-talents.html" class="mobile-nav-link">
+                    <i data-lucide="users"></i>
+                    Models & Talents
+                </a>
+                <a href="professionals.html" class="mobile-nav-link">
+                    <i data-lucide="briefcase"></i>
+                    Professionals
+                </a>
+                <a href="#castings" class="mobile-nav-link">
+                    <i data-lucide="calendar"></i>
+                    Castings
+                </a>
+                <a href="#post-casting" class="mobile-nav-link">
+                    <i data-lucide="plus-circle"></i>
+                    Post a casting
+                </a>
+                <a href="#academy" class="mobile-nav-link">
+                    <i data-lucide="graduation-cap"></i>
+                    Model Academy
+                </a>
+                <a href="#rankings" class="mobile-nav-link">
+                    <i data-lucide="bar-chart-2"></i>
+                    Rankings
+                </a>
+                <a href="#about" class="mobile-nav-link">
+                    <i data-lucide="users"></i>
+                    About us
+                </a>
+                <a href="#blog" class="mobile-nav-link">
+                    <i data-lucide="file-text"></i>
+                    Blog
+                </a>
+            </nav>
+
+            <div class="mobile-menu-footer">
+                <div class="language-selector">
+                    <i data-lucide="globe"></i>
+                    <span>Language</span>
+                    <i data-lucide="chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <div class="bottom-nav-items">
+            <a href="index.html" class="bottom-nav-link">
+                <i class="lucide lucide-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="castings.html" class="bottom-nav-link">
+                <i class="lucide lucide-camera"></i>
+                <span>Castings</span>
+            </a>
+            <a href="models.html" class="bottom-nav-link">
+                <i class="lucide lucide-users"></i>
+                <span>Models</span>
+            </a>
+            <a href="#" class="bottom-nav-link active">
+                <i class="lucide lucide-user"></i>
+                <span>Profile</span>
+            </a>
+        </div>
+    </nav>
+
     <div class="auth-container">
         <div class="auth-card">
             <h1>Log In</h1>
@@ -62,6 +170,23 @@
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
+
+        // Mobile menu functionality
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
 
         // Toggle password visibility
         document.querySelector('.toggle-password').addEventListener('click', function () {

@@ -6,12 +6,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Models & Talents - Model Management</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/models-talents.css">
+    <link rel="stylesheet" href="css/external/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <link rel="stylesheet" href="css/external/aos.css">
+    <link rel="stylesheet" href="css/external/satoshi.css">
+    <link rel="stylesheet" href="css/external/swiper-bundle.min.css">
+    <script src="js/external/gsap.min.js"></script>
+    <script src="js/external/ScrollTrigger.min.js"></script>
+    <script src="js/external/lucide.min.js"></script>
+    <script src="js/external/swiper-bundle.min.js"></script>
 </head>
 
 <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">
+            <img src="images/logo/model-LOGO.png" alt="Logo" class="logo" />
+        </a>
+
+        <div class="nav-center">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="castings.html" class="nav-link">Casting</a>
+            <a href="models.html" class="nav-link">Models</a>
+            <a href="directory.html" class="nav-link">Pro Directory</a>
+            <a href="marketplace.html" class="nav-link">Marketplace</a>
+        </div>
+
+        <div class="nav-right">
+            <div class="nav-auth">
+                <a href="login.html" class="btn-login">Log In</a>
+                <a href="signup.html" class="btn-signup">Sign Up</a>
+            </div>
+
+            <!-- Hamburger Menu -->
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <nav class="mobile-nav-links">
+                <div class="mobile-nav-auth">
+                    <a href="login.html" class="btn-login">Log In</a>
+                    <a href="signup.html" class="btn-signup">Sign Up</a>
+                </div>
+                <a href="#" class="mobile-nav-link upgrade">
+                    <i data-lucide="star"></i>
+                    Upgrade now
+                </a>
+                <a href="models-talents.html" class="mobile-nav-link active">
+                    <i data-lucide="users"></i>
+                    Models & Talents
+                </a>
+                <a href="professionals.html" class="mobile-nav-link">
+                    <i data-lucide="briefcase"></i>
+                    Professionals
+                </a>
+                <a href="#castings" class="mobile-nav-link">
+                    <i data-lucide="calendar"></i>
+                    Castings
+                </a>
+                <a href="#post-casting" class="mobile-nav-link">
+                    <i data-lucide="plus-circle"></i>
+                    Post a casting
+                </a>
+                <a href="#academy" class="mobile-nav-link">
+                    <i data-lucide="graduation-cap"></i>
+                    Model Academy
+                </a>
+                <a href="#rankings" class="mobile-nav-link">
+                    <i data-lucide="bar-chart-2"></i>
+                    Rankings
+                </a>
+                <a href="#about" class="mobile-nav-link">
+                    <i data-lucide="users"></i>
+                    About us
+                </a>
+                <a href="#blog" class="mobile-nav-link">
+                    <i data-lucide="file-text"></i>
+                    Blog
+                </a>
+            </nav>
+
+            <div class="mobile-menu-footer">
+                <div class="language-selector">
+                    <i data-lucide="globe"></i>
+                    <span>Language</span>
+                    <i data-lucide="chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <div class="bottom-nav-items">
+            <a href="index.html" class="bottom-nav-link">
+                <i class="lucide lucide-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="castings.html" class="bottom-nav-link">
+                <i class="lucide lucide-camera"></i>
+                <span>Castings</span>
+            </a>
+            <a href="models.html" class="bottom-nav-link">
+                <i class="lucide lucide-users"></i>
+                <span>Models</span>
+            </a>
+            <a href="#" class="bottom-nav-link active">
+                <i class="lucide lucide-user"></i>
+                <span>Profile</span>
+            </a>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
     <div class="models-talents-hero">
         <div class="models-talents-overlay"></div>
@@ -76,73 +188,198 @@
 
     <!-- brand-strip Section -->
     <section class="brand-strip">
-        <div class="brand-strip-inner">
-            <img src="/images/brands/adidas.png" alt="Nike" />
-            <img src="/images/brands/adidas.png" alt="Desigual" />
-            <img src="/images/brands/adidas.png" alt="Top Model" />
-            <img src="/images/brands/adidas.png" alt="F" />
-            <img src="/images/brands/adidas.png" alt="Elite" />
-            <img src="/images/brands/adidas.png" alt="Garnier" />
-            <img src="/images/brands/adidas.png" alt="MTV" />
-            <img src="/images/brands/adidas.png" alt="Superdry" />
+        <div class="brand-strip-container">
+            <div class="brand-strip-track">
+                <div class="brand-strip-slide">
+                    <img src="/images/brands/adidas.png" alt="Adidas" />
+                </div>
+                <div class="brand-strip-slide">
+                    <img src="/images/brands/nike.png" alt="Nike" />
+                </div>
+                <div class="brand-strip-slide">
+                    <img src="/images/brands/desigual.png" alt="Desigual" />
+                </div>
+                <div class="brand-strip-slide">
+                    <img src="/images/brands/topmodel.png" alt="Top Model" />
+                </div>
+                <div class="brand-strip-slide">
+                    <img src="/images/brands/elite.png" alt="Elite" />
+                </div>
+                <div class="brand-strip-slide">
+                    <img src="/images/brands/garnier.png" alt="Garnier" />
+                </div>
+                <div class="brand-strip-slide">
+                    <img src="/images/brands/mtv.png" alt="MTV" />
+                </div>
+                <div class="brand-strip-slide">
+                    <img src="/images/brands/superdry.png" alt="Superdry" />
+                </div>
+                <!-- Duplicate slides for infinite loop -->
+                <div class="brand-strip-slide">
+                    <img src="/images/brands/adidas.png" alt="Adidas" />
+                </div>
+                <div class="brand-strip-slide">
+                    <img src="/images/brands/nike.png" alt="Nike" />
+                </div>
+                <div class="brand-strip-slide">
+                    <img src="/images/brands/desigual.png" alt="Desigual" />
+                </div>
+                <div class="brand-strip-slide">
+                    <img src="/images/brands/topmodel.png" alt="Top Model" />
+                </div>
+            </div>
+        </div>
+        <div class="brand-strip-controls">
+            <button class="brand-strip-prev" aria-label="Previous brands">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="brand-strip-next" aria-label="Next brands">
+                <i class="fas fa-chevron-right"></i>
+            </button>
         </div>
     </section>
 
     <!-- Popular Castings Section -->
     <section class="popular-castings">
-        <h2 class="font-black">Popular Castings</h2>
-        <div class="popular-castings-cards">
-            <!-- Card 1 -->
-            <div class="popular-castings-card">
-                <h4 class="font-bold">Seeking female models worldwide for cosmetic brand</h4>
-                <img src="/images/models/hero-4.jpeg" alt="Model Image 1" />
-                <p class="font-regular">UK-based cosmetic brand is exclusively casting Content Creators in several
-                    locations to shoot content from home for a new product line.</p>
-                <a href="#" class="popular-castings-btn font-bold">Apply Now</a>
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="font-black">Popular Castings</h2>
+                <p class="section-subtitle font-regular">Discover exciting opportunities from top brands and agencies
+                </p>
             </div>
+            <div class="popular-castings-cards">
+                <!-- Card 1 -->
+                <div class="popular-castings-card">
+                    <div class="card-image">
+                        <img src="/images/models/hero-4.jpeg" alt="Model Image 1" />
+                        <div class="card-overlay">
+                            <span class="card-tag font-bold">Featured</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h4 class="font-bold">Seeking female models worldwide for cosmetic brand</h4>
+                            <div class="card-meta">
+                                <span class="location"><i class="fas fa-map-marker-alt"></i> Worldwide</span>
+                                <span class="type"><i class="fas fa-briefcase"></i> Content Creation</span>
+                            </div>
+                        </div>
+                        <p class="font-regular">UK-based cosmetic brand is exclusively casting Content Creators in
+                            several locations to shoot content from home for a new product line.</p>
+                        <div class="card-footer">
+                            <a href="#" class="popular-castings-btn font-bold">Apply Now</a>
+                            <span class="deadline font-regular">Deadline: 30 days</span>
+                        </div>
+                    </div>
+                </div>
 
-            <!-- Card 2 -->
-            <div class="popular-castings-card">
-                <h4 class="font-bold">Modeling Agency has MASSIVE demand for new faces</h4>
-                <img src="/images/models/hero-7.jpeg" alt="Model Image 2" />
-                <p class="font-regular">A renowned model agency working internationally with major brand names and
-                    fashion houses on high-end commercial shoots is looking for the most unique, unusual and interesting
-                    faces around!</p>
-                <a href="#" class="popular-castings-btn font-bold">Apply Now</a>
-            </div>
+                <!-- Card 2 -->
+                <div class="popular-castings-card">
+                    <div class="card-image">
+                        <img src="/images/models/hero-7.jpeg" alt="Model Image 2" />
+                        <div class="card-overlay">
+                            <span class="card-tag font-bold">Urgent</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h4 class="font-bold">Modeling Agency has MASSIVE demand for new faces</h4>
+                            <div class="card-meta">
+                                <span class="location"><i class="fas fa-map-marker-alt"></i> International</span>
+                                <span class="type"><i class="fas fa-briefcase"></i> Commercial</span>
+                            </div>
+                        </div>
+                        <p class="font-regular">A renowned model agency working internationally with major brand names
+                            and fashion houses on high-end commercial shoots is looking for the most unique, unusual and
+                            interesting faces around!</p>
+                        <div class="card-footer">
+                            <a href="#" class="popular-castings-btn font-bold">Apply Now</a>
+                            <span class="deadline font-regular">Deadline: 15 days</span>
+                        </div>
+                    </div>
+                </div>
 
-            <!-- Card 3 -->
-            <div class="popular-castings-card">
-                <h4 class="font-bold">Modeling Agency looking for new Lifestyle Models</h4>
-                <img src="/images/models/hero-6.jpeg" alt="Model Image 3" />
-                <p class="font-regular">One of Europe's most successful modeling agencies for major advertising
-                    campaigns is searching for new faces for non-exclusive representation.</p>
-                <a href="#" class="popular-castings-btn font-bold">Apply Now</a>
+                <!-- Card 3 -->
+                <div class="popular-castings-card">
+                    <div class="card-image">
+                        <img src="/images/models/hero-6.jpeg" alt="Model Image 3" />
+                        <div class="card-overlay">
+                            <span class="card-tag font-bold">New</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h4 class="font-bold">Modeling Agency looking for new Lifestyle Models</h4>
+                            <div class="card-meta">
+                                <span class="location"><i class="fas fa-map-marker-alt"></i> Europe</span>
+                                <span class="type"><i class="fas fa-briefcase"></i> Lifestyle</span>
+                            </div>
+                        </div>
+                        <p class="font-regular">One of Europe's most successful modeling agencies for major advertising
+                            campaigns is searching for new faces for non-exclusive representation.</p>
+                        <div class="card-footer">
+                            <a href="#" class="popular-castings-btn font-bold">Apply Now</a>
+                            <span class="deadline font-regular">Deadline: 45 days</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- How It Works -->
     <section class="how-it-works">
-        <h2 class="font-black">How does it work?</h2>
-        <div class="how-it-works-steps">
-            <div class="how-it-works-step">
-                <img src="/images/models/hero-1.jpeg" alt="Create Profile" />
-                <h3 class="font-bold">1. Create Your Profile</h3>
-                <p class="font-regular">Add your best photos, details, and Instagram to showcase yourself and get
-                    scouted by brands, photographers and agencies.</p>
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="font-black">How does it work?</h2>
+                <p class="section-subtitle font-regular">Start your modeling journey in three simple steps</p>
             </div>
-            <div class="how-it-works-step">
-                <img src="/images/models/hero-2.jpeg" alt="Apply to Jobs" />
-                <h3 class="font-bold">2. Apply to Jobs</h3>
-                <p class="font-regular">Browse hundreds of new jobs every day, apply to as many as you want and start
-                    earning money with your looks.</p>
-            </div>
-            <div class="how-it-works-step">
-                <img src="/images/models/hero-3.jpeg" alt="Connect with Brands" />
-                <h3 class="font-bold">3. Connect with Brands</h3>
-                <p class="font-regular">Talk, message & collaborate directly with photographers, agencies, and brands
-                    that you like.</p>
+            <div class="how-it-works-steps">
+                <div class="how-it-works-step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <div class="step-image">
+                            <img src="/images/models/hero-1.jpeg" alt="Create Profile" />
+                            <div class="step-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-bold">Create Your Profile</h3>
+                        <p class="font-regular">Add your best photos, details, and Instagram to showcase yourself and
+                            get scouted by brands, photographers and agencies.</p>
+                        <a href="#" class="step-link font-bold">Get Started <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="how-it-works-step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <div class="step-image">
+                            <img src="/images/models/hero-2.jpeg" alt="Apply to Jobs" />
+                            <div class="step-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-bold">Apply to Jobs</h3>
+                        <p class="font-regular">Browse hundreds of new jobs every day, apply to as many as you want and
+                            start earning money with your looks.</p>
+                        <a href="#" class="step-link font-bold">Browse Jobs <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="how-it-works-step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <div class="step-image">
+                            <img src="/images/models/hero-3.jpeg" alt="Connect with Brands" />
+                            <div class="step-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-bold">Connect with Brands</h3>
+                        <p class="font-regular">Talk, message & collaborate directly with photographers, agencies, and
+                            brands that you like.</p>
+                        <a href="#" class="step-link font-bold">Start Networking <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -255,6 +492,51 @@
         // Initialize Lucide icons
         lucide.createIcons();
 
+        // Brand Strip Slider
+        const brandStrip = document.querySelector('.brand-strip-track');
+        const prevButton = document.querySelector('.brand-strip-prev');
+        const nextButton = document.querySelector('.brand-strip-next');
+        let currentPosition = 0;
+        const slideWidth = 120; // Width of each slide
+        const gap = 48; // Gap between slides (3rem = 48px)
+        const slidesToShow = 6; // Number of slides visible at once
+        const totalSlides = document.querySelectorAll('.brand-strip-slide').length;
+        const maxPosition = -(totalSlides - slidesToShow) * (slideWidth + gap);
+
+        function updateSliderPosition() {
+            brandStrip.style.transform = `translateX(${currentPosition}px)`;
+        }
+
+        function slideNext() {
+            if (currentPosition > maxPosition) {
+                currentPosition -= (slideWidth + gap);
+                updateSliderPosition();
+            }
+        }
+
+        function slidePrev() {
+            if (currentPosition < 0) {
+                currentPosition += (slideWidth + gap);
+                updateSliderPosition();
+            }
+        }
+
+        // Event Listeners
+        nextButton.addEventListener('click', slideNext);
+        prevButton.addEventListener('click', slidePrev);
+
+        // Auto Slide
+        let autoSlideInterval = setInterval(slideNext, 3000);
+
+        // Pause auto slide on hover
+        brandStrip.addEventListener('mouseenter', () => {
+            clearInterval(autoSlideInterval);
+        });
+
+        brandStrip.addEventListener('mouseleave', () => {
+            autoSlideInterval = setInterval(slideNext, 3000);
+        });
+
         // Language selector functionality
         const languageToggle = document.querySelector('.language-toggle');
         const languageDropdown = document.querySelector('.language-dropdown');
@@ -304,6 +586,23 @@
                 // Add your button click logic here
                 setTimeout(() => this.classList.remove('loading'), 1000);
             });
+        });
+
+        // Mobile menu functionality
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
         });
     </script>
 </body>

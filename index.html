@@ -15,12 +15,15 @@
     <meta property="og:type" content="website">
     <title>Model Management - Professional Modeling Platform</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/success-stories.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js"></script>
-    <script src="https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <link rel="stylesheet" href="css/external/font-awesome.min.css">
+    <link rel="stylesheet" href="css/external/aos.css">
+    <link rel="stylesheet" href="css/external/satoshi.css">
+    <link rel="stylesheet" href="css/external/swiper-bundle.min.css">
+    <script src="js/external/gsap.min.js"></script>
+    <script src="js/external/ScrollTrigger.min.js"></script>
+    <script src="js/external/lucide.min.js"></script>
 </head>
 
 <body>
@@ -34,9 +37,9 @@
         <div class="nav-center">
             <a href="index.html" class="nav-link active">Home</a>
             <a href="castings.html" class="nav-link">Casting</a>
-            <a href="#" class="nav-link">Models</a>
-            <a href="#directory" class="nav-link">Pro Directory</a>
-            <a href="#marketplace" class="nav-link">Marketplace</a>
+            <a href="models.html" class="nav-link">Models</a>
+            <a href="directory.html" class="nav-link">Pro Directory</a>
+            <a href="marketplace.html" class="nav-link">Marketplace</a>
         </div>
 
         <div class="nav-right">
@@ -123,7 +126,7 @@
                 <i class="lucide lucide-users"></i>
                 <span>Models</span>
             </a>
-            
+
         </div>
     </nav>
 
@@ -796,7 +799,36 @@
     <section class="success-stories">
         <h2>Success Stories</h2>
         <div class="story-slider">
-            <!-- Story slides will be dynamically inserted by JavaScript -->
+            <div class="story-slide active">
+                <div class="story-content">
+                    <img src="images/models/hero-1.jpeg" alt="Success Story - Sarah Johnson" loading="lazy">
+                    <div class="story-text">
+                        <blockquote>ModelHub helped me land my first major campaign with a leading fashion brand.
+                        </blockquote>
+                        <cite>Sarah Johnson, Model</cite>
+                    </div>
+                </div>
+            </div>
+            <div class="story-slide">
+                <div class="story-content">
+                    <img src="images/models/hero-2.jpeg" alt="Success Story - James Wilson" loading="lazy">
+                    <div class="story-text">
+                        <blockquote>Through ModelHub, I've connected with amazing photographers and brands worldwide.
+                        </blockquote>
+                        <cite>James Wilson, Photographer</cite>
+                    </div>
+                </div>
+            </div>
+            <div class="story-slide">
+                <div class="story-content">
+                    <img src="images/models/hero-3.jpeg" alt="Success Story - Emma Davis" loading="lazy">
+                    <div class="story-text">
+                        <blockquote>The platform made it easy to find diverse talent for our latest campaign.
+                        </blockquote>
+                        <cite>Emma Davis, Brand Manager</cite>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="slider-controls">
             <button class="prev-slide" aria-label="Previous story">
@@ -910,7 +942,7 @@
         </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/aos.js"></script>
     <script src="js/main.js"></script>
     <script>
         // Initialize AOS

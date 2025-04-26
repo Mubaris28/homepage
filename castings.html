@@ -5,23 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Model Castings</title>
+    <link rel="stylesheet" href="css/casting.css">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/external/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/external/aos.css">
+    <link rel="stylesheet" href="css/external/satoshi.css">
+    <link rel="stylesheet" href="css/external/swiper-bundle.min.css">
+    <script src="js/external/lucide.min.js"></script>
+    <script src="js/external/swiper-bundle.min.js"></script>
 </head>
 
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <a href="index.html" class="nav-brand">
-            <img src="images/logo/model-LOGO.png" alt="Logo" class="logo">
+            <img src="images/logo/model-LOGO.png" alt="Logo" class="logo" />
         </a>
 
         <div class="nav-center">
             <a href="index.html" class="nav-link">Home</a>
             <a href="castings.html" class="nav-link active">Casting</a>
-            <a href="#" class="nav-link">Models</a>
-            <a href="#directory" class="nav-link">Pro Directory</a>
-            <a href="#marketplace" class="nav-link">Marketplace</a>
+            <a href="models.html" class="nav-link">Models</a>
+            <a href="directory.html" class="nav-link">Pro Directory</a>
+            <a href="marketplace.html" class="nav-link">Marketplace</a>
         </div>
 
         <div class="nav-right">
@@ -30,7 +37,8 @@
                 <a href="signup.html" class="btn-signup">Sign Up</a>
             </div>
 
-            <button class="hamburger" id="menuToggle">
+            <!-- Hamburger Menu -->
+            <button class="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -38,25 +46,79 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu">
             <nav class="mobile-nav-links">
                 <div class="mobile-nav-auth">
                     <a href="login.html" class="btn-login">Log In</a>
                     <a href="signup.html" class="btn-signup">Sign Up</a>
                 </div>
-                <a href="#" class="mobile-nav-link">
-                    <i class="fas fa-star"></i>
+                <a href="#" class="mobile-nav-link upgrade">
+                    <i data-lucide="star"></i>
                     Upgrade now
                 </a>
-                <a href="#castings" class="mobile-nav-link">
-                    <i class="fas fa-camera"></i>
+                <a href="models-talents.html" class="mobile-nav-link">
+                    <i data-lucide="users"></i>
+                    Models & Talents
+                </a>
+                <a href="professionals.html" class="mobile-nav-link">
+                    <i data-lucide="briefcase"></i>
+                    Professionals
+                </a>
+                <a href="castings.html" class="mobile-nav-link active">
+                    <i data-lucide="calendar"></i>
                     Castings
                 </a>
-                <a href="#models" class="mobile-nav-link">
-                    <i class="fas fa-users"></i>
-                    Models
+                <a href="#post-casting" class="mobile-nav-link">
+                    <i data-lucide="plus-circle"></i>
+                    Post a casting
+                </a>
+                <a href="#academy" class="mobile-nav-link">
+                    <i data-lucide="graduation-cap"></i>
+                    Model Academy
+                </a>
+                <a href="#rankings" class="mobile-nav-link">
+                    <i data-lucide="bar-chart-2"></i>
+                    Rankings
+                </a>
+                <a href="#about" class="mobile-nav-link">
+                    <i data-lucide="users"></i>
+                    About us
+                </a>
+                <a href="#blog" class="mobile-nav-link">
+                    <i data-lucide="file-text"></i>
+                    Blog
                 </a>
             </nav>
+
+            <div class="mobile-menu-footer">
+                <div class="language-selector">
+                    <i data-lucide="globe"></i>
+                    <span>Language</span>
+                    <i data-lucide="chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <div class="bottom-nav-items">
+            <a href="index.html" class="bottom-nav-link">
+                <i class="lucide lucide-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="castings.html" class="bottom-nav-link active">
+                <i class="lucide lucide-camera"></i>
+                <span>Castings</span>
+            </a>
+            <a href="models.html" class="bottom-nav-link">
+                <i class="lucide lucide-users"></i>
+                <span>Models</span>
+            </a>
+            <a href="#" class="bottom-nav-link">
+                <i class="lucide lucide-user"></i>
+                <span>Profile</span>
+            </a>
         </div>
     </nav>
 
@@ -286,6 +348,138 @@
                     </div>
                 </div>
             </div>
+            <!-- Casting Card 3 -->
+            <div class="casting-card">
+                <div class="casting-image-section">
+                    <div class="casting-image">
+                        <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?ixlib=rb-4.0.3"
+                            alt="Group of diverse models in neutral outfits" loading="lazy" decoding="async">
+                    </div>
+                </div>
+                <div class="casting-content-section">
+                    <div class="trusted-badge">
+                        <i class="fas fa-check"></i>
+                        Trusted by models
+                    </div>
+                    <div class="casting-details">
+                        <h3>We are looking for Various Profiles for Exciting Upcoming Campaigns / UK / Paid</h3>
+                        <div class="casting-info">
+                            <p>
+                                <i class="fas fa-map-marker-alt"></i>
+                                United Kingdom
+                            </p>
+                            <p>
+                                <i class="far fa-calendar"></i>
+                                Casting ends Jun 2, 2025
+                            </p>
+                            <p>
+                                <i class="fas fa-dollar-sign"></i>
+                                Paid shoot or event
+                            </p>
+                        </div>
+                        <button class="details-btn">More details</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Casting Card 2 -->
+            <div class="casting-card">
+                <div class="casting-image-section">
+                    <div class="casting-image">
+                        <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?ixlib=rb-4.0.3"
+                            alt="Group of diverse models in neutral outfits" loading="lazy" decoding="async">
+                    </div>
+                </div>
+                <div class="casting-content-section">
+                    <div class="trusted-badge">
+                        <i class="fas fa-check"></i>
+                        Trusted by models
+                    </div>
+                    <div class="casting-details">
+                        <h3>We are looking for Various Profiles for Exciting Upcoming Campaigns / UK / Paid</h3>
+                        <div class="casting-info">
+                            <p>
+                                <i class="fas fa-map-marker-alt"></i>
+                                United Kingdom
+                            </p>
+                            <p>
+                                <i class="far fa-calendar"></i>
+                                Casting ends Jun 2, 2025
+                            </p>
+                            <p>
+                                <i class="fas fa-dollar-sign"></i>
+                                Paid shoot or event
+                            </p>
+                        </div>
+                        <button class="details-btn">More details</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Casting Card 2 -->
+            <div class="casting-card">
+                <div class="casting-image-section">
+                    <div class="casting-image">
+                        <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?ixlib=rb-4.0.3"
+                            alt="Group of diverse models in neutral outfits" loading="lazy" decoding="async">
+                    </div>
+                </div>
+                <div class="casting-content-section">
+                    <div class="trusted-badge">
+                        <i class="fas fa-check"></i>
+                        Trusted by models
+                    </div>
+                    <div class="casting-details">
+                        <h3>We are looking for Various Profiles for Exciting Upcoming Campaigns / UK / Paid</h3>
+                        <div class="casting-info">
+                            <p>
+                                <i class="fas fa-map-marker-alt"></i>
+                                United Kingdom
+                            </p>
+                            <p>
+                                <i class="far fa-calendar"></i>
+                                Casting ends Jun 2, 2025
+                            </p>
+                            <p>
+                                <i class="fas fa-dollar-sign"></i>
+                                Paid shoot or event
+                            </p>
+                        </div>
+                        <button class="details-btn">More details</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Casting Card 2 -->
+            <div class="casting-card">
+                <div class="casting-image-section">
+                    <div class="casting-image">
+                        <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?ixlib=rb-4.0.3"
+                            alt="Group of diverse models in neutral outfits" loading="lazy" decoding="async">
+                    </div>
+                </div>
+                <div class="casting-content-section">
+                    <div class="trusted-badge">
+                        <i class="fas fa-check"></i>
+                        Trusted by models
+                    </div>
+                    <div class="casting-details">
+                        <h3>We are looking for Various Profiles for Exciting Upcoming Campaigns / UK / Paid</h3>
+                        <div class="casting-info">
+                            <p>
+                                <i class="fas fa-map-marker-alt"></i>
+                                United Kingdom
+                            </p>
+                            <p>
+                                <i class="far fa-calendar"></i>
+                                Casting ends Jun 2, 2025
+                            </p>
+                            <p>
+                                <i class="fas fa-dollar-sign"></i>
+                                Paid shoot or event
+                            </p>
+                        </div>
+                        <button class="details-btn">More details</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Loader for infinite scroll -->
@@ -337,15 +531,24 @@
         </div>
     </footer>
     <script>
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const body = document.body;
+        // Initialize Lucide icons
+        lucide.createIcons();
 
-        menuToggle?.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            mobileMenu?.classList.toggle('active');
-            body.classList.toggle('menu-open');
+        // Mobile menu functionality
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
         });
 
         // Dropdown functionality

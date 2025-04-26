@@ -105,35 +105,18 @@ function scrollBrands(direction) {
 // Success Stories Slider
 const successStoriesSlider = {
     currentSlide: 0,
-    slides: [
-        {
-            image: 'images/models/hero-1.jpeg',
-            quote: 'ModelHub helped me land my first major campaign with a leading fashion brand.',
-            author: 'Sarah Johnson, Model'
-        },
-        {
-            image: 'images/models/hero-2.jpeg',
-            quote: 'Through ModelHub, I\'ve connected with amazing photographers and brands worldwide.',
-            author: 'James Wilson, Photographer'
-        },
-        {
-            image: 'images/models/hero-3.jpeg',
-            quote: 'The platform made it easy to find diverse talent for our latest campaign.',
-            author: 'Emma Davis, Brand Manager'
-        }
-    ],
-
+    slides: document.querySelectorAll('.story-slide'),
+    
     init() {
-        this.slider = document.querySelector('.story-slider');
         this.prevBtn = document.querySelector('.prev-slide');
         this.nextBtn = document.querySelector('.next-slide');
-
-        if (!this.slider) return;
-
+        
+        if (!this.slides.length) return;
+        
         this.setupEventListeners();
-        this.updateSlider();
+        this.showSlide(0);
     },
-
+    
     setupEventListeners() {
         if (this.prevBtn) {
             this.prevBtn.addEventListener('click', () => this.navigate(-1));
@@ -141,14 +124,14 @@ const successStoriesSlider = {
         if (this.nextBtn) {
             this.nextBtn.addEventListener('click', () => this.navigate(1));
         }
-
+        
         // Touch events
         let touchStartX = 0;
-        this.slider.addEventListener('touchstart', (e) => {
+        document.querySelector('.story-slider').addEventListener('touchstart', (e) => {
             touchStartX = e.touches[0].clientX;
         });
-
-        this.slider.addEventListener('touchend', (e) => {
+        
+        document.querySelector('.story-slider').addEventListener('touchend', (e) => {
             const touchEndX = e.changedTouches[0].clientX;
             const diff = touchStartX - touchEndX;
             
@@ -157,34 +140,24 @@ const successStoriesSlider = {
             }
         });
     },
-
+    
     navigate(direction) {
         this.currentSlide = (this.currentSlide + direction + this.slides.length) % this.slides.length;
-        this.updateSlider();
+        this.showSlide(this.currentSlide);
     },
-
-    updateSlider() {
-        if (!this.slider) return;
-
-        const slide = this.slides[this.currentSlide];
-        this.slider.innerHTML = `
-            <div class="story-slide active">
-                <div class="story-content">
-                    <img src="${slide.image}" alt="Success Story" loading="lazy" onerror="this.src='images/models/hero-1.jpeg'">
-                    <div class="story-text">
-                        <blockquote>${slide.quote}</blockquote>
-                        <cite>${slide.author}</cite>
-                    </div>
-                </div>
-            </div>
-        `;
-
-        // Fade in animation
-        const storySlide = this.slider.querySelector('.story-slide');
-        storySlide.style.opacity = '0';
-        setTimeout(() => {
-            storySlide.style.opacity = '1';
-        }, 50);
+    
+    showSlide(index) {
+        this.slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === index) {
+                slide.classList.add('active');
+                // Trigger fade in animation
+                slide.style.opacity = '0';
+                setTimeout(() => {
+                    slide.style.opacity = '1';
+                }, 50);
+            }
+        });
     }
 };
 
@@ -205,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updateBrandSliderButtons();
     }
 
-    // Initialize Lucide icons
+     // Initialize Lucide icons
     lucide.createIcons();
 
     // Handle discover tabs
@@ -215,14 +188,21 @@ document.addEventListener('DOMContentLoaded', function() {
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
             const target = tab.getAttribute('data-tab');
-
+            
             // Remove active class from all tabs and grids
             tabs.forEach(t => t.classList.remove('active'));
-            grids.forEach(grid => grid.classList.remove('active'));
-
+            grids.forEach(grid => {
+                grid.classList.remove('active');
+                grid.style.display = 'none';
+            });
+            
             // Add active class to clicked tab and corresponding grid
             tab.classList.add('active');
-            document.getElementById(`${target}-models`).classList.add('active');
+            const targetGrid = document.getElementById(`${target}-models`);
+            if (targetGrid) {
+                targetGrid.classList.add('active');
+                targetGrid.style.display = 'grid';
+            }
         });
     });
 
@@ -231,6 +211,4 @@ document.addEventListener('DOMContentLoaded', function() {
         tabs[0].click();
     }
 });
-
-
 

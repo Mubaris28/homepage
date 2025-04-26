@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace - Black & White</title>
+    <link rel="stylesheet" href="css/marketplace-style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/external/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/external/aos.css">
+    <link rel="stylesheet" href="css/external/satoshi.css">
+    <link rel="stylesheet" href="css/external/swiper-bundle.min.css">
+    <script src="js/external/lucide.min.js"></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">
+            <img src="images/logo/model-LOGO.png" alt="Logo" class="logo" />
+        </a>
+
+        <div class="nav-center">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="castings.html" class="nav-link">Casting</a>
+            <a href="models.html" class="nav-link">Models</a>
+            <a href="directory.html" class="nav-link">Pro Directory</a>
+            <a href="marketplace.html" class="nav-link active">Marketplace</a>
+        </div>
+
+        <div class="nav-right">
+            <div class="nav-auth">
+                <a href="login.html" class="btn-login">Log In</a>
+                <a href="signup.html" class="btn-signup">Sign Up</a>
+            </div>
+
+            <!-- Hamburger Menu -->
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <nav class="mobile-nav-links">
+                <div class="mobile-nav-auth">
+                    <a href="login.html" class="btn-login">Log In</a>
+                    <a href="signup.html" class="btn-signup">Sign Up</a>
+                </div>
+                <a href="#" class="mobile-nav-link upgrade">
+                    <i data-lucide="star"></i>
+                    Upgrade now
+                </a>
+                <a href="models-talents.html" class="mobile-nav-link">
+                    <i data-lucide="users"></i>
+                    Models & Talents
+                </a>
+                <a href="professionals.html" class="mobile-nav-link">
+                    <i data-lucide="briefcase"></i>
+                    Professionals
+                </a>
+                <a href="castings.html" class="mobile-nav-link">
+                    <i data-lucide="calendar"></i>
+                    Castings
+                </a>
+                <a href="#post-casting" class="mobile-nav-link">
+                    <i data-lucide="plus-circle"></i>
+                    Post a casting
+                </a>
+                <a href="#academy" class="mobile-nav-link">
+                    <i data-lucide="graduation-cap"></i>
+                    Model Academy
+                </a>
+                <a href="#rankings" class="mobile-nav-link">
+                    <i data-lucide="bar-chart-2"></i>
+                    Rankings
+                </a>
+                <a href="#about" class="mobile-nav-link">
+                    <i data-lucide="users"></i>
+                    About us
+                </a>
+                <a href="#blog" class="mobile-nav-link">
+                    <i data-lucide="file-text"></i>
+                    Blog
+                </a>
+            </nav>
+
+            <div class="mobile-menu-footer">
+                <div class="language-selector">
+                    <i data-lucide="globe"></i>
+                    <span>Language</span>
+                    <i data-lucide="chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <div class="bottom-nav-items">
+            <a href="index.html" class="bottom-nav-link">
+                <i class="lucide lucide-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="castings.html" class="bottom-nav-link">
+                <i class="lucide lucide-camera"></i>
+                <span>Castings</span>
+            </a>
+            <a href="models.html" class="bottom-nav-link">
+                <i class="lucide lucide-users"></i>
+                <span>Models</span>
+            </a>
+            <a href="#" class="bottom-nav-link">
+                <i class="lucide lucide-user"></i>
+                <span>Profile</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <header>
+            <h1>Marketplace</h1>
+            <p class="subtitle">Find photo sessions, portfolio builders, and more</p>
+        </header>
+
+        <!-- Post Offer Button -->
+        <div class="post-offer">
+            <button class="post-offer-btn">
+                <span>+</span> Post an offer
+            </button>
+        </div>
+
+        <!-- Filters Section -->
+        <div class="filters-section">
+            <div class="filter-group">
+                <!-- Type Filter -->
+                <div class="filter-wrapper">
+                    <button class="filter-btn" data-dropdown="type">
+                        <span>Type</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-panel" id="type-dropdown">
+                        <div class="dropdown-options">
+                            <label class="dropdown-option">
+                                <input type="radio" name="type" value="all">
+                                <span>All</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="type" value="photo-session">
+                                <span>Photo Session</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="type" value="portfolio">
+                                <span>Portfolio Building</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="type" value="workshop">
+                                <span>Workshop</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Country Filter -->
+                <div class="filter-wrapper">
+                    <button class="filter-btn" data-dropdown="country">
+                        <span>Country</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-panel" id="country-dropdown">
+                        <div class="dropdown-search">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search country...">
+                        </div>
+                        <div class="dropdown-options">
+                            <label class="dropdown-option">
+                                <input type="radio" name="country" value="all">
+                                <span>All countries</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="country" value="germany">
+                                <span>Germany</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="country" value="uk">
+                                <span>United Kingdom</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="country" value="portugal">
+                                <span>Portugal</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- City Filter -->
+                <div class="filter-wrapper">
+                    <button class="filter-btn" data-dropdown="city">
+                        <span>City</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-panel" id="city-dropdown">
+                        <div class="dropdown-search">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search city...">
+                        </div>
+                        <div class="dropdown-options">
+                            <label class="dropdown-option">
+                                <input type="radio" name="city" value="all">
+                                <span>All cities</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="city" value="london">
+                                <span>London</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="city" value="lisbon">
+                                <span>Lisbon</span>
+                            </label>
+                            <label class="dropdown-option">
+                                <input type="radio" name="city" value="berlin">
+                                <span>Berlin</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Marketplace Grid -->
+        <div class="marketplace-grid">
+            <!-- Photo Session Card -->
+            <div class="marketplace-card">
+                <div class="card-image">
+                    <img src="images/marketplace/photo1.jpg" alt="Photo session">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Portfolio- / Sedcard- / Polarshooting</h3>
+                    <div class="card-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-camera"></i>
+                            <span>Photo shoot</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Recklinghausen, Germany</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="far fa-calendar"></i>
+                            <span>December 31, 2025</span>
+                        </div>
+                    </div>
+                    <div class="card-price">
+                        <div class="price">
+                            <span class="original">€210.00</span>
+                            <span class="discounted">€189.00</span>
+                            <span class="save">Save 10%</span>
+                        </div>
+                        <button class="see-offer-btn">See offer</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photo Session Card -->
+            <div class="marketplace-card">
+                <div class="card-image">
+                    <img src="images/marketplace/photo2.jpg" alt="Photo session">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Photo sessions</h3>
+                    <div class="card-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-camera"></i>
+                            <span>Photo shoot</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Lisbon, Portugal</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="far fa-calendar"></i>
+                            <span>June 30, 2025</span>
+                        </div>
+                    </div>
+                    <div class="card-price">
+                        <div class="price">
+                            <span class="original">€300.00</span>
+                            <span class="discounted">€255.00</span>
+                            <span class="save">Save 15%</span>
+                        </div>
+                        <button class="see-offer-btn">See offer</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photo Session Card -->
+            <div class="marketplace-card">
+                <div class="card-image">
+                    <img src="images/marketplace/photo3.jpg" alt="Photo session">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Portfolio Builder - Street Photo Session</h3>
+                    <div class="card-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-camera"></i>
+                            <span>Photo shoot</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>London, United Kingdom</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="far fa-calendar"></i>
+                            <span>July 15, 2025</span>
+                        </div>
+                    </div>
+                    <div class="card-price">
+                        <div class="price">
+                            <span class="original">£260.00</span>
+                            <span class="discounted">£182.00</span>
+                            <span class="save">Save 30%</span>
+                        </div>
+                        <button class="see-offer-btn">See offer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Company</h3>
+                <a href="#about">About us</a>
+                <a href="#careers">Careers</a>
+                <a href="#press">Press</a>
+                <a href="#blog">Blog</a>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <a href="#help">Help Center</a>
+                <a href="#safety">Safety Center</a>
+                <a href="#community">Community Guidelines</a>
+                <a href="#cookies">Cookies Policy</a>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="#copyright">Copyright Policy</a>
+                <a href="#accessibility">Accessibility</a>
+            </div>
+            <div class="footer-section">
+                <h3>Mobile App</h3>
+                <div class="app-buttons">
+                    <a href="#" class="app-button">
+                        <img src="images/app-store.png" alt="Download on App Store">
+                    </a>
+                    <a href="#" class="app-button">
+                        <img src="images/google-play.png" alt="Get it on Google Play">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+            <p>&copy; 2024 . All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu functionality
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        // Filter dropdown functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const dropdownPanels = document.querySelectorAll('.dropdown-panel');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const panel = button.nextElementSibling;
+                dropdownPanels.forEach(p => {
+                    if (p !== panel) {
+                        p.classList.remove('show');
+                    }
+                });
+                panel.classList.toggle('show');
+                e.stopPropagation();
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.filter-wrapper')) {
+                dropdownPanels.forEach(panel => {
+                    panel.classList.remove('show');
+                });
+            }
+        });
+
+        // Search functionality in dropdowns
+        const searchInputs = document.querySelectorAll('.dropdown-search input');
+        searchInputs.forEach(input => {
+            input.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                const options = input.closest('.dropdown-panel').querySelectorAll('.dropdown-option');
+
+                options.forEach(option => {
+                    const text = option.querySelector('span').textContent.toLowerCase();
+                    option.style.display = text.includes(searchTerm) ? 'flex' : 'none';
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
