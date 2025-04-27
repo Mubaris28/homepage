@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Model Management</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <a href="index.html" class="nav-brand">
+                <img src="images/logo/model-LOGO.png" alt="Logo" class="logo" />
+        
+            </a>
+        
+            <div class="nav-center">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="castings.html" class="nav-link">Casting</a>
+                <a href="models.html" class="nav-link">Models</a>
+                <a href="directory.html" class="nav-link">Pro Directory</a>
+                <a href="marketplace.html" class="nav-link">Marketplace</a>
+            </div>
+        
+            <div class="nav-right">
+                <div class="nav-auth">
+                    <a href="login.html" class="btn-login">Log In</a>
+                    <a href="signup.html" class="btn-signup">Sign Up</a>
+                </div>
+        
+                <!-- Hamburger Menu -->
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        
+            <!-- Mobile Menu -->
+            <div class="mobile-menu">
+                <nav class="mobile-nav-links">
+                    <div class="mobile-nav-auth">
+                        <a href="login.html" class="btn-login">Log In</a>
+                        <a href="signup.html" class="btn-signup">Sign Up</a>
+                    </div>
+                    <a href="#" class="mobile-nav-link upgrade">
+                        <i data-lucide="star"></i>
+                        Upgrade now
+                    </a>
+                    <a href="models-talents.html" class="mobile-nav-link">
+                        <i data-lucide="users"></i>
+                        Models & Talents
+                    </a>
+                    <a href="professionals.html" class="mobile-nav-link">
+                        <i data-lucide="briefcase"></i>
+                        Professionals
+                    </a>
+                    <a href="#castings" class="mobile-nav-link">
+                        <i data-lucide="calendar"></i>
+                        Castings
+                    </a>
+                    <a href="#post-casting" class="mobile-nav-link">
+                        <i data-lucide="plus-circle"></i>
+                        Post a casting
+                    </a>
+                    <a href="#academy" class="mobile-nav-link">
+                        <i data-lucide="graduation-cap"></i>
+                        Model Academy
+                    </a>
+                    <a href="#rankings" class="mobile-nav-link">
+                        <i data-lucide="bar-chart-2"></i>
+                        Rankings
+                    </a>
+                    <a href="#about" class="mobile-nav-link">
+                        <i data-lucide="users"></i>
+                        About us
+                    </a>
+                    <a href="#blog" class="mobile-nav-link">
+                        <i data-lucide="file-text"></i>
+                        Blog
+                    </a>
+                </nav>
+        
+                <div class="mobile-menu-footer">
+                    <div class="language-selector">
+                        <i data-lucide="globe"></i>
+                        <span>Language</span>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <div class="bottom-nav-items">
+                <a href="index.html" class="bottom-nav-link active">
+                    <i class="lucide lucide-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="bottom-nav-link">
+                    <i class="lucide lucide-camera"></i>
+                    <span>Castings</span>
+                </a>
+                <a href="#" class="bottom-nav-link">
+                    <i class="lucide lucide-users"></i>
+                    <span>Models</span>
+                </a>
+        
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="contact-page">
+        <div class="contact-container">
+            <h1>Contact Us</h1>
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name*</label>
+                    <input type="text" id="name" name="name" required>
+                    <span class="error-message">Please complete this required field.</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="customerProfile">Customer Profile*</label>
+                    <select id="customerProfile" name="customerProfile" required>
+                        <option value="">Please Select</option>
+                        <option value="model">Model</option>
+                        <option value="photographer">Photographer</option>
+                        <option value="agency">Agency</option>
+                        <option value="client">Client</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="website">Website</label>
+                        <input type="url" id="website" name="website">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <h2>Project Details</h2>
+                    <label for="projectDescription">Project description*</label>
+                    <textarea id="projectDescription" name="projectDescription" rows="4"
+                        placeholder="Describe the project details" required></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="location">Shooting or project location</label>
+                        <input type="text" id="location" name="location" placeholder="Indicate the country and city">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Shooting or project date</label>
+                        <input type="text" id="date" name="date" placeholder="If unknown, indicate approximately">
+                    </div>
+                    <div class="form-group">
+                        <label for="duration">Shooting or project duration</label>
+                        <input type="text" id="duration" name="duration"
+                            placeholder="Hours you will need the model(s) for">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="modelLocation">Where can the model(s) be based?</label>
+                    <input type="text" id="modelLocation" name="modelLocation"
+                        placeholder="Indicate the locations the models can be from if travel fees are covered by the client">
+                </div>
+
+                <div class="form-group">
+                    <label for="modelCount">How many models do you need?</label>
+                    <input type="number" id="modelCount" name="modelCount">
+                </div>
+
+                <div class="form-group">
+                    <label for="modelType">What type of model(s) do you need?</label>
+                    <textarea id="modelType" name="modelType" rows="3"
+                        placeholder="Indicate age range, gender, ethnicity, and any other features such as the models should have"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="buyouts">Buyouts</label>
+                    <input type="text" id="buyouts" name="buyouts" placeholder="Include territory, media & duration">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="budget">Total project budget</label>
+                        <input type="number" id="budget" name="budget" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="currency">Currency</label>
+                        <input type="text" id="currency" name="currency">
+                    </div>
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="agencyFee" name="agencyFee">
+                        <label for="agencyFee">Includes agency fee</label>
+                    </div>
+                </div>
+
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="budgetAssistance" name="budgetAssistance">
+                    <label for="budgetAssistance">I need assistance in defining the budget</label>
+                </div>
+
+                <div class="g-recaptcha" data-sitekey="your-recaptcha-site-key"></div>
+
+                <button type="submit" class="submit-btn">Submit</button>
+
+                <div class="form-success" style="display: none;">
+                    <h3>Thank you for your message!</h3>
+                    <p>We will get back to you as soon as possible.</p>
+                    <a href="index.html" class="back-home">Back to Home</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="font-bold">Company</h3>
+                <a href="#" class="font-regular">About us</a>
+                <a href="#" class="font-regular">Careers</a>
+                <a href="#" class="font-regular">Press</a>
+            </div>
+            <div class="footer-section">
+                <h3 class="font-bold">Help</h3>
+                <a href="#" class="font-regular">FAQ</a>
+                <a href="#" class="font-regular">Support</a>
+                <a href="#" class="font-regular">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3 class="font-bold">Legal</h3>
+                <a href="#" class="font-regular">Privacy Policy</a>
+                <a href="#" class="font-regular">Terms of Service</a>
+                <a href="#" class="font-regular">Cookie Policy</a>
+            </div>
+            <div class="footer-section">
+                <h3 class="font-bold">Download Our App</h3>
+                <div class="app-buttons">
+                    <a href="#" class="app-button font-bold">
+                        <i class="fab fa-apple"></i> App Store
+                    </a>
+                    <a href="#" class="app-button font-bold">
+                        <i class="fab fa-google-play"></i> Google Play
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+            <p class="font-regular">&copy; 2024 . All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/contact.js"></script>
+</body>
+
+</html>

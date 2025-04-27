@@ -4,14 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Professional Modeling Platform - Connect with top agencies and brands worldwide. Find models, photographers, and creative talent.">
+    <meta name="keywords"
+        content="modeling, models, fashion, photographers, agencies, talent management, professional models">
+    <meta name="author" content="Model Management">
+    <meta property="og:title" content="Model Management - Professional Modeling Platform">
+    <meta property="og:description"
+        content="Connect with top agencies and brands worldwide. Find models, photographers, and creative talent.">
+    <meta property="og:type" content="website">
     <title>Models - Model Management</title>
-    <link rel="stylesheet" href="css/model.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/external/font-awesome.min.css">
+    <link rel="stylesheet" href="css/model.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/external/font-awesome.min.css">
     <link rel="stylesheet" href="css/external/aos.css">
     <link rel="stylesheet" href="css/external/satoshi.css">
     <link rel="stylesheet" href="css/external/swiper-bundle.min.css">
+    <script src="js/external/gsap.min.js"></script>
+    <script src="js/external/ScrollTrigger.min.js"></script>
+    <script src="js/external/lucide.min.js"></script>
     <script src="js/external/swiper-bundle.min.js"></script>
 </head>
 
@@ -119,10 +131,6 @@
                     <i class="lucide lucide-users"></i>
                     <span>Models</span>
                 </a>
-                <a href="#" class="bottom-nav-link">
-                    <i class="lucide lucide-user"></i>
-                    <span>Profile</span>
-                </a>
             </div>
         </nav>
         <section class="section model-filters">
@@ -132,111 +140,57 @@
                 <!-- Disciplines Section -->
                 <div class="disciplines-section">
                     <div class="disciplines-slider-container">
-                        <div class="swiper-container disciplines-swiper">
+                        <div class="swiper disciplines-swiper">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <button class="filter-button locked">
+                                    <button class="filter-button">
                                         <i class="fas fa-lock"></i>
                                         <span>Fashion</span>
                                     </button>
                                 </div>
                                 <div class="swiper-slide">
-                                    <button class="filter-button locked">
+                                    <button class="filter-button">
                                         <i class="fas fa-lock"></i>
                                         <span>Content creator</span>
                                     </button>
                                 </div>
                                 <div class="swiper-slide">
-                                    <button class="filter-button locked">
+                                    <button class="filter-button">
                                         <i class="fas fa-lock"></i>
                                         <span>Curvy</span>
                                     </button>
                                 </div>
                                 <div class="swiper-slide">
-                                    <button class="filter-button locked">
+                                    <button class="filter-button">
                                         <i class="fas fa-lock"></i>
                                         <span>Tattoo</span>
                                     </button>
                                 </div>
                                 <div class="swiper-slide">
-                                    <button class="filter-button locked">
+                                    <button class="filter-button">
                                         <i class="fas fa-lock"></i>
                                         <span>Dancer</span>
                                     </button>
                                 </div>
                                 <div class="swiper-slide">
-                                    <button class="filter-button locked">
+                                    <button class="filter-button">
                                         <i class="fas fa-lock"></i>
                                         <span>Sport</span>
                                     </button>
                                 </div>
                                 <div class="swiper-slide">
-                                    <button class="filter-button locked">
+                                    <button class="filter-button">
                                         <i class="fas fa-lock"></i>
                                         <span>Actor</span>
                                     </button>
                                 </div>
-                                <div class="swiper-slide">
-                                    <button class="filter-button locked">
-                                        <i class="fas fa-lock"></i>
-                                        <span>Senior</span>
-                                    </button>
-                                </div>
-                                <div class="swiper-slide">
-                                    <button class="filter-button locked">
-                                        <i class="fas fa-lock"></i>
-                                        <span>Artistic Nude</span>
-                                    </button>
-                                </div>
-                                <div class="swiper-slide">
-                                    <button class="filter-button locked">
-                                        <i class="fas fa-lock"></i>
-                                        <span>Unique</span>
-                                    </button>
-                                </div>
-                                <div class="swiper-slide">
-                                    <button class="filter-button locked">
-                                        <i class="fas fa-lock"></i>
-                                        <span>Androgynous</span>
-                                    </button>
-                                </div>
-                                <div class="swiper-slide">
-                                    <button class="filter-button locked">
-                                        <i class="fas fa-lock"></i>
-                                        <span>Hostess/Promotional</span>
-                                    </button>
-                                </div>
-                                <div class="swiper-slide">
-                                    <button class="filter-button locked">
-                                        <i class="fas fa-lock"></i>
-                                        <span>Lingerie</span>
-                                    </button>
-                                </div>
-                                <div class="swiper-slide">
-                                    <button class="filter-button locked">
-                                        <i class="fas fa-lock"></i>
-                                        <span>Musician</span>
-                                    </button>
-                                </div>
-                                <div class="swiper-slide">
-                                    <button class="filter-button locked">
-                                        <i class="fas fa-lock"></i>
-                                        <span>Runway</span>
-                                    </button>
-                                </div>
-                                <div class="swiper-slide">
-                                    <button class="filter-button locked">
-                                        <i class="fas fa-lock"></i>
-                                        <span>Swimwear</span>
-                                    </button>
-                                </div>
                             </div>
-                            <div class="swiper-button-prev">
-                                <i class="fas fa-chevron-left"></i>
-                            </div>
-                            <div class="swiper-button-next">
-                                <i class="fas fa-chevron-right"></i>
-                            </div>
+                        </div>
+                        <div class="swiper-button-prev">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                        <div class="swiper-button-next">
+                            <i class="fas fa-chevron-right"></i>
                         </div>
                     </div>
                 </div>
@@ -272,28 +226,110 @@
                                 <span>Country</span>
                                 <i class="fas fa-chevron-down"></i>
                             </button>
+                            <div class="dropdown-content">
+                                <div class="option">
+                                    <input type="checkbox" id="usa">
+                                    <label for="usa">United States</label>
+                                </div>
+                                <div class="option">
+                                    <input type="checkbox" id="uk">
+                                    <label for="uk">United Kingdom</label>
+                                </div>
+                                <div class="option">
+                                    <input type="checkbox" id="france">
+                                    <label for="france">France</label>
+                                </div>
+                                <div class="option">
+                                    <input type="checkbox" id="italy">
+                                    <label for="italy">Italy</label>
+                                </div>
+                                <div class="option">
+                                    <input type="checkbox" id="germany">
+                                    <label for="germany">Germany</label>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="filter-group">
-                            <button class="filter-button dropdown-trigger" disabled>
+                            <button class="filter-button dropdown-trigger">
                                 <i class="fas fa-city"></i>
                                 <span>City</span>
                                 <i class="fas fa-chevron-down"></i>
                             </button>
+                            <div class="dropdown-content">
+                                <div class="option">
+                                    <input type="checkbox" id="new-york">
+                                    <label for="new-york">New York</label>
+                                </div>
+                                <div class="option">
+                                    <input type="checkbox" id="london">
+                                    <label for="london">London</label>
+                                </div>
+                                <div class="option">
+                                    <input type="checkbox" id="paris">
+                                    <label for="paris">Paris</label>
+                                </div>
+                                <div class="option">
+                                    <input type="checkbox" id="milan">
+                                    <label for="milan">Milan</label>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="filter-group">
-                            <button class="filter-button dropdown-trigger locked">
-                                <i class="fas fa-lock"></i>
+                            <button class="filter-button dropdown-trigger">
+                                <i class="fas fa-calendar"></i>
                                 <span>Age</span>
+                                <i class="fas fa-chevron-down"></i>
                             </button>
+                            <div class="dropdown-content">
+                                <div class="option">
+                                    <input type="checkbox" id="18-25">
+                                    <label for="18-25">18-25</label>
+                                </div>
+                                <div class="option">
+                                    <input type="checkbox" id="26-35">
+                                    <label for="26-35">26-35</label>
+                                </div>
+                                <div class="option">
+                                    <input type="checkbox" id="36-45">
+                                    <label for="36-45">36-45</label>
+                                </div>
+                                <div class="option">
+                                    <input type="checkbox" id="46-plus">
+                                    <label for="46-plus">46+</label>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="filter-group">
-                            <button class="filter-button dropdown-trigger locked">
-                                <i class="fas fa-lock"></i>
+                            <button class="filter-button dropdown-trigger">
+                                <i class="fas fa-users"></i>
                                 <span>Ethnicity</span>
+                                <i class="fas fa-chevron-down"></i>
                             </button>
+                            <div class="dropdown-content">
+                                <div class="option">
+                                    <input type="checkbox" id="asian">
+                                    <label for="asian">Asian</label>
+                                </div>
+                                <div class="option">
+                                    <input type="checkbox" id="black">
+                                    <label for="black">Black</label>
+                                </div>
+                                <div class="option">
+                                    <input type="checkbox" id="caucasian">
+                                    <label for="caucasian">Caucasian</label>
+                                </div>
+                                <div class="option">
+                                    <input type="checkbox" id="hispanic">
+                                    <label for="hispanic">Hispanic</label>
+                                </div>
+                                <div class="option">
+                                    <input type="checkbox" id="middle-eastern">
+                                    <label for="middle-eastern">Middle Eastern</label>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="filter-group">
@@ -302,13 +338,30 @@
                                 <span>Measurements</span>
                                 <i class="fas fa-chevron-down"></i>
                             </button>
-                        </div>
-
-                        <div class="filter-group">
-                            <button class="filter-button dropdown-trigger locked">
-                                <i class="fas fa-lock"></i>
-                                <span>Height</span>
-                            </button>
+                            <div class="dropdown-content measurements-dropdown">
+                                <div class="measurement-inputs">
+                                    <div class="measurement-field">
+                                        <label>Height (cm)</label>
+                                        <input type="number" placeholder="Min" min="140" max="200">
+                                        <input type="number" placeholder="Max" min="140" max="200">
+                                    </div>
+                                    <div class="measurement-field">
+                                        <label>Bust (cm)</label>
+                                        <input type="number" placeholder="Min" min="70" max="120">
+                                        <input type="number" placeholder="Max" min="70" max="120">
+                                    </div>
+                                    <div class="measurement-field">
+                                        <label>Waist (cm)</label>
+                                        <input type="number" placeholder="Min" min="50" max="100">
+                                        <input type="number" placeholder="Max" min="50" max="100">
+                                    </div>
+                                    <div class="measurement-field">
+                                        <label>Hips (cm)</label>
+                                        <input type="number" placeholder="Min" min="70" max="120">
+                                        <input type="number" placeholder="Max" min="70" max="120">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="filter-group">
@@ -317,6 +370,24 @@
                                 <span>Eye color</span>
                                 <i class="fas fa-chevron-down"></i>
                             </button>
+                            <div class="dropdown-content">
+                                <div class="option">
+                                    <input type="checkbox" id="blue-eyes">
+                                    <label for="blue-eyes">Blue</label>
+                                </div>
+                                <div class="option">
+                                    <input type="checkbox" id="brown-eyes">
+                                    <label for="brown-eyes">Brown</label>
+                                </div>
+                                <div class="option">
+                                    <input type="checkbox" id="green-eyes">
+                                    <label for="green-eyes">Green</label>
+                                </div>
+                                <div class="option">
+                                    <input type="checkbox" id="hazel-eyes">
+                                    <label for="hazel-eyes">Hazel</label>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="filter-group">
@@ -325,13 +396,45 @@
                                 <span>Hair color</span>
                                 <i class="fas fa-chevron-down"></i>
                             </button>
+                            <div class="dropdown-content">
+                                <div class="option">
+                                    <input type="checkbox" id="blonde">
+                                    <label for="blonde">Blonde</label>
+                                </div>
+                                <div class="option">
+                                    <input type="checkbox" id="brown-hair">
+                                    <label for="brown-hair">Brown</label>
+                                </div>
+                                <div class="option">
+                                    <input type="checkbox" id="black-hair">
+                                    <label for="black-hair">Black</label>
+                                </div>
+                                <div class="option">
+                                    <input type="checkbox" id="red-hair">
+                                    <label for="red-hair">Red</label>
+                                </div>
+                                <div class="option">
+                                    <input type="checkbox" id="other-hair">
+                                    <label for="other-hair">Other</label>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="filter-group">
-                            <button class="filter-button dropdown-trigger locked">
-                                <i class="fas fa-lock"></i>
+                            <button class="filter-button dropdown-trigger">
+                                <i class="fas fa-shoe-prints"></i>
                                 <span>Shoes</span>
+                                <i class="fas fa-chevron-down"></i>
                             </button>
+                            <div class="dropdown-content">
+                                <div class="measurement-inputs">
+                                    <div class="measurement-field">
+                                        <label>Size (EU)</label>
+                                        <input type="number" placeholder="Min" min="35" max="47">
+                                        <input type="number" placeholder="Max" min="35" max="47">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -342,13 +445,26 @@
                         </button>
                     </div>
 
-                    <!-- Sort Dropdown -->
-                    <div class="sort-dropdown">
+                    <div class="editors-pick-dropdown filter-group">
                         <button class="filter-button dropdown-trigger">
-                            <i class="fas fa-sort"></i>
+                            <i class="fas fa-star"></i>
                             <span>Editors pick</span>
                             <i class="fas fa-chevron-down"></i>
                         </button>
+                        <div class="dropdown-content">
+                            <div class="option">
+                                <input type="radio" id="editors-pick" name="sort" checked>
+                                <label for="editors-pick">Editors Pick</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="newest" name="sort">
+                                <label for="newest">Newest</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="most-popular" name="sort">
+                                <label for="most-popular">Most Popular</label>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -364,42 +480,46 @@
                             <i class="fas fa-star"></i>
                             <span>Premium</span>
                         </div>
-                        <div class="model-image">
+                        <a href="model-profile.html" class="model-image">
                             <img src="images/models/hero-1.jpeg" alt="Model in white outfit">
-                        </div>
+                        </a>
                         <div class="model-info">
-                            <h3 class="model-name">Sarah Johnson</h3>
+                            <h3 class="model-name"><a href="model-profile.html">Sarah Johnson</a></h3>
                             <p class="model-location">New York, USA</p>
                         </div>
                     </div>
 
                     <!-- Regular Model Cards -->
                     <div class="model-card">
-                        <div class="model-image">
+                        <a href="model-profile.html" class="model-image">
                             <img src="images/models/hero-2.jpeg" alt="Model in blue lace">
-                        </div>
+                        </a>
                         <div class="model-info">
-                            <h3 class="model-name">Emma Wilson</h3>
+                            <h3 class="model-name"><a href="model-profile.html">Emma Wilson</a></h3>
                             <p class="model-location">London, UK</p>
                         </div>
                     </div>
 
                     <div class="model-card">
                         <div class="model-image">
-                            <img src="images/models/hero-2.jpeg" alt="Model beauty shot">
+                            <a href="model-profile.html" class="model-image">
+                                <img src="images/models/hero-2.jpeg" alt="Model in blue lace">
+                            </a>
                         </div>
                         <div class="model-info">
-                            <h3 class="model-name">Sophia Chen</h3>
+                            <h3 class="model-name"><a href="model-profile.html">Sophia Chen</a></h3>
                             <p class="model-location">Shanghai, China</p>
                         </div>
                     </div>
 
                     <div class="model-card">
                         <div class="model-image">
-                            <img src="images/models/hero-2.jpeg" alt="Model with ruff collar">
+                            <a href="model-profile.html" class="model-image">
+                                <img src="images/models/hero-2.jpeg" alt="Model with ruff collar">
+                            </a>
                         </div>
                         <div class="model-info">
-                            <h3 class="model-name">Olivia Martinez</h3>
+                            <h3 class="model-name"><a href="model-profile.html">Olivia Martinez</a></h3>
                             <p class="model-location">Madrid, Spain</p>
                         </div>
                     </div>
@@ -583,7 +703,6 @@
 
     <script src="js/header.js"></script>
     <script src="js/footer.js"></script>
-    <script src="js/external/lucide.min.js"></script>
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
@@ -608,49 +727,102 @@
         // Initialize Swiper
         const disciplinesSwiper = new Swiper('.disciplines-swiper', {
             slidesPerView: 'auto',
-            spaceBetween: 4,
+            spaceBetween: 8,
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: '.disciplines-slider-container .swiper-button-next',
+                prevEl: '.disciplines-slider-container .swiper-button-prev',
             },
             breakpoints: {
                 320: {
                     slidesPerView: 2,
+                    spaceBetween: 4,
                 },
                 480: {
                     slidesPerView: 3,
+                    spaceBetween: 6,
                 },
                 768: {
                     slidesPerView: 5,
+                    spaceBetween: 8,
                 },
                 1024: {
                     slidesPerView: 7,
+                    spaceBetween: 8,
                 },
             }
         });
 
         // Dropdown functionality
-        document.querySelectorAll('.dropdown-trigger').forEach(trigger => {
+        const dropdowns = document.querySelectorAll('.dropdown-trigger');
+        let activeDropdown = null;
+
+        dropdowns.forEach(trigger => {
             trigger.addEventListener('click', (e) => {
+                e.stopPropagation();
                 const content = trigger.nextElementSibling;
+
+                // Close any open dropdown except the current one
+                if (activeDropdown && activeDropdown !== content) {
+                    activeDropdown.classList.remove('show');
+                }
+
                 if (content && content.classList.contains('dropdown-content')) {
                     content.classList.toggle('show');
+                    activeDropdown = content.classList.contains('show') ? content : null;
                 }
             });
         });
 
         // Close dropdowns when clicking outside
-        window.addEventListener('click', (e) => {
-            if (!e.target.matches('.dropdown-trigger')) {
-                document.querySelectorAll('.dropdown-content').forEach(content => {
-                    if (content.classList.contains('show')) {
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.filter-group')) {
+                dropdowns.forEach(dropdown => {
+                    const content = dropdown.nextElementSibling;
+                    if (content && content.classList.contains('show')) {
                         content.classList.remove('show');
                     }
                 });
+                activeDropdown = null;
             }
         });
 
-        // Initialize Masonry
+        // Handle checkbox and radio button clicks
+        document.querySelectorAll('.option input').forEach(input => {
+            input.addEventListener('change', (e) => {
+                e.stopPropagation();
+                const filterGroup = e.target.closest('.filter-group');
+                const filterButton = filterGroup.querySelector('.filter-button span');
+                const selectedOptions = filterGroup.querySelectorAll('input:checked');
+
+                if (selectedOptions.length > 0) {
+                    if (selectedOptions.length === 1) {
+                        filterButton.textContent = selectedOptions[0].nextElementSibling.textContent;
+                    } else {
+                        filterButton.textContent = `${selectedOptions.length} selected`;
+                    }
+                } else {
+                    // Reset to default text
+                    filterButton.textContent = filterButton.getAttribute('data-default') || filterButton.textContent;
+                }
+            });
+        });
+
+        // Handle measurement inputs
+        document.querySelectorAll('.measurement-field input').forEach(input => {
+            input.addEventListener('input', (e) => {
+                const field = e.target.closest('.measurement-field');
+                const label = field.querySelector('label').textContent;
+                const min = field.querySelector('input[placeholder="Min"]').value;
+                const max = field.querySelector('input[placeholder="Max"]').value;
+
+                if (min && max) {
+                    const filterButton = e.target.closest('.filter-group').querySelector('.filter-button span');
+                    filterButton.textContent = `${label}: ${min}-${max}`;
+                }
+            });
+        });
+
+        // Initialize Masonry layout
         var grid = document.querySelector('.models-masonry-grid');
         var masonry = new Masonry(grid, {
             itemSelector: '.model-card',

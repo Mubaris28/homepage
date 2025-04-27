@@ -130,10 +130,10 @@
                 <h1>Model Castings</h1>
                 <h2>Modeling jobs</h2>
             </div>
-            <button class="post-casting-btn">
+            <a href="signup.html" class="post-casting-btn">
                 <i class="fas fa-plus"></i>
                 Post casting
-            </button>
+            </a>
         </div>
 
         <!-- Filters Section -->
@@ -280,7 +280,7 @@
             <div class="casting-card">
                 <div class="casting-image-section">
                     <div class="casting-image">
-                        <img src="https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?ixlib=rb-4.0.3"
+                        <img src="images/models/hero-1.jpeg"
                             alt="Model in water for hotel lifestyle shoot" loading="lazy" decoding="async">
                     </div>
                 </div>
@@ -309,7 +309,8 @@
                                 Travel costs covered
                             </span>
                         </div>
-                        <button class="details-btn">More details</button>
+                        <a href="casting-profile.html" class="details-btn">More details</a>
+
                         <p class="last-activity">Last activity: <span>recently active</span></p>
                     </div>
                 </div>
@@ -319,7 +320,7 @@
             <div class="casting-card">
                 <div class="casting-image-section">
                     <div class="casting-image">
-                        <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?ixlib=rb-4.0.3"
+                        <img src="images/models/hero-2.jpeg"
                             alt="Group of diverse models in neutral outfits" loading="lazy" decoding="async">
                     </div>
                 </div>
@@ -344,7 +345,7 @@
                                 Paid shoot or event
                             </p>
                         </div>
-                        <button class="details-btn">More details</button>
+                        <a href="casting-profile.html" class="details-btn">More details</a>
                     </div>
                 </div>
             </div>
@@ -352,7 +353,7 @@
             <div class="casting-card">
                 <div class="casting-image-section">
                     <div class="casting-image">
-                        <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?ixlib=rb-4.0.3"
+                        <img src="images/models/hero-3.jpeg"
                             alt="Group of diverse models in neutral outfits" loading="lazy" decoding="async">
                     </div>
                 </div>
@@ -377,7 +378,7 @@
                                 Paid shoot or event
                             </p>
                         </div>
-                        <button class="details-btn">More details</button>
+                        <a href="casting-profile.html" class="details-btn">More details</a>
                     </div>
                 </div>
             </div>
@@ -385,7 +386,7 @@
             <div class="casting-card">
                 <div class="casting-image-section">
                     <div class="casting-image">
-                        <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?ixlib=rb-4.0.3"
+                        <img src="images/models/hero-4.jpeg"
                             alt="Group of diverse models in neutral outfits" loading="lazy" decoding="async">
                     </div>
                 </div>
@@ -410,7 +411,7 @@
                                 Paid shoot or event
                             </p>
                         </div>
-                        <button class="details-btn">More details</button>
+                        <a href="casting-profile.html" class="details-btn">More details</a>
                     </div>
                 </div>
             </div>
@@ -418,7 +419,7 @@
             <div class="casting-card">
                 <div class="casting-image-section">
                     <div class="casting-image">
-                        <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?ixlib=rb-4.0.3"
+                        <img src="images/models/hero-5.jpeg"
                             alt="Group of diverse models in neutral outfits" loading="lazy" decoding="async">
                     </div>
                 </div>
@@ -443,7 +444,7 @@
                                 Paid shoot or event
                             </p>
                         </div>
-                        <button class="details-btn">More details</button>
+                        <a href="casting-profile.html" class="details-btn">More details</a>
                     </div>
                 </div>
             </div>
@@ -451,7 +452,7 @@
             <div class="casting-card">
                 <div class="casting-image-section">
                     <div class="casting-image">
-                        <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?ixlib=rb-4.0.3"
+                        <img src="images/models/hero-6.jpeg"
                             alt="Group of diverse models in neutral outfits" loading="lazy" decoding="async">
                     </div>
                 </div>
@@ -476,10 +477,17 @@
                                 Paid shoot or event
                             </p>
                         </div>
-                        <button class="details-btn">More details</button>
+                        <a href="casting-profile.html" class="details-btn">More details</a>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="models-cta">
+            <p>Sign up to see more models and access premium features</p>
+            <button class="signup-btn">
+                <i class="fas fa-user-plus"></i>
+                Sign up now
+            </button>
         </div>
 
         <!-- Loader for infinite scroll -->
@@ -640,84 +648,7 @@
             });
         });
 
-        // Infinite scroll
-        let page = 1;
-        let loading = false;
-        const castingsGrid = document.querySelector('.castings-grid');
-        const loader = document.querySelector('.loader-container');
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !loading) {
-                    loadMoreCastings();
-                }
-            });
-        }, {
-            rootMargin: '100px',
-            threshold: 0.1
-        });
-
-        loader && observer.observe(loader);
-
-        async function loadMoreCastings() {
-            if (loading) return;
-            loading = true;
-            loader && (loader.style.display = 'flex');
-
-            try {
-                await new Promise(resolve => setTimeout(resolve, 1500));
-                const newCards = generateMoreCastings();
-                castingsGrid?.insertAdjacentHTML('beforeend', newCards);
-                page++;
-            } catch (error) {
-                console.error('Error loading castings:', error);
-            } finally {
-                loading = false;
-                loader && (loader.style.display = 'none');
-            }
-        }
-
-        function generateMoreCastings() {
-            const images = [
-                'https://images.unsplash.com/photo-1581338834647-b0fb40704e21',
-                'https://images.unsplash.com/photo-1534528741775-53994a69daeb',
-                'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6',
-                'https://images.unsplash.com/photo-1517841905240-472988babdf9'
-            ];
-
-            return `
-                <div class="casting-card">
-                    <div class="casting-image-section">
-                        <div class="casting-image">
-                            <img src="${images[page % images.length]}?w=800" 
-                                 alt="Model casting image ${page}"
-                                 loading="lazy"
-                                 decoding="async">
-                        </div>
-                    </div>
-                    <div class="casting-content-section">
-                        <div class="tag well-paid">Well Paid</div>
-                        <div class="casting-details">
-                            <h3>Fashion Campaign ${page}</h3>
-                            <div class="casting-info">
-                                <p><i class="fas fa-globe"></i> Worldwide</p>
-                                <p><i class="far fa-calendar"></i> Casting ends May 15, 2025</p>
-                                <p><i class="fas fa-dollar-sign"></i> Paid shoot or event</p>
-                            </div>
-                            <div class="price-section">
-                                <span class="amount">$${800 + (page * 100)}</span>
-                                <span class="travel-note">
-                                    <i class="fas fa-plane"></i>
-                                    Travel costs covered
-                                </span>
-                            </div>
-                            <button class="details-btn">More details</button>
-                            <p class="last-activity">Last activity: <span>recently active</span></p>
-                        </div>
-                    </div>
-                </div>
-            `.repeat(2);
-        }
     </script>
 </body>
 
