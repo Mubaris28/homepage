@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Management - Register</title>
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Model Management">
+        </div>
+        <div class="nav-right">
+            <a href="#" class="logout">Log out</a>
+        </div>
+    </header>
+
+    <main class="register-container">
+        <section class="purpose-section">
+            <h2>I want to</h2>
+            <div class="purpose-options">
+                <label class="radio-option">
+                    <input type="radio" name="purpose" value="find_jobs" checked>
+                    <span class="radio-label">Find modeling jobs</span>
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="purpose" value="find_models">
+                    <span class="radio-label">Find models</span>
+                </label>
+            </div>
+        </section>
+
+        <section class="role-section">
+            <h2>Which one are you?</h2>
+            <div class="role-options">
+                <label class="radio-option">
+                    <input type="radio" name="role" value="aspiring">
+                    <span class="radio-label">Aspiring model</span>
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="role" value="professional">
+                    <span class="radio-label">Professional model</span>
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="role" value="talent">
+                    <span class="radio-label">Talent (Actor, dancer, musician, sports person, etc)</span>
+                </label>
+            </div>
+        </section>
+
+        <section class="details-section">
+            <h2>Your details</h2>
+            <form class="details-form">
+                <div class="form-group">
+                    <label>First name <span class="required">*</span></label>
+                    <input type="text" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Last name <span class="required">*</span></label>
+                    <input type="text" placeholder="Enter your last name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Date of birth <span class="required">*</span></label>
+                    <input type="text" placeholder="Enter your date of birth" required>
+                </div>
+
+                <div class="form-group location-group">
+                    <label>Location <span class="required">*</span></label>
+                    <div class="location-inputs">
+                        <div class="select-wrapper">
+                            <select required>
+                                <option value="India">India</option>
+                            </select>
+                        </div>
+                        <div class="city-input">
+                            <input type="text" placeholder="Enter a city" required>
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group phone-group">
+                    <label>Phone <span class="required">*</span></label>
+                    <div class="phone-input">
+                        <div class="country-code">
+                            <select>
+                                <option value="+91">+91</option>
+                            </select>
+                        </div>
+                        <input type="tel" placeholder="Enter your phone number" required>
+                    </div>
+                    <small class="phone-note">Will not show publicly</small>
+                </div>
+
+                <div class="form-group">
+                    <label>Gender <span class="required">*</span></label>
+                    <select required>
+                        <option value="">Select your gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Height <span class="required">*</span></label>
+                    <select required>
+                        <option value="">Select your height</option>
+                        <option value="150">150 cm (4'11")</option>
+                        <option value="155">155 cm (5'1")</option>
+                        <option value="160">160 cm (5'3")</option>
+                        <option value="165">165 cm (5'5")</option>
+                        <option value="170">170 cm (5'7")</option>
+                        <option value="175">175 cm (5'9")</option>
+                        <option value="180">180 cm (5'11")</option>
+                        <option value="185">185 cm (6'1")</option>
+                        <option value="190">190 cm (6'3")</option>
+                        <option value="195">195 cm (6'5")</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Nationality <span class="required">*</span></label>
+                    <select required>
+                        <option value="">Select a nationality</option>
+                        <option value="indian">Indian</option>
+                        <option value="american">American</option>
+                        <option value="british">British</option>
+                        <option value="canadian">Canadian</option>
+                        <option value="australian">Australian</option>
+                        <option value="chinese">Chinese</option>
+                        <option value="japanese">Japanese</option>
+                        <option value="korean">Korean</option>
+                        <option value="french">French</option>
+                        <option value="german">German</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Ethnicity <span class="required">*</span></label>
+                    <select required>
+                        <option value="">Select your ethnicity</option>
+                        <option value="asian">Asian</option>
+                        <option value="african">African</option>
+                        <option value="caucasian">Caucasian</option>
+                        <option value="hispanic">Hispanic</option>
+                        <option value="middle_eastern">Middle Eastern</option>
+                        <option value="mixed">Mixed</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group notifications">
+                    <label class="checkbox-option">
+                        <input type="checkbox">
+                        <span class="checkbox-label">I agree to receive account notifications for bookings, castings and
+                            messages.</span>
+                    </label>
+                </div>
+
+                <div class="form-group marketing">
+                    <label class="checkbox-option">
+                        <input type="checkbox">
+                        <span class="checkbox-label">I would like to receive information about castings, special offers
+                            and site updates.</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="confirm-btn">Confirm</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="js/register.js"></script>
+</body>
+
+</html>

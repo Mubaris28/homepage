@@ -1,0 +1,434 @@
+:root {
+    --primary-color: #333;
+    --secondary-color: #666;
+    --accent-color: #40c98c;
+    --background-color: #f5f5f5;
+    --white: #ffffff;
+    --border-color: #e0e0e0;
+    --yellow: #ffd54f;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    line-height: 1.6;
+}
+
+/* Top Navigation */
+.top-nav {
+    background: var(--white);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-left .logo img {
+    height: 30px;
+}
+
+.nav-center {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-center a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.messages-icon {
+    color: var(--primary-color);
+    font-size: 1.2em;
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.user-menu img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+/* Main Container */
+.container {
+    display: grid;
+    grid-template-columns: 250px 1fr 300px;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+/* Left Sidebar */
+.sidebar {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 20px;
+    height: fit-content;
+    position: sticky;
+    top: 85px;
+}
+
+.profile-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.status {
+    color: var(--secondary-color);
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+.upgrade-btn {
+    background-color: #e91e63;
+    color: var(--white);
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 15px auto;
+    transition: var(--transition);
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar-nav a {
+    text-decoration: none;
+    color: var(--primary-color);
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: var(--transition);
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+    background-color: var(--background-color);
+}
+
+.sidebar-nav a i {
+    width: 20px;
+    text-align: center;
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.welcome-message {
+    background-color: var(--white);
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.message-icon {
+    color: #e91e63;
+    font-size: 1.2em;
+}
+
+.setup-progress {
+    background-color: var(--yellow);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.progress-bar {
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 8px;
+    border-radius: 4px;
+    margin: 15px 0;
+    overflow: hidden;
+}
+
+.progress {
+    background-color: var(--white);
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.setup-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.step.completed {
+    color: var(--white);
+}
+
+.step-link {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.step small {
+    color: var(--primary-color);
+    font-size: 0.8em;
+}
+
+.premium-banner {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.wave-decoration {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: url('images/wave.svg') repeat-x;
+    background-size: contain;
+}
+
+.upgrade-account-btn {
+    background-color: #222;
+    color: var(--white);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.action-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.action-btn {
+    background-color: var(--accent-color);
+    color: var(--white);
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: var(--transition);
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+}
+
+.casting-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.casting-card {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.casting-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.see-more {
+    color: var(--accent-color);
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.no-messages,
+.no-bookings {
+    text-align: center;
+    padding: 30px;
+    color: var(--secondary-color);
+}
+
+.no-messages i,
+.no-bookings i {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.premium-message {
+    background-color: var(--background-color);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.premium-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Right Sidebar */
+.right-sidebar {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 20px;
+    position: sticky;
+    top: 85px;
+}
+
+.model-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.model-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.model-info h4 {
+    margin: 0;
+    color: var(--accent-color);
+}
+
+.model-info p {
+    color: var(--secondary-color);
+    font-size: 0.9em;
+    margin: 2px 0;
+}
+
+.follow-btn {
+    background-color: var(--accent-color);
+    color: var(--white);
+    border: none;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+    .container {
+        grid-template-columns: 220px 1fr 280px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        grid-template-columns: 200px 1fr;
+    }
+    .right-sidebar {
+        display: none;
+    }
+    .nav-center {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+    .sidebar {
+        display: none;
+    }
+    .setup-steps {
+        grid-template-columns: 1fr;
+    }
+    .action-buttons {
+        grid-template-columns: 1fr;
+    }
+    .casting-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .nav-center {
+        display: none;
+    }
+    .top-nav {
+        padding: 10px 15px;
+    }
+} 

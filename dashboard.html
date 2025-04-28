@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Management - Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="nav-left">
+            <a href="/" class="logo">
+                <img src="images/logo.png" alt="Model Management">
+            </a>
+        </div>
+        <div class="nav-center">
+            <a href="/home">Home</a>
+            <a href="/castings">Castings</a>
+            <a href="/models">Models</a>
+            <a href="/pro-directory">Pro directory</a>
+            <a href="/marketplace">Marketplace</a>
+        </div>
+        <div class="nav-right">
+            <a href="/messages" class="messages-icon">
+                <i class="fas fa-comment-alt"></i>
+            </a>
+            <div class="user-menu">
+                <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=100&h=100&fit=crop"
+                    alt="Muhammed">
+                <span>Muhammed</span>
+            </div>
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <div class="profile-section">
+                <div class="profile-image">
+                    <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=200&h=200&fit=crop"
+                        alt="Profile">
+                </div>
+                <h3>Muhammed Mubaris</h3>
+                <p class="status">New face</p>
+                <button class="upgrade-btn">
+                    <i class="fas fa-star"></i>
+                    Upgrade now
+                </button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="active">
+                    <i class="fas fa-th-large"></i>
+                    Dashboard
+                </a>
+                <a href="#">
+                    <i class="fas fa-user"></i>
+                    Account
+                </a>
+                <a href="#">
+                    <i class="fas fa-images"></i>
+                    My photos
+                </a>
+                <a href="#">
+                    <i class="fas fa-video"></i>
+                    Videos
+                </a>
+                <a href="#">
+                    <i class="fas fa-clipboard-list"></i>
+                    Casting applications
+                </a>
+                <a href="#">
+                    <i class="fas fa-envelope"></i>
+                    Messages
+                </a>
+                <a href="#">
+                    <i class="fas fa-calendar"></i>
+                    Bookings
+                </a>
+                <a href="#">
+                    <i class="fas fa-wallet"></i>
+                    Payouts
+                </a>
+                <a href="#">
+                    <i class="fas fa-clipboard"></i>
+                    Boards
+                </a>
+                <a href="#">
+                    <i class="fas fa-users"></i>
+                    Followers
+                </a>
+                <a href="#">
+                    <i class="fas fa-star"></i>
+                    Reviews
+                </a>
+                <a href="#">
+                    <i class="fas fa-store"></i>
+                    My Marketplace
+                </a>
+                <a href="#">
+                    <i class="fas fa-credit-card"></i>
+                    Subscription
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Welcome Message -->
+            <div class="welcome-message">
+                <div class="message-icon">
+                    <i class="fas fa-exclamation-circle"></i>
+                </div>
+                <p>Thanks for joining! Please treat members with respect and upload photos representing YOU in the best
+                    way to potential clients.</p>
+            </div>
+
+            <!-- Setup Progress -->
+            <div class="setup-progress">
+                <h2>Hi Muhammed, please complete this steps to setup your Profile.</h2>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 17%"></div>
+                </div>
+                <div class="setup-steps">
+                    <div class="step completed">
+                        <i class="fas fa-check"></i>
+                        <span>Confirm your email</span>
+                    </div>
+                    <div class="step">
+                        <a href="#" class="step-link">Upload a profile photo</a>
+                    </div>
+                    <div class="step">
+                        <a href="#" class="step-link">Write something about you</a>
+                    </div>
+                    <div class="step">
+                        <a href="#" class="step-link">Verify phone number</a>
+                        <small>Link with Instagram to show your feed</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Premium Banner -->
+            <div class="premium-banner">
+                <div class="premium-content">
+                    <h2>Go Premium and get discovered!</h2>
+                    <button class="upgrade-account-btn">Upgrade your account</button>
+                </div>
+                <div class="wave-decoration"></div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <a href="/castings" class="action-btn see-castings">
+                    <i class="fas fa-camera"></i>
+                    See castings
+                </a>
+                <a href="/photos/upload" class="action-btn add-photos">
+                    <i class="fas fa-camera"></i>
+                    Add photos
+                </a>
+            </div>
+
+            <!-- Recent Castings -->
+            <div class="recent-castings">
+                <h3>Most recent castings</h3>
+                <div class="casting-grid">
+                    <div class="casting-card">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=300&fit=crop"
+                            alt="Casting 1">
+                    </div>
+                    <div class="casting-card">
+                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&h=300&fit=crop"
+                            alt="Casting 2">
+                    </div>
+                    <div class="casting-card">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=300&fit=crop"
+                            alt="Casting 3">
+                    </div>
+                    <div class="casting-card">
+                        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=300&fit=crop"
+                            alt="Casting 4">
+                    </div>
+                    <div class="casting-card">
+                        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&h=300&fit=crop"
+                            alt="Casting 5">
+                    </div>
+                </div>
+                <a href="/castings" class="see-more">See more castings</a>
+            </div>
+
+            <!-- Latest Message -->
+            <div class="latest-message">
+                <h3>Latest message</h3>
+                <div class="message-content">
+                    <div class="no-messages">
+                        <i class="fas fa-envelope"></i>
+                        <p>You don't have any messages</p>
+                        <small>You can only send messages in response to a message from another user.</small>
+                        <div class="premium-message">
+                            <i class="fas fa-lock"></i>
+                            <p>To start a message conversation with a model agency, brand or photographer from our
+                                search</p>
+                            <a href="/premium" class="premium-link">Go Premium now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Latest Booking -->
+            <div class="latest-booking">
+                <h3>Latest booking</h3>
+                <div class="booking-content">
+                    <div class="no-bookings">
+                        <i class="fas fa-calendar"></i>
+                        <p>You haven't had any bookings</p>
+                        <small>Take the hassle out of being booked and request clients to book you through your
+                            profile.</small>
+                        <a href="/learn-more" class="learn-more">Find out more</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar">
+            <h3>Models you may like</h3>
+            <div class="suggested-models">
+                <div class="model-card">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
+                        alt="Oksana">
+                    <div class="model-info">
+                        <h4>Oksana</h4>
+                        <p>New Delhi, India</p>
+                        <button class="follow-btn">+ FOLLOW</button>
+                    </div>
+                </div>
+                <div class="model-card">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop"
+                        alt="Devika">
+                    <div class="model-info">
+                        <h4>Devika</h4>
+                        <p>New Delhi, India</p>
+                        <button class="follow-btn">+ FOLLOW</button>
+                    </div>
+                </div>
+                <div class="model-card">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
+                        alt="Rachit">
+                    <div class="model-info">
+                        <h4>Rachit</h4>
+                        <p>Mumbai, India</p>
+                        <button class="follow-btn">+ FOLLOW</button>
+                    </div>
+                </div>
+                <div class="model-card">
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&h=100&fit=crop"
+                        alt="Sakshi">
+                    <div class="model-info">
+                        <h4>Sakshi</h4>
+                        <p>Bhopal, India</p>
+                        <button class="follow-btn">+ FOLLOW</button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>
